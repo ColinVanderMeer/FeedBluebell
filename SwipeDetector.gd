@@ -7,11 +7,12 @@ export (float, 1.0, 1.5) var MAX_DIAGONAL_SLOPE = 1.3
 
 onready var timer = $Timer
 var swipe_start_position = Vector2()
+var mouse_on = false
 
 func _input(event):
 	if not event is InputEventScreenTouch:
 		return
-	if event.pressed:
+	if event.pressed and mouse_on:
 		_start_detection(event.position)
 	elif not timer.is_stopped():
 		_end_detection(event.position)
@@ -33,3 +34,10 @@ func _end_detection(position):
 
 func _on_Timer_timeout():
 	emit_signal('swipe_canceled', swipe_start_position)
+
+
+func _on_Food_mouse_entered():
+	mouse_on = true
+
+func _on_Food_mouse_exited():
+	mouse_on = false

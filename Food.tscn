@@ -25,6 +25,7 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[connection signal="input_event" from="." to="SwipeDetector" method="_on_Food_input_event"]
+[connection signal="mouse_entered" from="." to="SwipeDetector" method="_on_Food_mouse_entered"]
+[connection signal="mouse_exited" from="." to="SwipeDetector" method="_on_Food_mouse_exited"]
 [connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]
 [connection signal="timeout" from="SwipeDetector/Timer" to="SwipeDetector" method="_on_Timer_timeout"]
