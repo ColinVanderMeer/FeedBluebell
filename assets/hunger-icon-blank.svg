@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 2048 2048" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-    <g transform="matrix(1.32214,0.473061,-0.473061,1.32214,-178.485,-1304.29)">
-        <g transform="matrix(0.707107,0.707107,-0.707107,0.707107,895.768,-538.08)">
-            <path d="M1771.3,1724.09C1949.08,1534.32 2048,1284.03 2048,1024C2048,870.753 2013.6,719.461 1947.35,581.277L1766.77,667.859C1820.07,779.019 1847.74,900.723 1847.74,1024C1847.74,1233.18 1768.16,1434.52 1625.15,1587.17L1771.3,1724.09Z" style="fill:rgb(34,34,34);stroke:black;stroke-width:25.66px;"/>
-        </g>
-        <g transform="matrix(0.527029,0.527029,-0.502191,0.502191,863.185,-168.022)">
-            <path d="M1771.3,1724.09C1949.08,1534.32 2048,1284.03 2048,1024C2048,893.246 2022.96,763.702 1974.23,642.367L1024,1024L1771.3,1724.09Z" style="fill:rgb(34,34,34);stroke:black;stroke-width:46.31px;"/>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" version="1.1" viewBox="0 0 2048 2048" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5"><g><g><path d="M1771.3,1724.09C1949.08,1534.32 2048,1284.03 2048,1024C2048,870.753 2013.6,719.461 1947.35,581.277L1766.77,667.859C1820.07,779.019 1847.74,900.723 1847.74,1024C1847.74,1233.18 1768.16,1434.52 1625.15,1587.17L1771.3,1724.09Z" style="fill:#222;stroke:#000;stroke-width:25.66px" transform="matrix(1.32214,0.473061,-0.473061,1.32214,-178.485,-1304.29) matrix(0.707107,0.707107,-0.707107,0.707107,895.768,-538.08)"/></g><g><path d="M1771.3,1724.09C1949.08,1534.32 2048,1284.03 2048,1024C2048,893.246 2022.96,763.702 1974.23,642.367L1024,1024L1771.3,1724.09Z" style="fill:#222;stroke:#000;stroke-width:46.31px" transform="matrix(1.32214,0.473061,-0.473061,1.32214,-178.485,-1304.29) matrix(0.527029,0.527029,-0.502191,0.502191,863.185,-168.022)"/></g></g></svg>
