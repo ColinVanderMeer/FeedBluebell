@@ -7,6 +7,7 @@ var direction = Vector2.ZERO
 var _velocity = Vector2.ZERO
 var t = 0.0
 onready var start = self.position
+var target = Vector2.ZERO
 
 func _on_SwipeDetector_swiped(dir):
 	if detect:
@@ -15,7 +16,6 @@ func _on_SwipeDetector_swiped(dir):
 		detect = false
 
 func generate_curve(t: float):
-	var target = Vector2(100, 500)
 	#var middle = start.linear_interpolate(target, 0.5)
 	var middle = Vector2.ZERO
 	middle.x = target.x+100
