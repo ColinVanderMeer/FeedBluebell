@@ -1,2 +1,6 @@
 .import
+<<<<<<< Updated upstream
 assets/*.import
+=======
+.DS_Store
+>>>>>>> Stashed changes
