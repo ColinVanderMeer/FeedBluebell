@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/costume_bitcoin.svg-6eff0bb5290bbb6fc1457a7ab8db892e.stex"
+path="res://.import/hunger-icon-blank.svg-691499457b1f887181cc068757a81e0a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/costume_bitcoin.svg"
-dest_files=[ "res://.import/costume_bitcoin.svg-6eff0bb5290bbb6fc1457a7ab8db892e.stex" ]
+source_file="res://assets/hunger-icon-blank.svg"
+dest_files=[ "res://.import/hunger-icon-blank.svg-691499457b1f887181cc068757a81e0a.stex" ]
 
 [params]
 
