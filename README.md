@@ -1,3 +1,10 @@
+# Colors
+
+Use these colors however you want, I'm thinking light mode, colorful UI.
+
+![image](https://github.com/23marabi/feed-the-pig/assets/85466117/5f445ff5-9f54-4cf3-9da4-489ca9eb29d8)
+
+
 # Godot-Fontpack
 A collection of open fonts ready to use in Godot projects.
 
