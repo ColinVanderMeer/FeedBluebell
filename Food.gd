@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (float) var friction = 0.18
+export var FALL_SPEED = 5
 
 var detect = true
 var direction = Vector2.ZERO
@@ -32,3 +32,6 @@ func _physics_process(delta):
 	if !detect:
 		t += delta
 		position = generate_curve(t)
+	else:
+		position.y += FALL_SPEED
+		start = self.position
