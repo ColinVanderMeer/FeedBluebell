@@ -6,16 +6,23 @@ signal swipe_canceled(start_position)
 export (float, 1.0, 1.5) var MAX_DIAGONAL_SLOPE = 1.3
 
 onready var timer = $Timer
+onready var food_shape = get_owner().get_node("Collision")
 var swipe_start_position = Vector2()
 var mouse_on = false
 
+func _on_Food_input_event(viewport, event, shape_idx):
+#	pass # Replace with function body.
+#func _input_event(viewport, event, food_shape):
+	if event is InputEventMouseButton:
+		print("clicked")
+		if event.is_pressed():
+			print("detected")
+			_start_detection(event.position)
 func _input(event):
-	if not event is InputEventScreenTouch:
-		return
-	if event.pressed and mouse_on:
-		_start_detection(event.position)
-	elif not timer.is_stopped():
-		_end_detection(event.position)
+	if event is InputEventMouseButton:
+		if not timer.is_stopped():
+			print("stoped")
+			_end_detection(event.position)
 		
 func _start_detection(position):
 	swipe_start_position = position
@@ -41,3 +48,6 @@ func _on_Food_mouse_entered():
 
 func _on_Food_mouse_exited():
 	mouse_on = false
+
+
+
