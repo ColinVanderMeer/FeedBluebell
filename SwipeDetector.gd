@@ -23,14 +23,11 @@ func _start_detection(position):
 	
 func _end_detection(position):
 	timer.stop()
-	var direction = (position - swipe_start_position).normalized()
-	if abs(direction.x) + abs(direction.y) >= MAX_DIAGONAL_SLOPE:
-		return
+	var direction = position - swipe_start_position
 	
-	if abs(direction.x) > abs(direction.y):
-		emit_signal('swiped', Vector2(-sign(direction.x), 0.0))
-	else:
-		emit_signal('swiped', Vector2(0.0, -sign(direction.y)))
+	if abs(direction.x) > 30:
+		emit_signal('swiped', Vector2(sign(direction.x), 0.0))
+
 
 func _on_Timer_timeout():
 	emit_signal('swipe_canceled', swipe_start_position)
