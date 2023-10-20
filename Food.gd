@@ -9,12 +9,36 @@ var _velocity = Vector2.ZERO
 var t = 0.0
 onready var start = self.position
 var target = Vector2.ZERO
+var pig_target = Vector2.ZERO
+var trash_target = Vector2.ZERO
 
-func _on_SwipeDetector_swiped(dir):
-	if detect:
-		#dir.y = self.global_position.y - 500
-		direction = -dir
+onready var timer = $Timer
+var swipe_start_position = Vector2()
+
+func _on_Food_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			_start_detection(event.position)
+func _input(event):
+	if event is InputEventMouseButton:
+		if not timer.is_stopped():
+			_end_detection(event.position)
+		
+func _start_detection(position):
+	swipe_start_position = position
+	timer.start()
+	
+func _end_detection(position):
+	timer.stop()
+	direction = position - swipe_start_position
+	
+	if abs(direction.x) > 30:
+		if direction.x > 0:
+			target = trash_target
+		else:
+			target = pig_target
 		detect = false
+
 
 func generate_curve(t: float):
 	#var middle = start.linear_interpolate(target, 0.5)
