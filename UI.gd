@@ -13,6 +13,9 @@ func _on_Timer_timeout():
 		# You can add your logic for what happens when the countdown reaches 0 here
 
 	
-func _on_Pig_update_consumed(c):
-	$ProgressBar.value += 1.5
+func _on_Pig_update_consumed(garbage):
+	if garbage == true:
+		$ProgressBar.value -= 1.5
+	else:
+		$ProgressBar.value += 1.5
 #	$Panel/Label.text = "Consumed: " + str(c)
