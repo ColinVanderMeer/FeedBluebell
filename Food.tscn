@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://AnimatedSprite.gd" type="Script" id=1]
-[ext_resource path="res://SwipeDetector.gd" type="Script" id=2]
 [ext_resource path="res://Food.gd" type="Script" id=3]
 [ext_resource path="res://assets/Apple.svg" type="Texture" id=5]
 [ext_resource path="res://assets/Bottle.svg" type="Texture" id=6]
@@ -26,10 +25,7 @@ animations = [ {
 input_pickable = true
 script = ExtResource( 3 )
 
-[node name="SwipeDetector" type="Node" parent="."]
-script = ExtResource( 2 )
-
-[node name="Timer" type="Timer" parent="SwipeDetector"]
+[node name="Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
@@ -41,5 +37,4 @@ frames = SubResource( 2 )
 animation = "apple"
 script = ExtResource( 1 )
 
-[connection signal="input_event" from="." to="SwipeDetector" method="_on_Food_input_event"]
-[connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]
+[connection signal="input_event" from="." to="." method="_on_Food_input_event"]
