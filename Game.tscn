@@ -46,5 +46,11 @@ z_index = 1
 wait_time = 2.0
 autostart = true
 
+[node name="Trash" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1084, 534 )
+rotation = 3.14159
+z_index = 1
+
 [connection signal="update_consumed" from="Pig" to="UI" method="_on_Pig_update_consumed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="update_consumed" from="Trash" to="UI" method="_on_Pig_update_consumed"]

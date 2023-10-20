@@ -9,11 +9,16 @@ var _velocity = Vector2.ZERO
 var t = 0.0
 onready var start = self.position
 var target = Vector2.ZERO
+var pig_target = Vector2.ZERO
+var trash_target = Vector2.ZERO
 
 func _on_SwipeDetector_swiped(dir):
 	if detect:
 		#dir.y = self.global_position.y - 500
-		direction = -dir
+		if dir > Vector2.ZERO:
+			target = trash_target
+		else:
+			target = pig_target
 		detect = false
 
 func generate_curve(t: float):
