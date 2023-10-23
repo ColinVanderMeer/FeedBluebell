@@ -18,6 +18,8 @@ var swipe_start_position = Vector2()
 func _on_Food_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
+			var garbage = $AnimatedSprite.garbage
+			print(garbage)
 			_start_detection(event.position)
 func _input(event):
 	if event is InputEventMouseButton:

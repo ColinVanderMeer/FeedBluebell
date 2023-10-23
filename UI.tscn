@@ -7,10 +7,20 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+menu = ExtResource( 2 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_top = 66.0
+margin_right = 216.0
+margin_bottom = 97.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 180.0
 margin_bottom = 55.0
+rect_scale = Vector2( 1.2, 1.2 )
 theme = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Panel"]
@@ -19,3 +29,5 @@ margin_top = 10.0
 margin_right = 10.0
 margin_bottom = 10.0
 text = "Consumed: 0"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
