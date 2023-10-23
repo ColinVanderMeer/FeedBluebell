@@ -1,6 +1,6 @@
 extends AnimatedSprite
 
-var garbage
+var type = true
 
 func _ready():
 	randomize()
@@ -10,5 +10,6 @@ func play_random_animation():
 	var animations = frames.get_animation_names()
 	var animation_id = randi() % animations.size()
 	var animation_name = animations[animation_id]
-	garbage = animation_id % 2 == 1
+	if animation_name == "bottle":
+		type = false
 	play(animation_name)

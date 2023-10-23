@@ -15,11 +15,14 @@ var trash_target = Vector2.ZERO
 onready var timer = $Timer
 var swipe_start_position = Vector2()
 
+var type = true
+
+func _ready():
+	type = $AnimatedSprite.type
+	
 func _on_Food_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			var garbage = $AnimatedSprite.garbage
-			print(garbage)
 			_start_detection(event.position)
 func _input(event):
 	if event is InputEventMouseButton:
