@@ -1,7 +1,8 @@
 extends Control
 
-export(PackedScene) var menu
+export(PackedScene) var game_over
 export var step = 1.5
+var game_time = 0
 
 func _ready():
 	$ProgressBar.value = 7  # Start with full progress
@@ -10,7 +11,8 @@ func _ready():
 func _on_Timer_timeout():
 	$ProgressBar.value -= 1   # Update the progress bar
 	if $ProgressBar.value <= 0:
-		get_tree().change_scene_to(menu)
+		ScoreManager.score = game_time
+		get_tree().change_scene_to(game_over)
 		# You can add your logic for what happens when the countdown reaches 0 here
 
 	
@@ -26,3 +28,8 @@ func _on_Trash_update_consumed(type):
 		$ProgressBar.value -= step
 	else:
 		$ProgressBar.value += step
+
+func _process(delta):
+	$Panel/Label.text = "Time: " + str(stepify(game_time, 0.01))
+	game_time += delta
+

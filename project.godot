@@ -13,6 +13,10 @@ config_version=4
 config/name="Feed the Pig"
 run/main_scene="res://Menu.tscn"
 
+[autoload]
+
+ScoreManager="*res://ScoreManager.gd"
+
 [display]
 
 window/size/width=1280
