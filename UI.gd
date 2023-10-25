@@ -1,6 +1,7 @@
 extends Control
 
 export(PackedScene) var menu
+export var step = 1.5
 
 func _ready():
 	$ProgressBar.value = 7  # Start with full progress
@@ -13,9 +14,15 @@ func _on_Timer_timeout():
 		# You can add your logic for what happens when the countdown reaches 0 here
 
 	
-func _on_Pig_update_consumed(garbage):
-	if garbage == true:
-		$ProgressBar.value -= 1.5
+func _on_Pig_update_consumed(type):
+	if type:
+		$ProgressBar.value += step
 	else:
-		$ProgressBar.value += 1.5
-#	$Panel/Label.text = "Consumed: " + str(c)
+		$ProgressBar.value -= step
+
+
+func _on_Trash_update_consumed(type):
+	if type:
+		$ProgressBar.value -= step
+	else:
+		$ProgressBar.value += step
