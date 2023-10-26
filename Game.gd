@@ -7,11 +7,11 @@ func _on_SpawnTimer_timeout():
 	new_food.position = $SpawnPosition.global_position
 	new_food.pig_target = $Pig.global_position
 	new_food.trash_target = $Trash.global_position
-	new_food.FALL_SPEED = 5 + ScoreManager.score / 22
+	new_food.FALL_SPEED = 5 + ScoreManager.score / 20
 	add_child(new_food)
 
 func _process(delta):
-	$SpawnTimer.wait_time = 1 - log(ScoreManager.score) / 30
+	$SpawnTimer.wait_time = 1 - log(ScoreManager.score) / 27
 
 
 func _on_Despawn_body_entered(body):
