@@ -30,9 +30,9 @@ theme = ExtResource( 2 )
 [node name="FinalScore" type="Label" parent="Panel"]
 anchor_left = 0.333
 anchor_right = 0.666
-margin_left = -0.23999
+margin_left = -428.24
 margin_top = 247.0
-margin_right = -0.47998
+margin_right = 427.52
 margin_bottom = 329.0
 rect_pivot_offset = Vector2( 299, 41 )
 theme = ExtResource( 2 )
