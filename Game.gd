@@ -12,3 +12,7 @@ func _on_SpawnTimer_timeout():
 
 func _process(delta):
 	$SpawnTimer.wait_time = 1 - log(ScoreManager.score) / 30
+
+
+func _on_Despawn_body_entered(body):
+	body.queue_free()
