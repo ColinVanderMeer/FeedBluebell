@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://AnimatedSprite.gd" type="Script" id=1]
+[ext_resource path="res://assets/broccoli.svg" type="Texture" id=2]
 [ext_resource path="res://Food.gd" type="Script" id=3]
+[ext_resource path="res://assets/Meat.svg" type="Texture" id=4]
 [ext_resource path="res://assets/Apple.svg" type="Texture" id=5]
 [ext_resource path="res://assets/Bottle.svg" type="Texture" id=6]
 
@@ -19,6 +21,16 @@ animations = [ {
 "loop": true,
 "name": "bottle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "broccoli",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "meat",
+"speed": 5.0
 } ]
 
 [node name="Food" type="KinematicBody2D"]
@@ -34,7 +46,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
-animation = "apple"
+animation = "meat"
 script = ExtResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_Food_input_event"]

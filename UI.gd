@@ -11,7 +11,6 @@ func _ready():
 func _on_Timer_timeout():
 	$ProgressBar.value -= 1   # Update the progress bar
 	if $ProgressBar.value <= 0:
-		ScoreManager.score = game_time
 		get_tree().change_scene_to(game_over)
 		# You can add your logic for what happens when the countdown reaches 0 here
 
@@ -31,5 +30,5 @@ func _on_Trash_update_consumed(type):
 
 func _process(delta):
 	$Panel/Label.text = "Time: " + str(stepify(game_time, 0.01))
+	ScoreManager.score = game_time
 	game_time += delta
-

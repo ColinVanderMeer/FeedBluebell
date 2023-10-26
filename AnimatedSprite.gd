@@ -12,4 +12,6 @@ func play_random_animation():
 	var animation_name = animations[animation_id]
 	if animation_name == "bottle":
 		type = false
+	if animation_name == "meat":
+		type = false
 	play(animation_name)
