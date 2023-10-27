@@ -16,6 +16,7 @@ margin_right = 216.0
 margin_bottom = 97.0
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.07
 autostart = true
 
 [node name="Panel" type="Panel" parent="."]
