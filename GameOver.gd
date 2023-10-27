@@ -9,7 +9,7 @@ export(String, FILE, "*.tscn") var game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Panel/FinalScore.text = "Time: " + str(int(ScoreManager.score / 60)) + " mintues and " + str(int(ScoreManager.score) % 60) + " seconds"
+	$Panel/FinalScore.text = "Time: " + str(int(ScoreManager.score / 60)) + " minutes and " + str(int(ScoreManager.score) % 60) + " seconds"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

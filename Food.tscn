@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/Bottle.svg" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 80.2808
+radius = 92.0217
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
