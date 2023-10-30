@@ -34,7 +34,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Feed the Pig"
 align = 1
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="StartButton" type="Button" parent="Panel"]
 anchor_left = 0.333
 anchor_right = 0.666
 margin_left = 50.0
@@ -44,4 +44,16 @@ text = "Start"
 script = ExtResource( 3 )
 game = ExtResource( 4 )
 
-[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_Button_pressed"]
+[node name="TutorialButton" type="Button" parent="Panel"]
+anchor_left = 0.372
+anchor_right = 0.627
+margin_left = -0.160004
+margin_top = 300.0
+margin_right = 0.439941
+margin_bottom = 341.0
+text = "Tutorial"
+script = ExtResource( 3 )
+game = ExtResource( 4 )
+
+[connection signal="pressed" from="Panel/StartButton" to="Panel/StartButton" method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/TutorialButton" to="Panel/TutorialButton" method="_on_Button_pressed"]

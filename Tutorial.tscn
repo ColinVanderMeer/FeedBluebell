@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Start.gd" type="Script" id=2]
+[ext_resource path="res://Theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/Tutorial.png" type="Texture" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -46, 107 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 4 )
+
+[node name="StartButton" type="Button" parent="."]
+anchor_left = 0.333
+anchor_right = 0.666
+margin_left = 396.76
+margin_top = 561.0
+margin_right = 296.76
+margin_bottom = 602.0
+theme = ExtResource( 3 )
+text = "Start"
+script = ExtResource( 2 )
+game = ExtResource( 1 )
+
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_Button_pressed"]
