@@ -1,7 +1,7 @@
 extends Control
 
 export(PackedScene) var game_over
-export var step = 1.5
+export var step = 20
 var game_time = 0
 
 func _ready():
