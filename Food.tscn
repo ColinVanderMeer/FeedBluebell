@@ -34,6 +34,7 @@ animations = [ {
 } ]
 
 [node name="Food" type="KinematicBody2D"]
+z_as_relative = false
 input_pickable = true
 script = ExtResource( 3 )
 
