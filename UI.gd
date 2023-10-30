@@ -1,12 +1,13 @@
 extends Control
 
 export(PackedScene) var game_over
-export var step = 1.5
+export var step = 20
 var game_time = 0
 
 func _ready():
-	$ProgressBar.value = 7  # Start with full progress
-	$ProgressBar.max_value = 7
+	$ProgressBar.value = 100  # Start with full progress
+	$ProgressBar.max_value = 100
+	$Timer.wait_time = 0.07
 
 func _on_Timer_timeout():
 	$ProgressBar.value -= 1   # Update the progress bar

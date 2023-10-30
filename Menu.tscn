@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/kirifont/KiriFont.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://Start.gd" type="Script" id=3]
+[ext_resource path="res://Menu.gd" type="Script" id=3]
 [ext_resource path="res://Game.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -20,6 +21,9 @@ material = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 3 )
+game = ExtResource( 4 )
+tutorial = ExtResource( 5 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1280.0
@@ -34,14 +38,22 @@ custom_fonts/font = SubResource( 2 )
 text = "Feed the Pig"
 align = 1
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="StartButton" type="Button" parent="Panel"]
 anchor_left = 0.333
 anchor_right = 0.666
 margin_left = 50.0
 margin_top = 200.0
 margin_right = -50.0
 text = "Start"
-script = ExtResource( 3 )
-game = ExtResource( 4 )
 
-[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_Button_pressed"]
+[node name="TutorialButton" type="Button" parent="Panel"]
+anchor_left = 0.372
+anchor_right = 0.627
+margin_left = -0.160004
+margin_top = 300.0
+margin_right = 0.439941
+margin_bottom = 341.0
+text = "Tutorial"
+
+[connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_TutorialButton_pressed"]
