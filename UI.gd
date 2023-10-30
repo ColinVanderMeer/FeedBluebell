@@ -1,7 +1,7 @@
 extends Control
 
 export(PackedScene) var game_over
-export var step = 1.5
+export var step = 20
 var game_time = 0
 
 func _ready():
@@ -30,6 +30,13 @@ func _on_Trash_update_consumed(type):
 		$ProgressBar.value += step
 
 func _process(delta):
-	$Panel/Label.text = "Time: " + str(stepify(game_time, 0.01))
-	ScoreManager.score = game_time
-	game_time += delta
+	if !ScoreManager.pause:
+		$Panel/Label.text = "Time: " + str(stepify(game_time, 0.01))
+		ScoreManager.score = game_time
+		game_time += delta
+
+
+func _on_Button_pressed():
+	ScoreManager.pause = not ScoreManager.pause
+	$Timer.paused = ScoreManager.pause
+	$PauseScreen.visible = ScoreManager.pause

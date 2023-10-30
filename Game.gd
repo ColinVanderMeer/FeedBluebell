@@ -11,8 +11,11 @@ func _on_SpawnTimer_timeout():
 	add_child(new_food)
 
 func _process(delta):
-	$SpawnTimer.wait_time = 1 - log(ScoreManager.score) / 27
-
+	if ScoreManager.pause:
+		$SpawnTimer.paused = true
+	else:
+		$SpawnTimer.paused = false
+		$SpawnTimer.wait_time = 1 - log(ScoreManager.score) / 30
 
 func _on_Despawn_body_entered(body):
 	body.queue_free()

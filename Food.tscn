@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/Bottle.svg" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 92.0217
+radius = 80.2808
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -34,6 +34,7 @@ animations = [ {
 } ]
 
 [node name="Food" type="KinematicBody2D"]
+z_as_relative = false
 input_pickable = true
 script = ExtResource( 3 )
 

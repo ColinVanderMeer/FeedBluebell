@@ -21,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 game = "res://Game.tscn"
+title_screen = "res://Menu.tscn"
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1280.0
@@ -55,7 +56,7 @@ text = "You Failed"
 align = 1
 valign = 1
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="TryAgain" type="Button" parent="Panel"]
 anchor_left = 0.333
 anchor_right = 0.666
 margin_left = -0.23999
@@ -64,4 +65,15 @@ margin_right = -0.47998
 margin_bottom = 500.0
 text = "Try Again?"
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[node name="TitleScren2" type="Button" parent="Panel"]
+anchor_left = 0.333
+anchor_right = 0.666
+margin_left = -0.23999
+margin_top = 555.0
+margin_right = -0.47998
+margin_bottom = 619.0
+rect_pivot_offset = Vector2( 280, 64 )
+text = "Title Screen"
+
+[connection signal="pressed" from="Panel/TryAgain" to="." method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="Panel/TitleScren2" to="." method="_on_TitleScreen_pressed"]
