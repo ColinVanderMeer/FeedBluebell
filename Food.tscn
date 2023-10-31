@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://assets/broccoli.svg" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/grapes.svg" type="Texture" id=10]
 [ext_resource path="res://assets/pasta.svg" type="Texture" id=11]
 [ext_resource path="res://assets/carrot.svg" type="Texture" id=12]
+[ext_resource path="res://assets/granola-bar-wrapped.svg" type="Texture" id=13]
+[ext_resource path="res://assets/wooden-spoon.svg" type="Texture" id=14]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 92.0217
@@ -67,6 +69,16 @@ animations = [ {
 "loop": true,
 "name": "sandwich",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "spoon",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "wrapper",
+"speed": 5.0
 } ]
 
 [node name="Food" type="KinematicBody2D"]
@@ -83,7 +95,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
-animation = "meat"
+animation = "wrapper"
 script = ExtResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_Food_input_event"]
