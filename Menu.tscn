@@ -53,7 +53,7 @@ margin_left = -0.160004
 margin_top = 300.0
 margin_right = 0.439941
 margin_bottom = 341.0
-text = "Tutorial"
+text = "How to play"
 
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_TutorialButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://assets/broccoli.svg" type="Texture" id=2]
@@ -6,9 +6,15 @@
 [ext_resource path="res://assets/Meat.svg" type="Texture" id=4]
 [ext_resource path="res://assets/Apple.svg" type="Texture" id=5]
 [ext_resource path="res://assets/Bottle.svg" type="Texture" id=6]
+[ext_resource path="res://assets/cheese.svg" type="Texture" id=7]
+[ext_resource path="res://assets/sandwich.svg" type="Texture" id=8]
+[ext_resource path="res://assets/granola-bar.svg" type="Texture" id=9]
+[ext_resource path="res://assets/grapes.svg" type="Texture" id=10]
+[ext_resource path="res://assets/pasta.svg" type="Texture" id=11]
+[ext_resource path="res://assets/carrot.svg" type="Texture" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 80.2808
+radius = 92.0217
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -27,9 +33,39 @@ animations = [ {
 "name": "broccoli",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "carrot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "cheese",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "granola",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "grapes",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "meat",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "pasta",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "sandwich",
 "speed": 5.0
 } ]
 
