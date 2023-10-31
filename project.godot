@@ -16,6 +16,7 @@ run/main_scene="res://Menu.tscn"
 [autoload]
 
 ScoreManager="*res://ScoreManager.gd"
+BackgroundMusic="*res://BackgroundMusic.tscn"
 
 [display]
 
