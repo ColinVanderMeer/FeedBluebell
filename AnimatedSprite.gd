@@ -1,6 +1,7 @@
 extends AnimatedSprite
 
 var type = true
+var animation_id = 0
 
 # NEED BAD FOOD AFTER CAROT AND ABOVE
 var foods = ["apple", "bottle", "broccoli", "meat", "carrot", "wrapper", "cheese", "spoon", "grapes", "granola", "pasta", "sandwich"]
@@ -10,7 +11,10 @@ func _ready():
 	play_random_animation()
 
 func play_random_animation():
-	var animation_id = randi() % (2 + int(ScoreManager.score / 5))
+	if int(ScoreManager.score / 5) > 10:
+		animation_id = randi() % 12
+	else:	
+		animation_id = randi() % (2 + int(ScoreManager.score / 5))
 	var animation_name = foods[animation_id]
 	if animation_name == "bottle"\
 	or animation_name == "meat"\
