@@ -40,3 +40,7 @@ func _on_Button_pressed():
 	ScoreManager.pause = not ScoreManager.pause
 	$Timer.paused = ScoreManager.pause
 	$PauseScreen.visible = ScoreManager.pause
+	if ScoreManager.pause:
+		BackgroundMusic.volume_db = -5.0
+	else:
+		BackgroundMusic.volume_db = 0.0
