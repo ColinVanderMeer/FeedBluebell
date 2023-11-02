@@ -2,8 +2,8 @@
 
 [ext_resource path="res://assets/pig.svg" type="Texture" id=1]
 [ext_resource path="res://Pig.gd" type="Script" id=2]
-[ext_resource path="res://assets/sfx/good_food.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sfx/bad_food.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/default/good_food.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sfx/default/bad_food.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 69.1231

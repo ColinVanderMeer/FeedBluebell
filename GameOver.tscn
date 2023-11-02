@@ -2,8 +2,8 @@
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Theme.tres" type="Theme" id=2]
-[ext_resource path="res://fonts/kirifont/KiriFont.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/sfx/game over.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/fonts/kirifont/KiriFont.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sfx/default/game over.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48

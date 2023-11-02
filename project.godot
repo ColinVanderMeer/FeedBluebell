@@ -17,6 +17,7 @@ run/main_scene="res://Menu.tscn"
 
 ScoreManager="*res://ScoreManager.gd"
 BackgroundMusic="*res://BackgroundMusic.tscn"
+SoundManager="*res://assets/sfx/SoundManager.gd"
 
 [display]
 
