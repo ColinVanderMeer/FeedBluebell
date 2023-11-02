@@ -12,9 +12,8 @@ export(String, FILE, "*.tscn") var title_screen
 func _ready():
 	$Panel/FinalScore.text = "Time: " + str(int(ScoreManager.score / 60)) + " minutes and " + str(int(ScoreManager.score) % 60) + " seconds"
 	BackgroundMusic.stop()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	$AudioStreamPlayer.stream = SoundManager.game_over
+	$AudioStreamPlayer.play()
 
 
 func _on_TryAgain_pressed():
