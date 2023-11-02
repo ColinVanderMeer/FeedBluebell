@@ -1,6 +1,7 @@
 extends Control
 
 export(PackedScene) var game_over
+export(String, FILE, "*.tscn") var title_screen
 export var step = 20
 var game_time = 0
 
@@ -44,3 +45,9 @@ func _on_Button_pressed():
 		BackgroundMusic.volume_db = -5.0
 	else:
 		BackgroundMusic.volume_db = 0.0
+
+func _on_MenuButton_pressed():
+	if ResourceLoader.exists(title_screen):
+		ScoreManager.pause = not ScoreManager.pause
+		$Timer.paused = ScoreManager.pause
+		var _error = get_tree().change_scene(title_screen)

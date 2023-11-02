@@ -23,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 game_over = ExtResource( 3 )
+title_screen = "res://Menu.tscn"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 margin_top = 66.0
@@ -78,5 +79,15 @@ align = 1
 valign = 1
 uppercase = true
 
+[node name="MenuButton" type="Button" parent="PauseScreen"]
+anchor_left = 0.333
+anchor_right = 0.666
+margin_left = 50.0
+margin_top = 200.0
+margin_right = -50.0
+theme = ExtResource( 2 )
+text = "Back To Menu"
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="PauseScreen/MenuButton" to="." method="_on_MenuButton_pressed"]
