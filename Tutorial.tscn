@@ -17,11 +17,11 @@ position = Vector2( 640, 360 )
 texture = ExtResource( 4 )
 
 [node name="StartButton" type="Button" parent="."]
-anchor_left = 0.333
-anchor_right = 0.666
-margin_left = 396.76
+anchor_left = 0.643
+anchor_right = 0.898
+margin_left = -0.0400391
 margin_top = 561.0
-margin_right = 296.76
+margin_right = -0.200073
 margin_bottom = 602.0
 theme = ExtResource( 3 )
 text = "Start"

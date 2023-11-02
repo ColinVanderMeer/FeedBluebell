@@ -7,10 +7,10 @@ var game_time = 0
 func _ready():
 	$ProgressBar.value = 100  # Start with full progress
 	$ProgressBar.max_value = 100
-	$Timer.wait_time = 0.07
+	# $Timer.wait_time = 0.07
 
 func _on_Timer_timeout():
-	$ProgressBar.value -= 1   # Update the progress bar
+	$ProgressBar.value -= 0.25   # Update the progress bar
 	if $ProgressBar.value <= 0:
 		get_tree().change_scene_to(game_over)
 		# You can add your logic for what happens when the countdown reaches 0 here

@@ -28,9 +28,10 @@ game_over = ExtResource( 3 )
 margin_top = 66.0
 margin_right = 216.0
 margin_bottom = 97.0
+theme = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.07
+wait_time = 0.005
 autostart = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -41,9 +42,9 @@ theme = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Panel"]
 margin_left = 10.0
-margin_top = 10.0
-margin_right = 10.0
-margin_bottom = 10.0
+margin_top = 19.1667
+margin_right = 171.0
+margin_bottom = 40.1667
 custom_fonts/font = SubResource( 1 )
 text = "Consumed: 0"
 

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/kirifont/Kirifont.tres" type="DynamicFont" id=1]
 
@@ -35,6 +35,11 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.937255, 0.945098, 0.960784, 1 )
 
+[sub_resource type="StyleBoxFlat" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.937255, 0.945098, 0.960784, 1 )
+
 [resource]
 Button/colors/font_color = Color( 0.298039, 0.309804, 0.411765, 1 )
 Button/colors/font_color_disabled = Color( 0.360784, 0.372549, 0.466667, 1 )
@@ -49,3 +54,8 @@ Button/styles/pressed = SubResource( 3 )
 Label/colors/font_color = Color( 0.298039, 0.309804, 0.411765, 1 )
 Label/fonts/font = ExtResource( 1 )
 Panel/styles/panel = SubResource( 5 )
+ProgressBar/colors/font_color = Color( 0.298039, 0.309804, 0.411765, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = ExtResource( 1 )
+ProgressBar/styles/bg = SubResource( 6 )
+ProgressBar/styles/fg = SubResource( 7 )
