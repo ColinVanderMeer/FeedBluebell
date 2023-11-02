@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bad_food.wav-b514c5c03d5caa7ab255d777f9f81fb1.sample"
+
+[deps]
+
+source_file="res://assets/sfx/jaden/bad_food.wav"
+dest_files=[ "res://.import/bad_food.wav-b514c5c03d5caa7ab255d777f9f81fb1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

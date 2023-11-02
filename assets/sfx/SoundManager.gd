@@ -1,6 +1,6 @@
 extends Node
 
-enum SOUND_PACK {DEFAULT}
+enum SOUND_PACK {DEFAULT, JADEN}
 
 var soundpack = SOUND_PACK.DEFAULT
 
@@ -13,6 +13,8 @@ func _ready():
 	match soundpack:
 		SOUND_PACK.DEFAULT:
 			path += "default/"
+		SOUND_PACK.JADEN:
+			path += "jaden/"
 	
 	good_food = load(path+"good_food.wav")
 	bad_food = load(path+"bad_food.wav")
