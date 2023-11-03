@@ -16,14 +16,14 @@ game = ExtResource( 1 )
 position = Vector2( 640, 360 )
 texture = ExtResource( 4 )
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="Sprite"]
 anchor_left = 0.643
 anchor_right = 0.898
-margin_left = -0.0400391
-margin_top = 561.0
-margin_right = -0.200073
-margin_bottom = 602.0
+margin_left = -640.04
+margin_top = 201.0
+margin_right = -640.2
+margin_bottom = 242.0
 theme = ExtResource( 3 )
 text = "Start"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Sprite/StartButton" to="." method="_on_StartButton_pressed"]
