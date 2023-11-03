@@ -52,7 +52,7 @@ margin_bottom = 219.0
 rect_pivot_offset = Vector2( 964, 345 )
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
-text = "You Failed"
+text = "Game Over"
 align = 1
 valign = 1
 
