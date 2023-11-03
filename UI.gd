@@ -42,9 +42,9 @@ func _on_Button_pressed():
 	$Timer.paused = ScoreManager.pause
 	$PauseScreen.visible = ScoreManager.pause
 	if ScoreManager.pause:
-		BackgroundMusic.volume_db = -5.0
+		BackgroundMusic.volume_db = -8.0
 	else:
-		BackgroundMusic.volume_db = 0.0
+		BackgroundMusic.volume_db = -3.0
 
 func _on_MenuButton_pressed():
 	if ResourceLoader.exists(title_screen):
