@@ -10,7 +10,7 @@ func _on_SpawnTimer_timeout():
 	new_food.FALL_SPEED = 5 + ScoreManager.score / 20
 	add_child(new_food)
 
-func _process(delta):
+func _process(_delta):
 	if ScoreManager.pause:
 		$SpawnTimer.paused = true
 	else:
