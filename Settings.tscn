@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/40.png" type="Texture" id=2]
+[ext_resource path="res://Settings.gd" type="Script" id=3]
+[ext_resource path="res://assets/close_material.svg" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.937255, 0.945098, 0.960784, 1 )
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -879, 0 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+scale = Vector2( 1280, 720 )
+texture = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 288.0
+margin_top = 75.0
+margin_right = 992.0
+margin_bottom = 645.0
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 321.0
+margin_top = 103.0
+margin_right = 369.0
+margin_bottom = 151.0
+theme = ExtResource( 1 )
+icon = ExtResource( 4 )
+icon_align = 1
+expand_icon = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

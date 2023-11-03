@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/kirifont/KiriFont.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Menu.gd" type="Script" id=3]
 [ext_resource path="res://Game.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tutorial.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Settings.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -53,7 +54,32 @@ margin_left = -0.160004
 margin_top = 300.0
 margin_right = 0.439941
 margin_bottom = 341.0
+rect_pivot_offset = Vector2( 284, 171 )
 text = "How to play"
+
+[node name="SettingsButton" type="Button" parent="Panel"]
+anchor_left = 0.372
+anchor_right = 0.627
+margin_left = -0.160004
+margin_top = 400.0
+margin_right = 0.439941
+margin_bottom = 441.0
+rect_pivot_offset = Vector2( 284, 171 )
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="Panel"]
+anchor_left = 0.372
+anchor_right = 0.627
+margin_left = -0.160004
+margin_top = 500.0
+margin_right = 0.439941
+margin_bottom = 541.0
+rect_pivot_offset = Vector2( 284, 171 )
+text = "Settings"
+
+[node name="Settings" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_TutorialButton_pressed"]
+[connection signal="pressed" from="Panel/SettingsButton" to="." method="_on_SettingsButton_pressed"]
