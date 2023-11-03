@@ -13,7 +13,7 @@ func _ready():
 func _on_Timer_timeout():
 	$ProgressBar.value -= 0.25   # Update the progress bar
 	if $ProgressBar.value <= 0:
-		get_tree().change_scene_to(game_over)
+		var _error = get_tree().change_scene_to(game_over)
 		# You can add your logic for what happens when the countdown reaches 0 here
 
 	

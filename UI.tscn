@@ -30,6 +30,7 @@ margin_top = 66.0
 margin_right = 216.0
 margin_bottom = 97.0
 theme = ExtResource( 2 )
+percent_visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.005
