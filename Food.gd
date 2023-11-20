@@ -38,11 +38,11 @@ func _end_detection(position):
 	timer.stop()
 	direction = position - swipe_start_position
 	
-	if abs(direction.x) > 30:
-		if direction.x > 0:
-			target = trash_target
-		else:
+	if abs(direction.y) > 30:
+		if direction.y > 0:
 			target = pig_target
+		else:
+			target = trash_target
 		detect = false
 
 
@@ -66,5 +66,5 @@ func _physics_process(delta):
 			t = clamp(t, 0, SPEED)
 			position = generate_curve(t)
 		else:
-			position.y += FALL_SPEED
+			position.x += FALL_SPEED
 			start = self.position

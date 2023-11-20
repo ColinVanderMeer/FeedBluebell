@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://AnimatedSprite.gd" type="Script" id=1]
-[ext_resource path="res://Food.gd" type="Script" id=3]
 [ext_resource path="res://assets/food/broccoli.svg" type="Texture" id=2]
+[ext_resource path="res://Food.gd" type="Script" id=3]
 [ext_resource path="res://assets/food/Meat.svg" type="Texture" id=4]
 [ext_resource path="res://assets/food/Apple.svg" type="Texture" id=5]
 [ext_resource path="res://assets/food/Bottle.svg" type="Texture" id=6]
@@ -14,6 +14,9 @@
 [ext_resource path="res://assets/food/carrot.svg" type="Texture" id=12]
 [ext_resource path="res://assets/food/granola-bar-wrapped.svg" type="Texture" id=13]
 [ext_resource path="res://assets/food/wooden-spoon.svg" type="Texture" id=14]
+[ext_resource path="res://assets/food/milk-carton.svg" type="Texture" id=15]
+[ext_resource path="res://assets/food/cupcake.svg" type="Texture" id=16]
+[ext_resource path="res://assets/food/fish.svg" type="Texture" id=17]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 92.0217
@@ -45,6 +48,16 @@ animations = [ {
 "name": "cheese",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "cupcake",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "fish",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "granola",
@@ -58,6 +71,11 @@ animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "meat",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "milk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ) ],
@@ -95,7 +113,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
-animation = "wrapper"
+animation = "cupcake"
 script = ExtResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_Food_input_event"]

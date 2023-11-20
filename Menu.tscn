@@ -27,8 +27,8 @@ game = ExtResource( 4 )
 tutorial = ExtResource( 5 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_right = 720.0
+margin_bottom = 1280.0
 
 [node name="Label" type="Label" parent="Panel"]
 anchor_left = 0.333
@@ -42,27 +42,28 @@ align = 1
 [node name="StartButton" type="Button" parent="Panel"]
 anchor_left = 0.333
 anchor_right = 0.666
-margin_left = 50.0
-margin_top = 200.0
-margin_right = -50.0
+margin_left = 0.23999
+margin_top = 191.0
+margin_right = 53.92
+margin_bottom = 228.0
 text = "Start"
 
 [node name="TutorialButton" type="Button" parent="Panel"]
 anchor_left = 0.372
 anchor_right = 0.627
-margin_left = -0.160004
-margin_top = 300.0
-margin_right = 0.439941
-margin_bottom = 341.0
+margin_left = -27.84
+margin_top = 303.0
+margin_right = 81.56
+margin_bottom = 344.0
 rect_pivot_offset = Vector2( 284, 171 )
 text = "How to play"
 
 [node name="SettingsButton" type="Button" parent="Panel"]
 anchor_left = 0.372
 anchor_right = 0.627
-margin_left = -0.160004
+margin_left = -27.84
 margin_top = 400.0
-margin_right = 0.439941
+margin_right = 85.56
 margin_bottom = 441.0
 rect_pivot_offset = Vector2( 284, 171 )
 text = "Settings"
@@ -70,9 +71,9 @@ text = "Settings"
 [node name="CreditsButton" type="Button" parent="Panel"]
 anchor_left = 0.372
 anchor_right = 0.627
-margin_left = -0.160004
+margin_left = -27.84
 margin_top = 500.0
-margin_right = 0.439941
+margin_right = 85.56
 margin_bottom = 541.0
 rect_pivot_offset = Vector2( 284, 171 )
 text = "Settings"

@@ -4,7 +4,7 @@ var type = true
 var animation_id = 0
 
 # NEED BAD FOOD AFTER CAROT AND ABOVE
-var foods = ["apple", "bottle", "broccoli", "meat", "carrot", "wrapper", "cheese", "spoon", "grapes", "granola", "pasta", "sandwich"]
+var foods = ["apple", "bottle", "broccoli", "meat", "carrot", "wrapper", "cheese", "spoon", "grapes", "milk", "granola", "fish", "pasta", "cupcake", "sandwich"]
 
 func _ready():
 	randomize()
