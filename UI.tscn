@@ -54,10 +54,10 @@ text = "Consumed: 0"
 layer = 5
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-margin_left = 1165.0
-margin_top = 15.0
-margin_right = 1265.0
-margin_bottom = 115.0
+margin_left = 600.0
+margin_top = 12.0
+margin_right = 700.0
+margin_bottom = 112.0
 theme = ExtResource( 2 )
 icon = ExtResource( 4 )
 
