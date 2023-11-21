@@ -19,6 +19,9 @@ func play_random_animation():
 	if animation_name == "bottle"\
 	or animation_name == "meat"\
 	or animation_name == "wrapper"\
-	or animation_name == "spoon":
+	or animation_name == "spoon"\
+	or animation_name == "milk"\
+	or animation_name == "fish"\
+	or animation_name == "cupcake":
 		type = false
 	play(animation_name)
