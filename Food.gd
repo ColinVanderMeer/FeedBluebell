@@ -49,8 +49,8 @@ func _end_detection(position):
 func generate_curve(t: float):
 	#var middle = start.linear_interpolate(target, 0.5)
 	var middle = Vector2.ZERO
-	middle.x = target.x+100
-	middle.y = target.y - (target.y - start.y)
+	middle.y = target.y+100
+	middle.x = target.x - (target.x - start.x)
 	return _quadratic_bezier(start, middle, target, t)
 
 func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float):
