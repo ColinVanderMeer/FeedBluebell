@@ -1,5 +1,4 @@
 extends StaticBody2D
-extends
 
 # How many food items have been consumed, deprecated
 var consumed = 0
