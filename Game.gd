@@ -3,11 +3,12 @@ extends Node2D
 export(PackedScene) var FOOD
 
 func _on_SpawnTimer_timeout():
+	# Spawn new food item on set spawn position, dynamically update fall speed based on score
 	var new_food = FOOD.instance()
 	new_food.position = $SpawnPosition.global_position
 	new_food.pig_target = $Pig.global_position
 	new_food.trash_target = $Trash.global_position
-	new_food.FALL_SPEED = 5 + ScoreManager.score / 20
+	new_food.FALL_SPEED = 5 + ScoreManager.score / 20 # TODO: make this better
 	add_child(new_food)
 
 func _process(_delta):

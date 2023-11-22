@@ -4,6 +4,7 @@ var type = true
 var animation_id = 0
 
 # NEED BAD FOOD AFTER CAROT AND ABOVE
+# TODO: what the hell is this
 var foods = ["apple", "bottle", "broccoli", "meat", "carrot", "wrapper", "cheese", "spoon", "grapes", "milk", "granola", "fish", "pasta", "cupcake", "sandwich"]
 
 func _ready():
@@ -16,6 +17,7 @@ func play_random_animation():
 	else:	
 		animation_id = randi() % (2 + int(ScoreManager.score / 5))
 	var animation_name = foods[animation_id]
+	# TODO: bruh
 	if animation_name == "bottle"\
 	or animation_name == "meat"\
 	or animation_name == "wrapper"\

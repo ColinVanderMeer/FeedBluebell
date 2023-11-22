@@ -6,10 +6,12 @@ signal update_consumed(c)
 func _on_Area2D_body_entered(body):
 	if !body.type:
 		$FoodSFX.stream = SoundManager.good_food
+		# TODO: remove these, and make sure audio is normalized
 		$FoodSFX.volume_db = -5.0
 	else:
 		$FoodSFX.stream = SoundManager.bad_food
 		$FoodSFX.volume_db = 5.0
+	
 	$FoodSFX.play()
 	emit_signal("update_consumed", body.type)
 	body.queue_free()

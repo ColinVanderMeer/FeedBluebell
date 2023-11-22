@@ -46,9 +46,8 @@ func _end_detection(position):
 			target = trash_target
 		detect = false
 
-
 func generate_curve(t: float):
-	#var middle = start.linear_interpolate(target, 0.5)
+	# Generates a bezier curve based on the food and pig position, following it
 	var middle = Vector2.ZERO
 	middle.y = target.y+100
 	middle.x = target.x - (target.x - start.x)
@@ -63,9 +62,11 @@ func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float):
 func _physics_process(delta):
 	if !ScoreManager.pause:
 		if !detect:
+			# Follow curve to pig
 			t += delta * CURVE_SPEED
 			t = clamp(t, 0, SPEED)
 			position = generate_curve(t)
 		else:
+			# Just fall
 			position.x += FALL_SPEED
 			start = self.position
