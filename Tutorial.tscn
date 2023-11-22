@@ -12,12 +12,16 @@ rect_pivot_offset = Vector2( -46, 107 )
 script = ExtResource( 2 )
 game = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 360, 640 )
-scale = Vector2( 0.5625, 1.77778 )
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 438, 640 )
+scale = Vector2( 0.684375, 1.77778 )
 texture = ExtResource( 4 )
 
-[node name="StartButton" type="Button" parent="Sprite"]
+[node name="StartButton" type="Button" parent="Control/Sprite"]
 anchor_left = 0.643
 anchor_right = 0.898
 margin_left = -640.04
@@ -27,4 +31,4 @@ margin_bottom = 242.0
 theme = ExtResource( 3 )
 text = "Start"
 
-[connection signal="pressed" from="Sprite/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Control/Sprite/StartButton" to="." method="_on_StartButton_pressed"]

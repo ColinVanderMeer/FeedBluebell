@@ -10,7 +10,7 @@ export(String, FILE, "*.tscn") var title_screen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Panel/FinalScore.text = "Time: " + str(int(ScoreManager.score / 60)) + " minutes and " + str(int(ScoreManager.score) % 60) + " seconds"
+	$Panel/FinalScore.text = "Time: " + str(int(ScoreManager.score / 60)) + " minutes\n" + str(int(ScoreManager.score) % 60) + " seconds"
 	BackgroundMusic.stop()
 	$AudioStreamPlayer.stream = SoundManager.game_over
 	$AudioStreamPlayer.play()
