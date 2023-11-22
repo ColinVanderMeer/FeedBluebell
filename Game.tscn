@@ -41,7 +41,7 @@ autostart = true
 [node name="Despawn" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Despawn"]
-position = Vector2( 1028.38, 640 )
+position = Vector2( 1136, 640 )
 shape = SubResource( 4 )
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
