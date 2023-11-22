@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var FALL_SPEED = 5
 export var SPEED = 1.5
+export var CURVE_SPEED = 2.5
 
 var detect = true
 var direction = Vector2.ZERO
@@ -62,7 +63,7 @@ func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float):
 func _physics_process(delta):
 	if !ScoreManager.pause:
 		if !detect:
-			t += delta*2
+			t += delta * CURVE_SPEED
 			t = clamp(t, 0, SPEED)
 			position = generate_curve(t)
 		else:
