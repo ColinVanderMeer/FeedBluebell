@@ -17,6 +17,7 @@ func _process(_delta):
 	else:
 		$SpawnTimer.paused = false
 		$SpawnTimer.wait_time = 1 - log(ScoreManager.score) / 30
+	$Background.position.y = get_viewport().get_visible_rect().size.y - 900
 
 func _on_Despawn_body_entered(body):
 	body.queue_free()

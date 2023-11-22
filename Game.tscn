@@ -4,8 +4,8 @@
 [ext_resource path="res://Food.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game.gd" type="Script" id=4]
+[ext_resource path="res://assets/backgroundTest2.png" type="Texture" id=5]
 [ext_resource path="res://Trash.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/background_test.jpeg" type="Texture" id=7]
 [ext_resource path="res://SpawnPosition.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -16,9 +16,9 @@ script = ExtResource( 4 )
 FOOD = ExtResource( 2 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( -421, 656 )
+position = Vector2( 168, 368 )
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 
 [node name="SpawnPosition" type="Position2D" parent="."]
 position = Vector2( -100, 640 )
