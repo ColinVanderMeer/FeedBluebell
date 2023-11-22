@@ -26,12 +26,12 @@ position = Vector2( -100, 640 )
 script = ExtResource( 8 )
 
 [node name="Trash" parent="." instance=ExtResource( 6 )]
-position = Vector2( 360, 231 )
+position = Vector2( 438, 231 )
 z_index = 1
 z_as_relative = false
 
 [node name="Pig" parent="." instance=ExtResource( 1 )]
-position = Vector2( 325, 1069 )
+position = Vector2( 438, 1069 )
 z_index = 1
 z_as_relative = false
 
