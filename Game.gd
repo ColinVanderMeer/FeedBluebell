@@ -1,6 +1,7 @@
 extends Node2D
 
 export(PackedScene) var FOOD
+export(int) var BGSIZE
 
 func _on_SpawnTimer_timeout():
 	# Spawn new food item on set spawn position, dynamically update fall speed based on score
@@ -17,7 +18,7 @@ func _process(_delta):
 	else:
 		$SpawnTimer.paused = false
 		$SpawnTimer.wait_time = 1 - log(ScoreManager.score) / 30
-	$Background.position.y = get_viewport().get_visible_rect().size.y - 900
+	$BackgroundNew.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
 
 func _on_Despawn_body_entered(body):
 	body.queue_free()
