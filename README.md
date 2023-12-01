@@ -13,3 +13,11 @@ Each font folder contains the .tres file for Godot, additional font versions if 
 Preview of all fonts in this pack:
 
 ![alt text](https://raw.githubusercontent.com/dalton5000/Godot-Fontpack/master/fonts/overview.PNG "Preview Image")
+
+
+# TODO
+
+More damage feedback
+Loading screen (bluebell running across field)
+Distractions (Think float, )
+Split background (field, rockway recycle)
