@@ -19,7 +19,7 @@
 [ext_resource path="res://assets/food/fish.svg" type="Texture" id=17]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 104.0
+radius = 152.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -111,7 +111,7 @@ one_shot = true
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.234375, 0.234375 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 2 )
 animation = "apple"
 script = ExtResource( 1 )
