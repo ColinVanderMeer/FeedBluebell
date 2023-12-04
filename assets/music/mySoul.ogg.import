@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mySoul.ogg-7152d9418f430dee49fa3aa55e364a61.oggstr"
+
+[deps]
+
+source_file="res://assets/music/mySoul.ogg"
+dest_files=[ "res://.import/mySoul.ogg-7152d9418f430dee49fa3aa55e364a61.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=60.8

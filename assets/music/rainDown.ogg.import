@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rainDown.ogg-f103bf24745470ddc8548c4ebad4e567.oggstr"
+
+[deps]
+
+source_file="res://assets/music/rainDown.ogg"
+dest_files=[ "res://.import/rainDown.ogg-f103bf24745470ddc8548c4ebad4e567.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=33.0
