@@ -47,10 +47,10 @@ func _on_Button_pressed():
 	if ScoreManager.pause:
 		# Lower bg music on pause screen
 		# TODO: do this for other menus
-		BackgroundMusic.volume_db = -8.0
+		$AudioStreamPlayer.volume_db = -8.0
 	else:
 		# TODO: normalize SFX so we can set this to 0dB
-		BackgroundMusic.volume_db = -3.0
+		$AudioStreamPlayer.volume_db = -3.0
 
 func _on_MenuButton_pressed():
 	# Exit to menu

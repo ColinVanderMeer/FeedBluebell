@@ -3,6 +3,9 @@ extends Node2D
 export(PackedScene) var FOOD
 export(int) var BGSIZE
 
+func _ready():
+	$UI/AudioStreamPlayer.play(0)
+
 func _on_SpawnTimer_timeout():
 	# Spawn new food item on set spawn position, dynamically update fall speed based on score
 	var new_food = FOOD.instance()

@@ -17,7 +17,10 @@ Preview of all fonts in this pack:
 
 # TODO
 
-More damage feedback
+More damage feedback **
+Better indications of good / bad **
+Tutorial saying "swipe not drag"
 Loading screen (bluebell running across field)
 Distractions (Think float, )
 Split background (field, rockway recycle)
+Better difficulty curve
