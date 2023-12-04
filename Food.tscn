@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://assets/food/broccoli.svg" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/food/milk-carton.svg" type="Texture" id=15]
 [ext_resource path="res://assets/food/cupcake.svg" type="Texture" id=16]
 [ext_resource path="res://assets/food/fish.svg" type="Texture" id=17]
+[ext_resource path="res://assets/food/meat-rockway.svg" type="Texture" id=18]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 152.0
@@ -83,6 +84,11 @@ animations = [ {
 "name": "pasta",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "rockMeat",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "sandwich",
@@ -113,7 +119,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 2 )
-animation = "apple"
+animation = "rockMeat"
 script = ExtResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_Food_input_event"]
