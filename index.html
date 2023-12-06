@@ -267,6 +267,8 @@
     const supabase = createClient('https://emnytewhiezyjzocqbqg.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtbnl0ZXdoaWV6eWp6b2NxYnFnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDE5MDU4NTcsImV4cCI6MjAxNzQ4MTg1N30.OQ0uCPOWOQxfrU949ChFxwLYkW8mdJQulFD8YvVMohs')
     const browser = window.navigator.userAgent.includes("Chrome") || window.navigator.userAgent.includes("Chromium") ? "Chromium" : window.navigator.userAgent.includes("Firefox") ? "Firefox" : "WebKit";
     supabase.from('Logs').insert({ user_agent : window.navigator.userAgent, browser : browser })
+    // Holy shit we can use local storage to profile unique users and you don't even have to ask to for cookies
+    // We could also use local storage to persist game stats if godot lets us do that
   </script>
 </body>
 
