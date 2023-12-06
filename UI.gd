@@ -3,19 +3,12 @@ extends Control
 export(PackedScene) var game_over
 export(String, FILE, "*.tscn") var title_screen
 export var STEP = 20
-export var TIMER_STEP = 0.25
+export var TIMER_STEP = 14
 var game_time = 0
 
 func _ready():
 	$ProgressBar.value = 100
 	$ProgressBar.max_value = 100
-
-func _on_Timer_timeout():
-	# Decrement progress each timer tick
-	$ProgressBar.value -= TIMER_STEP
-	if $ProgressBar.value <= 0:
-		# Gameover when progress bar is empty
-		var _error = get_tree().change_scene_to(game_over)
 
 	
 func _on_Pig_update_consumed(type):
@@ -37,6 +30,11 @@ func _process(delta):
 		$Panel/Label.text = "Time: " + str(stepify(game_time, 0.01))
 		ScoreManager.score = game_time
 		game_time += delta
+
+		$ProgressBar.value -= TIMER_STEP * delta
+		if $ProgressBar.value <= 0:
+			# Gameover when progress bar is empty
+			var _error = get_tree().change_scene_to(game_over)
 
 func _on_Button_pressed():
 	# Pause Button

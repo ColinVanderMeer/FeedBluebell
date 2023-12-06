@@ -34,10 +34,6 @@ margin_bottom = 97.0
 theme = ExtResource( 2 )
 percent_visible = false
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.005
-autostart = true
-
 [node name="Panel" type="Panel" parent="."]
 margin_right = 180.0
 margin_bottom = 55.0
@@ -98,6 +94,5 @@ text = "Back To Menu"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseScreen/Panel/MenuButton" to="." method="_on_MenuButton_pressed"]
