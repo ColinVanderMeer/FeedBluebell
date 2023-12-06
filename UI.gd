@@ -5,6 +5,7 @@ export(String, FILE, "*.tscn") var title_screen
 export var STEP = 20
 export var TIMER_STEP = 14
 var game_time = 0
+var coyote = 0
 
 func _ready():
 	$ProgressBar.value = 100
@@ -32,9 +33,12 @@ func _process(delta):
 		game_time += delta
 
 		$ProgressBar.value -= TIMER_STEP * delta
+		coyote = 0
 		if $ProgressBar.value <= 0:
 			# Gameover when progress bar is empty
-			var _error = get_tree().change_scene_to(game_over)
+			coyote += delta
+			if coyote > 0.5:
+				var _error = get_tree().change_scene_to(game_over)
 
 func _on_Button_pressed():
 	# Pause Button
