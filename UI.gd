@@ -40,7 +40,6 @@ func _on_Button_pressed():
 	# Pause Button
 	# set global pause variable, which other scripts use
 	ScoreManager.pause = not ScoreManager.pause
-	$Timer.paused = ScoreManager.pause
 	$PauseScreen.visible = ScoreManager.pause
 	if ScoreManager.pause:
 		# Lower bg music on pause screen
