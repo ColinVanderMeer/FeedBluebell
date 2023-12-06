@@ -53,5 +53,4 @@ func _on_MenuButton_pressed():
 	# Exit to menu
 	if ResourceLoader.exists(title_screen):
 		ScoreManager.pause = not ScoreManager.pause
-		$Timer.paused = ScoreManager.pause
 		var _error = get_tree().change_scene(title_screen)
