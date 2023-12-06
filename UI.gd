@@ -33,12 +33,13 @@ func _process(delta):
 		game_time += delta
 
 		$ProgressBar.value -= TIMER_STEP * delta
-		coyote = 0
 		if $ProgressBar.value <= 0:
 			# Gameover when progress bar is empty
 			coyote += delta
 			if coyote > 0.5:
 				var _error = get_tree().change_scene_to(game_over)
+		else:
+			coyote = 0
 
 func _on_Button_pressed():
 	# Pause Button

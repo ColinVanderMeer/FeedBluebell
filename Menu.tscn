@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Theme.tres" type="Theme" id=1]
+[ext_resource path="res://GuiTheme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/kirifont/KiriFont.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Menu.gd" type="Script" id=3]
 [ext_resource path="res://Game.tscn" type="PackedScene" id=4]
@@ -16,6 +16,14 @@ use_filter = true
 extra_spacing_top = 5
 extra_spacing_bottom = 5
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [node name="Menu" type="Control"]
 material = SubResource( 1 )
@@ -40,43 +48,47 @@ text = "Feed the Pig"
 align = 1
 
 [node name="StartButton" type="Button" parent="Panel"]
-anchor_left = 0.333
-anchor_right = 0.666
-margin_left = 0.23999
-margin_top = 191.0
-margin_right = 53.92
-margin_bottom = 228.0
+anchor_left = 0.245
+anchor_top = 0.159
+anchor_right = 0.755
+anchor_bottom = 0.325
+margin_left = 0.37999
+margin_top = 0.47998
+margin_right = -0.380066
+margin_bottom = -0.160034
+custom_styles/focus = SubResource( 3 )
 text = "Start"
 
 [node name="TutorialButton" type="Button" parent="Panel"]
-anchor_left = 0.372
-anchor_right = 0.627
-margin_left = -27.84
-margin_top = 303.0
-margin_right = 81.56
-margin_bottom = 344.0
+anchor_left = 0.245
+anchor_top = 0.359
+anchor_right = 0.755
+anchor_bottom = 0.525
+margin_left = 0.37999
+margin_top = -0.359985
+margin_right = -0.380066
+margin_bottom = 0.279968
 rect_pivot_offset = Vector2( 284, 171 )
+custom_styles/focus = SubResource( 4 )
 text = "How to play"
 
 [node name="SettingsButton" type="Button" parent="Panel"]
-anchor_left = 0.372
-anchor_right = 0.627
-margin_left = -27.84
-margin_top = 400.0
-margin_right = 85.56
-margin_bottom = 441.0
+anchor_left = 0.245
+anchor_top = 0.559
+anchor_right = 0.755
+anchor_bottom = 0.725
 rect_pivot_offset = Vector2( 284, 171 )
+custom_styles/focus = SubResource( 5 )
 text = "Settings"
 
 [node name="CreditsButton" type="Button" parent="Panel"]
-anchor_left = 0.372
-anchor_right = 0.627
-margin_left = -27.84
-margin_top = 500.0
-margin_right = 85.56
-margin_bottom = 541.0
+anchor_left = 0.245
+anchor_top = 0.759
+anchor_right = 0.755
+anchor_bottom = 0.925
 rect_pivot_offset = Vector2( 284, 171 )
-text = "Settings"
+custom_styles/focus = SubResource( 6 )
+text = "Credits"
 
 [node name="Settings" parent="." instance=ExtResource( 6 )]
 visible = false
