@@ -6,14 +6,14 @@ signal update_consumed(type)
 
 var ping = false
 var scaling = Vector2(0.025,0.025)
-var max_scale = Vector2(0.5,0.5)
+var max_scale = Vector2(0.625,0.625)
 
 func _process(delta):
 	# Ensure always on the bottom of screen
 	self.position.y = get_viewport().get_visible_rect().size.y - 150
 	if ping and ($Ping.scale < max_scale):
-		$Ping.scale += scaling
-		$Ping.modulate.a -= 0.05
+		$Ping.scale += scaling / 0.016667 * delta # delta time hack to make sure scaling is consistent across framerate
+		$Ping.modulate.a -= 0.05 / 0.016667 * delta
 	elif $Ping.scale >= max_scale:
 		$Ping.scale = scaling
 		$Ping.modulate.a = 1

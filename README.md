@@ -24,3 +24,6 @@ Loading screen (bluebell running across field)
 Distractions (Think float, )
 Split background (field, rockway recycle)
 Better difficulty curve
+
+change spagetti
+Change buttons?
