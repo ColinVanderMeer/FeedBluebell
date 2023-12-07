@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/kirifont/KiriFont.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Settings.gd" type="Script" id=3]
 [ext_resource path="res://assets/close_material.svg" type="Texture" id=4]
 
@@ -10,6 +11,14 @@ corner_radius_top_left = 45
 corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 5
+extra_spacing_bottom = 5
+font_data = ExtResource( 2 )
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0
@@ -43,6 +52,19 @@ icon = ExtResource( 4 )
 icon_align = 1
 expand_icon = true
 
+[node name="MusicLabel" type="Label" parent="Panel"]
+anchor_left = 0.073
+anchor_top = 0.149
+anchor_right = 0.673
+anchor_bottom = 0.196
+margin_left = 0.0399971
+margin_top = -0.0200043
+margin_right = 2.03998
+margin_bottom = -0.0800171
+custom_fonts/font = SubResource( 2 )
+text = "Music Volume"
+align = 1
+
 [node name="MusicSlider" type="HSlider" parent="Panel"]
 anchor_left = 0.073
 anchor_top = 0.165
@@ -54,6 +76,19 @@ margin_right = 0.119995
 margin_bottom = 0.259979
 max_value = 1.0
 step = 0.05
+
+[node name="SfxLabel" type="Label" parent="Panel"]
+anchor_left = 0.073
+anchor_top = 0.247
+anchor_right = 0.677
+anchor_bottom = 0.294
+margin_left = 0.0399971
+margin_top = -0.0600128
+margin_right = -0.0400391
+margin_bottom = -0.119995
+custom_fonts/font = SubResource( 2 )
+text = "Effects Volume"
+align = 1
 
 [node name="SfxSlider" type="HSlider" parent="Panel"]
 anchor_left = 0.073
