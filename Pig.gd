@@ -13,7 +13,7 @@ func _process(delta):
 	self.position.y = get_viewport().get_visible_rect().size.y - 150
 	if ping and ($Ping.scale < max_scale):
 		$Ping.scale += scaling / 0.016667 * delta # delta time hack to make sure scaling is consistent across framerate
-		$Ping.modulate.a -= 0.05 / 0.016667 * delta
+		$Ping.modulate.a -= 0.04 / 0.016667 * delta
 	elif $Ping.scale >= max_scale:
 		$Ping.scale = scaling
 		$Ping.modulate.a = 1
