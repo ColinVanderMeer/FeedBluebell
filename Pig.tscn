@@ -47,6 +47,7 @@ position = Vector2( -2, -23 )
 shape = SubResource( 1 )
 
 [node name="FoodSFX" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.75

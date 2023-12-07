@@ -43,4 +43,30 @@ icon = ExtResource( 4 )
 icon_align = 1
 expand_icon = true
 
+[node name="MusicSlider" type="HSlider" parent="Panel"]
+anchor_left = 0.073
+anchor_top = 0.165
+anchor_right = 0.919
+anchor_bottom = 0.263
+margin_left = 0.0399971
+margin_top = 0.299988
+margin_right = 0.119995
+margin_bottom = 0.259979
+max_value = 1.0
+step = 0.05
+
+[node name="SfxSlider" type="HSlider" parent="Panel"]
+anchor_left = 0.073
+anchor_top = 0.255
+anchor_right = 0.919
+anchor_bottom = 0.353
+margin_left = 0.0399971
+margin_top = 0.0999756
+margin_right = 0.119995
+margin_bottom = 0.0599976
+max_value = 1.0
+step = 0.05
+
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="value_changed" from="Panel/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="Panel/SfxSlider" to="." method="_on_SfxSlider_value_changed"]
