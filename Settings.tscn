@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/kirifont/KiriFont.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Settings.gd" type="Script" id=3]
 [ext_resource path="res://assets/close_material.svg" type="Texture" id=4]
+[ext_resource path="res://assets/fonts/kirifont/Kirifont.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.937255, 0.945098, 0.960784, 1 )
@@ -19,6 +20,19 @@ use_filter = true
 extra_spacing_top = 5
 extra_spacing_bottom = 5
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.5915, 0.604175, 0.65, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0
@@ -102,6 +116,62 @@ margin_bottom = 0.0599976
 max_value = 1.0
 step = 0.05
 
+[node name="SfxLabel2" type="Label" parent="Panel"]
+anchor_left = 0.073
+anchor_top = 0.247
+anchor_right = 0.677
+anchor_bottom = 0.294
+margin_left = 0.0400009
+margin_top = 95.94
+margin_right = 45.96
+margin_bottom = 95.88
+custom_fonts/font = SubResource( 2 )
+text = "Background Music"
+
+[node name="Music" type="Panel" parent="Panel"]
+anchor_left = 0.073
+anchor_top = 0.427
+anchor_right = 0.073
+anchor_bottom = 0.427
+margin_left = 0.0399971
+margin_top = -24.46
+margin_right = 440.04
+margin_bottom = 31.54
+custom_styles/panel = SubResource( 3 )
+
+[node name="MusicRight" type="Button" parent="Panel/Music"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -28.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 88, 40 )
+custom_styles/focus = SubResource( 4 )
+text = ">"
+
+[node name="MusicLeft" type="Button" parent="Panel/Music"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -28.0
+margin_right = 40.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 88, 40 )
+custom_styles/focus = SubResource( 4 )
+text = "<"
+
+[node name="Label" type="Label" parent="Panel/Music"]
+margin_right = 440.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "My Soul Cries Out"
+align = 1
+valign = 1
+
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="value_changed" from="Panel/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
 [connection signal="value_changed" from="Panel/SfxSlider" to="." method="_on_SfxSlider_value_changed"]
+[connection signal="pressed" from="Panel/Music/MusicRight" to="." method="_on_MusicRight_pressed"]
+[connection signal="pressed" from="Panel/Music/MusicLeft" to="." method="_on_MusicLeft_pressed"]

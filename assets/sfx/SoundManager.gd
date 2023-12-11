@@ -5,6 +5,7 @@ enum SOUND_PACK {DEFAULT, JADEN}
 
 # Set the default soundpack
 var soundpack = SOUND_PACK.DEFAULT
+var music = "mySoul"
 
 # TODO: Make these an array/hashmap of some kind?
 var good_food

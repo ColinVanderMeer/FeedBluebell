@@ -13,7 +13,9 @@ func _on_BackButton_pressed():
 onready var musicBus := AudioServer.get_bus_index("Music")
 onready var sfxBus := AudioServer.get_bus_index("SFX")
 
-
+# godot array with two values "mySoul" and "rainDown"
+var currentMusicIndex = 0
+var musicList = ["mySoul", "rainDown"]
 
 
 func _ready() -> void:
@@ -30,3 +32,23 @@ func _on_SfxSlider_value_changed(value: float) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_MusicRight_pressed() -> void:
+	currentMusicIndex += 1
+	if currentMusicIndex >= musicList.size():
+		currentMusicIndex = 0
+	updateMusic()
+
+func _on_MusicLeft_pressed() -> void:
+	currentMusicIndex -= 1
+	if currentMusicIndex < 0:
+		currentMusicIndex = musicList.size() - 1
+	updateMusic()
+
+func updateMusic() -> void:
+	if currentMusicIndex == 0:
+		$Panel/Music/Label.text = "My Soul Cries Out"
+	if currentMusicIndex == 1:
+		$Panel/Music/Label.text = "Rain Down"
+	SoundManager.music = musicList[currentMusicIndex]
+

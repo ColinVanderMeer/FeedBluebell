@@ -10,6 +10,7 @@ var coyote = 0
 func _ready():
 	$ProgressBar.value = 100
 	$ProgressBar.max_value = 100
+	$AudioStreamPlayer.stream = load("res://assets/music/" + SoundManager.music + ".ogg")
 
 	
 func _on_Pig_update_consumed(type):
