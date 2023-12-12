@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/fonts/kirifont/KiriFont.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://GuiTheme.tres" type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -24,7 +23,7 @@ font_data = ExtResource( 3 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 4 )
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 game = "res://Game.tscn"
 title_screen = "res://Menu.tscn"
