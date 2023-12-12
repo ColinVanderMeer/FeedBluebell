@@ -1,6 +1,7 @@
 # Colors
 
 Use these colors however you want, I'm thinking light mode, colorful UI.
+<img width="579" alt="image" src="https://github.com/23marabi/feed-the-pig/assets/85466117/ea3cebf7-475a-4deb-b892-9857ccb754f8">
 
 ![image](https://github.com/23marabi/feed-the-pig/assets/85466117/5f445ff5-9f54-4cf3-9da4-489ca9eb29d8)
 
