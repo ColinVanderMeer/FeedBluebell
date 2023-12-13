@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button2.svg-822956900ba455b2ddbff1bd86d89bee.stex"
+path="res://.import/buttonCreditsHalf.png-94d8e00cd265c136198143f1ffa3eaca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/button2.svg"
-dest_files=[ "res://.import/button2.svg-822956900ba455b2ddbff1bd86d89bee.stex" ]
+source_file="res://assets/gui/buttonCreditsHalf.png"
+dest_files=[ "res://.import/buttonCreditsHalf.png-94d8e00cd265c136198143f1ffa3eaca.stex" ]
 
 [params]
 
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=5.0
+svg/scale=1.0

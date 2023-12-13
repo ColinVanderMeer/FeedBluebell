@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button2Pressed.svg-a3a464d5bc17c617ed69cad9c1e37ae7.stex"
+path="res://.import/buttonLeaderboard.png-6c5da0aaacfbacb7a09d043ebb12abca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/button2Pressed.svg"
-dest_files=[ "res://.import/button2Pressed.svg-a3a464d5bc17c617ed69cad9c1e37ae7.stex" ]
+source_file="res://assets/gui/buttonLeaderboard.png"
+dest_files=[ "res://.import/buttonLeaderboard.png-6c5da0aaacfbacb7a09d043ebb12abca.stex" ]
 
 [params]
 
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=5.0
+svg/scale=1.0
