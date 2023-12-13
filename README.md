@@ -28,3 +28,6 @@ Better difficulty curve
 
 change spagetti
 Change buttons?
+
+napkins
+HOW TO PLAY
