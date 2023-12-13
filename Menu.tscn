@@ -256,6 +256,7 @@ theme = SubResource( 32 )
 custom_styles/focus = SubResource( 16 )
 
 [node name="Settings" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_TutorialButton_pressed"]
