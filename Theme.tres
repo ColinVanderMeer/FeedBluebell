@@ -1,51 +1,50 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/gui/slider.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/sliderActive.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.54902, 0.560784, 0.631373, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.8, 0.815686, 0.854902, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-shadow_color = Color( 1, 1, 1, 0.776471 )
-shadow_size = 1
-shadow_offset = Vector2( 2, 2 )
+[sub_resource type="DynamicFont" id=9]
+size = 42
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 12
+font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.737255, 0.752941, 0.8, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
+bg_color = Color( 0.192157, 0.227451, 0.203922, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 12
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.67451, 0.690196, 0.745098, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.126, 0.15, 0.134, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
 expand_margin_left = 5.0
 expand_margin_right = 5.0
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.937255, 0.945098, 0.960784, 1 )
+bg_color = Color( 0.956863, 1, 0.960784, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.847059, 0.435294, 0.603922, 1 )
@@ -54,17 +53,15 @@ bg_color = Color( 0.847059, 0.435294, 0.603922, 1 )
 bg_color = Color( 0.4335, 0.85, 0.5168, 1 )
 
 [resource]
-Button/colors/font_color = Color( 0.298039, 0.309804, 0.411765, 1 )
-Button/colors/font_color_disabled = Color( 0.360784, 0.372549, 0.466667, 1 )
-Button/colors/font_color_focus = Color( 0.298039, 0.309804, 0.411765, 1 )
-Button/colors/font_color_hover = Color( 0.298039, 0.309804, 0.411765, 1 )
-Button/colors/font_color_pressed = Color( 0.298039, 0.309804, 0.411765, 1 )
-Button/fonts/font = ExtResource( 1 )
-Button/styles/disabled = SubResource( 4 )
-Button/styles/hover = SubResource( 1 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 0.74902, 0.74902, 0.74902, 1 )
+Button/fonts/font = SubResource( 9 )
+Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 2 )
-Button/styles/pressed = SubResource( 3 )
-HSlider/styles/slider = SubResource( 2 )
+Button/styles/pressed = SubResource( 10 )
+HSlider/icons/grabber = ExtResource( 2 )
+HSlider/icons/grabber_highlight = ExtResource( 3 )
+HSlider/styles/slider = SubResource( 8 )
 Label/colors/font_color = Color( 0.298039, 0.309804, 0.411765, 1 )
 Label/fonts/font = ExtResource( 1 )
 Panel/styles/panel = SubResource( 5 )

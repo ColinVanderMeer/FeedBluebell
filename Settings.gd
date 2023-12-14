@@ -17,6 +17,12 @@ onready var sfxBus := AudioServer.get_bus_index("SFX")
 var currentMusicIndex = 0
 var musicList = ["mySoul", "rainDown"]
 
+var currentSoundIndex = 0
+var soundList = ["sound1", "sound2"]
+
+var currentCostumeIndex = 0
+var costumeList = ["costume1", "costume2"]
+
 
 func _ready() -> void:
 	$Panel/MusicSlider.value = db2linear(AudioServer.get_bus_volume_db(musicBus))
@@ -45,10 +51,48 @@ func _on_MusicLeft_pressed() -> void:
 		currentMusicIndex = musicList.size() - 1
 	updateMusic()
 
+func _on_SoundRight_pressed() -> void:
+	currentSoundIndex += 1
+	if currentSoundIndex >= soundList.size():
+		currentSoundIndex = 0
+	updateSound()
+
+func _on_SoundLeft_pressed() -> void:
+	currentSoundIndex -= 1
+	if currentSoundIndex < 0:
+		currentSoundIndex = soundList.size() - 1
+	updateSound()
+
+func _on_CostumeRight_pressed() -> void:
+	currentCostumeIndex += 1
+	if currentCostumeIndex >= costumeList.size():
+		currentCostumeIndex = 0
+	updateCostume()
+
+func _on_CostumeLeft_pressed() -> void:
+	currentCostumeIndex -= 1
+	if currentCostumeIndex < 0:
+		currentCostumeIndex = costumeList.size() - 1
+	updateCostume()
+
 func updateMusic() -> void:
 	if currentMusicIndex == 0:
 		$Panel/Music/Label.text = "My Soul Cries Out"
 	if currentMusicIndex == 1:
 		$Panel/Music/Label.text = "Rain Down"
 	SoundManager.music = musicList[currentMusicIndex]
+
+func updateSound() -> void:
+	if currentSoundIndex == 0:
+		$Panel/SoundPack/Label.text = "Sound 1"
+	if currentSoundIndex == 1:
+		$Panel/SoundPack/Label.text = "Sound 2"
+	SoundManager.sound = soundList[currentSoundIndex]
+
+func updateCostume() -> void:
+	if currentCostumeIndex == 0:
+		$Panel/Costume/Label.text = "Costume 1"
+	if currentCostumeIndex == 1:
+		$Panel/Costume/Label.text = "Costume 2"
+	SoundManager.costume = costumeList[currentCostumeIndex]
 
