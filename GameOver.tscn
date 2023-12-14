@@ -83,5 +83,8 @@ text = "Title Screen"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true
+
 [connection signal="pressed" from="Panel/TryAgain" to="." method="_on_TryAgain_pressed"]
 [connection signal="pressed" from="Panel/TitleScren2" to="." method="_on_TitleScreen_pressed"]

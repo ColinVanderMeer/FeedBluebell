@@ -9,6 +9,8 @@ func _ready():
 	$AudioStreamPlayer.stream = SoundManager.game_over
 	$AudioStreamPlayer.play()
 
+	_make_post("http://127.0.0.1:8080/api/new", {"score":ScoreManager.score, "name":"Godot", "key":"test"}, false)
+
 func _on_TryAgain_pressed():
 	if ResourceLoader.exists(game):
 		var _error = get_tree().change_scene(game)
@@ -16,3 +18,10 @@ func _on_TryAgain_pressed():
 func _on_TitleScreen_pressed():
 	if ResourceLoader.exists(title_screen):
 		var _error = get_tree().change_scene(title_screen)
+
+
+func _make_post(url, data, ssl):
+	var query = JSON.print(data)
+	print(query)
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.request(url, headers, ssl, HTTPClient.METHOD_POST, query)
