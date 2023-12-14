@@ -349,7 +349,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 2
 theme = SubResource( 15 )
 custom_fonts/font = SubResource( 5 )
-text = "My Soul Cries Outfdsfsdfdsfdsfsdfsdf"
+text = "These expand if there's too much text"
 align = 1
 valign = 1
 
