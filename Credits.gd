@@ -11,10 +11,11 @@ func _on_BackButton_pressed():
 	self.visible = false
 
 func _on_CodeButton_pressed():
-	print($Panel/CodeEntry.text)
-	if $Panel/CodeEntry.text == "1234":
-		print("un")
-		$Panel/CodeEntry.text = "Correct"
+	print()
+	if $Panel/CodeEntry.text == "703":
+		$Panel/CodeEntry.text = "Rain Down Unlocked"
+	elif $Panel/CodeEntry.text == "retrobell":
+		$Panel/CodeEntry.text = "Retro Skin Unlocked"
 	else:
 		$Panel/CodeEntry.text = "Incorrect"
 
