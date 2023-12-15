@@ -11,13 +11,15 @@ func _on_BackButton_pressed():
 	self.visible = false
 
 func _on_CodeButton_pressed():
-	print()
-	if $Panel/CodeEntry.text == "703":
-		$Panel/CodeEntry.text = "Rain Down Unlocked"
-	elif $Panel/CodeEntry.text == "retrobell":
-		$Panel/CodeEntry.text = "Retro Skin Unlocked"
-	else:
-		$Panel/CodeEntry.text = "Incorrect"
+	match $Panel/CodeEntry.text:
+		"703":
+			$Panel/CodeEntry.text = "Rain Down Unlocked"
+		"retrobell":
+			$Panel/CodeEntry.text = "Retro Skin Unlocked"
+		"rainbow":
+			$Panel/CodeEntry.text = "Retro Skin Unlocked"
+		_:
+			$Panel/CodeEntry.text = "Incorrect"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
