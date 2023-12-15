@@ -11,3 +11,6 @@ func _on_TutorialButton_pressed():
 
 func _on_SettingsButton_pressed():
 	$Settings.visible = true
+
+func _on_CreditsButton_pressed():
+	$Credits.visible = true

@@ -1,0 +1,248 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Credits.gd" type="Script" id=3]
+[ext_resource path="res://assets/gui/xButton.png" type="Texture" id=4]
+[ext_resource path="res://assets/gui/yellowRect.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.956863, 1, 0.960784, 1 )
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 485, 464 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 485, 464 )
+modulate_color = Color( 0.75, 0.75, 0.75, 1 )
+
+[sub_resource type="Theme" id=8]
+Button/styles/hover = SubResource( 6 )
+Button/styles/normal = SubResource( 6 )
+Button/styles/pressed = SubResource( 7 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1584, 420 )
+
+[sub_resource type="Theme" id=11]
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/fonts/font = SubResource( 5 )
+Label/styles/normal = SubResource( 10 )
+LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
+LineEdit/fonts/font = SubResource( 5 )
+LineEdit/styles/focus = SubResource( 10 )
+LineEdit/styles/normal = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 28
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=13]
+size = 28
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 8
+font_data = ExtResource( 2 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -879, 0 )
+script = ExtResource( 3 )
+
+[node name="Background" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 0.294118 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.16
+anchor_top = 0.117
+anchor_right = 0.84
+anchor_bottom = 0.883
+margin_left = -0.160004
+margin_top = 0.23999
+margin_right = 0.159973
+margin_bottom = -0.23999
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="BackButton" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -82.0
+margin_top = -30.0
+margin_right = 22.0
+margin_bottom = 74.0
+theme = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+icon_align = 1
+expand_icon = true
+
+[node name="CodeEntry" type="LineEdit" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -270.0
+margin_top = -142.0
+margin_right = 194.0
+margin_bottom = -66.0
+theme = SubResource( 11 )
+align = 1
+placeholder_text = "Enter code"
+placeholder_alpha = 1.0
+
+[node name="CodeBox2" type="Label" parent="Panel"]
+anchor_left = 0.034
+anchor_top = 0.108
+anchor_right = 0.933
+anchor_bottom = 0.818
+margin_left = -0.264002
+margin_top = 0.159996
+margin_right = -0.0679932
+margin_bottom = 0.359985
+custom_fonts/font = SubResource( 12 )
+text = "CREDITS:
+
+Main Development team: 
+Colin VanderMeer, Erin Abicht
+
+Graphics: Enoch Lau, 
+Gabrielle Dominguez, Alyssa Panda (add skin people here)
+
+Music: Oliver Erb
+
+Project Coordinator: Sara Wahl
+
+Special thanks to Don Dyck Steinmann, Cyndi Pugh, and the Enviro-Soc club for their support.
+
+"
+autowrap = true
+
+[node name="CodeButton" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.998
+anchor_right = 0.5
+anchor_bottom = 0.998
+margin_left = 218.0
+margin_top = -128.04
+margin_right = 274.0
+margin_bottom = -73.04
+rect_pivot_offset = Vector2( 88, 40 )
+custom_styles/focus = SubResource( 4 )
+text = ">"
+icon_align = 1
+
+[node name="ThirdPartyButton" type="Button" parent="Panel"]
+anchor_left = 0.034
+anchor_top = 0.108
+anchor_right = 0.034
+anchor_bottom = 0.108
+margin_left = -0.264002
+margin_top = 560.16
+margin_right = 319.736
+margin_bottom = 615.16
+custom_fonts/font = SubResource( 13 )
+text = "thrid party licenses"
+
+[node name="ThirdParty" type="Panel" parent="."]
+visible = false
+anchor_left = 0.16
+anchor_top = 0.117
+anchor_right = 0.84
+anchor_bottom = 0.883
+margin_left = -0.160004
+margin_top = 0.23999
+margin_right = 0.159973
+margin_bottom = -0.23999
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ThirdParty"]
+anchor_left = 0.034
+anchor_top = 0.092
+anchor_right = 0.98
+anchor_bottom = 0.941
+margin_left = -0.264002
+margin_top = -0.160004
+margin_right = -0.0800171
+margin_bottom = -0.180054
+scroll_horizontal_enabled = false
+
+[node name="Label" type="Label" parent="ThirdParty/ScrollContainer"]
+margin_right = 552.0
+margin_bottom = 3921.0
+rect_min_size = Vector2( 552, 0 )
+size_flags_horizontal = 2
+text = "Luckiest guy font:
+
+    Copyright 2017  	Astigmatic
+
+    Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+	
+	
+	
+	Godot:
+
+    This game uses Godot Engine, available under the following license:
+
+    Copyright (c) 2014-present Godot Engine contributors. Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+Portions of this software are copyright © 2022 The FreeType Project (www.freetype.org). All rights reserved.
+
+
+
+    Copyright The Mbed TLS Contributors
+
+    Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+"
+autowrap = true
+
+[node name="ThridBackButton" type="Button" parent="ThirdParty"]
+margin_left = 44.0
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 73.0
+text = "<"
+
+[connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Panel/CodeButton" to="." method="_on_CodeButton_pressed"]
+[connection signal="pressed" from="Panel/ThirdPartyButton" to="." method="_on_ThirdPartyButton_pressed"]
+[connection signal="pressed" from="ThirdParty/ThridBackButton" to="." method="_on_ThridBackButton_pressed"]
