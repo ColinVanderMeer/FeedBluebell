@@ -51,9 +51,11 @@ func _on_Button_pressed():
 		# Lower bg music on pause screen
 		# TODO: do this for other menus
 		$AudioStreamPlayer.volume_db = -8.0
+		$CanvasLayer/Button.icon = load("res://assets/gui/buttonResume.png")
 	else:
 		# TODO: normalize SFX so we can set this to 0dB
 		$AudioStreamPlayer.volume_db = -3.0
+		$CanvasLayer/Button.icon = load("res://assets/gui/buttonPause.png")
 
 func _on_MenuButton_pressed():
 	# Exit to menu
