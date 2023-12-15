@@ -271,6 +271,7 @@ custom_styles/focus = SubResource( 16 )
 visible = false
 
 [node name="Credits" parent="." instance=ExtResource( 15 )]
+visible = false
 
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_TutorialButton_pressed"]

@@ -299,7 +299,7 @@ margin_right = 468.896
 margin_bottom = 31.4
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Costume"
+text = "Skins"
 
 [node name="Costume" type="Panel" parent="Panel"]
 anchor_left = 0.087
