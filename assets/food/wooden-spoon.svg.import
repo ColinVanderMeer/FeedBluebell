@@ -14,7 +14,7 @@ dest_files=[ "res://.import/wooden-spoon.svg-008721330100767094311f78ba74394d.st
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=1.0
+svg/scale=0.5

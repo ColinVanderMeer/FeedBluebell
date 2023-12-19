@@ -117,7 +117,7 @@ one_shot = true
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 2 )
 animation = "rockMeat"
 script = ExtResource( 1 )

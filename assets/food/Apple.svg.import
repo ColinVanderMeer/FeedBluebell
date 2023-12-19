@@ -14,7 +14,7 @@ dest_files=[ "res://.import/Apple.svg-04e44ad3c5f37877048bc3b55111cd80.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=1.0
+svg/scale=0.5
