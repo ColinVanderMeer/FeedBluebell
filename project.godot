@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Feed the Pig"
+config/description="Make Bluebell the pig happy by feeding her food scraps and keeping them out of the landfill! She can eat anything except meat from home. Be careful to never feed her any packaging or non-food items!"
 run/main_scene="res://Menu.tscn"
 run/low_processor_mode=true
+boot_splash/image="res://assets/splashscreen.png"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
+config/icon="res://assets/characters/happy_bbspr.png"
 
 [autoload]
 
