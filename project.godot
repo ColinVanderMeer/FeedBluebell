@@ -12,6 +12,7 @@ config_version=4
 
 config/name="Feed the Pig"
 run/main_scene="res://Menu.tscn"
+run/low_processor_mode=true
 
 [autoload]
 
@@ -65,7 +66,15 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+2d/options/use_nvidia_rect_flicker_workaround=true
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+threads/thread_model=2
+threads/thread_safe_bvh=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+quality/depth_prepass/enable=false
+quality/lightmapping/use_bicubic_sampling=false
 environment/default_clear_color=Color( 0, 0, 0, 1 )
+quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"

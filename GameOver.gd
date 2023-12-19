@@ -1,7 +1,7 @@
 extends Control
 
-export(String, FILE, "*.tscn") var game
-export(String, FILE, "*.tscn") var title_screen
+export(String, FILE, "*.tscn") onready var game
+export(String, FILE, "*.tscn") onready var title_screen
 
 func _ready():
 	# Set final time based on score, format as human-readable
