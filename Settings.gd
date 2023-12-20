@@ -43,12 +43,16 @@ func _on_MusicRight_pressed() -> void:
 	currentMusicIndex += 1
 	if currentMusicIndex >= musicList.size():
 		currentMusicIndex = 0
+	if currentMusicIndex == 1 and not ScoreManager.unlock_data.has("703"):
+		currentMusicIndex = 0
 	updateMusic()
 
 func _on_MusicLeft_pressed() -> void:
 	currentMusicIndex -= 1
 	if currentMusicIndex < 0:
 		currentMusicIndex = musicList.size() - 1
+	if currentMusicIndex == 1 and not ScoreManager.unlock_data.has("703"):
+		currentMusicIndex = 0
 	updateMusic()
 
 func _on_SoundRight_pressed() -> void:

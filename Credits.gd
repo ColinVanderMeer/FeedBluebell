@@ -9,11 +9,13 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _on_BackButton_pressed():
 	self.visible = false
+	ScoreManager.save_data()
 
 func _on_CodeButton_pressed():
 	match $Panel/CodeEntry.text:
 		"703":
 			$Panel/CodeEntry.text = "Rain Down Unlocked"
+			ScoreManager.unlock_data.append("703")
 		"retrobell":
 			$Panel/CodeEntry.text = "Retro Skin Unlocked"
 		"rainbow":
