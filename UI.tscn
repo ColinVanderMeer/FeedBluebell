@@ -45,6 +45,8 @@ modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=8]
 Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/fonts/font = SubResource( 5 )
 Button/styles/hover = SubResource( 6 )
 Button/styles/normal = SubResource( 6 )
