@@ -30,5 +30,5 @@ func _make_post(url, data, ssl):
 
 
 func _on_LeaderboardButton_pressed():
-	LeaderboardName = $Panel/LeaderboardButton.text
+	LeaderboardName = $Panel/LeaderboardEntry.text
 	_make_post("http://127.0.0.1:8080/api/new", {"score":ScoreManager.score, "name":LeaderboardName, "key":"test"}, false)
