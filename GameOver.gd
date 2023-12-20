@@ -3,13 +3,15 @@ extends Control
 export(String, FILE, "*.tscn") onready var game
 export(String, FILE, "*.tscn") onready var title_screen
 
+var LeaderboardName = "Godot"
+
 func _ready():
 	# Set final time based on score, format as human-readable
 	$Panel/FinalScore.text = "Time: " + str(int(ScoreManager.score / 60)) + " minutes\n" + str(int(ScoreManager.score) % 60) + " seconds"
 	$AudioStreamPlayer.stream = SoundManager.game_over
 	$AudioStreamPlayer.play()
 
-	_make_post("http://127.0.0.1:8080/api/new", {"score":ScoreManager.score, "name":"Godot", "key":"test"}, false)
+	
 
 func _on_TryAgain_pressed():
 	if ResourceLoader.exists(game):
@@ -25,3 +27,8 @@ func _make_post(url, data, ssl):
 	print(query)
 	var headers = ["Content-Type: application/json"]
 	$HTTPRequest.request(url, headers, ssl, HTTPClient.METHOD_POST, query)
+
+
+func _on_LeaderboardButton_pressed():
+	LeaderboardName = $Panel/LeaderboardButton.text
+	_make_post("http://127.0.0.1:8080/api/new", {"score":ScoreManager.score, "name":LeaderboardName, "key":"test"}, false)

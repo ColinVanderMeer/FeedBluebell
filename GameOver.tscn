@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://CodeEntry.gd" type="Script" id=4]
+[ext_resource path="res://assets/gui/yellowRect.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -19,6 +21,27 @@ font_data = ExtResource( 3 )
 [sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1584, 420 )
+
+[sub_resource type="Theme" id=11]
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/fonts/font = SubResource( 5 )
+Label/styles/normal = SubResource( 10 )
+LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
+LineEdit/fonts/font = SubResource( 5 )
+LineEdit/styles/focus = SubResource( 10 )
+LineEdit/styles/normal = SubResource( 10 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -62,9 +85,9 @@ valign = 1
 
 [node name="TryAgain" type="Button" parent="Panel"]
 anchor_left = 0.245
-anchor_top = 0.309
+anchor_top = 0.459
 anchor_right = 0.755
-anchor_bottom = 0.509
+anchor_bottom = 0.659
 margin_left = -0.23999
 margin_right = -0.47998
 custom_styles/focus = SubResource( 3 )
@@ -72,14 +95,43 @@ text = "Try Again?"
 
 [node name="TitleScren2" type="Button" parent="Panel"]
 anchor_left = 0.245
-anchor_top = 0.543
+anchor_top = 0.693
 anchor_right = 0.755
-anchor_bottom = 0.743
+anchor_bottom = 0.893
 margin_left = -0.23999
 margin_right = -0.47998
 rect_pivot_offset = Vector2( 280, 64 )
 custom_styles/focus = SubResource( 4 )
 text = "Title Screen"
+
+[node name="LeaderboardEntry" type="LineEdit" parent="Panel"]
+anchor_left = 0.502
+anchor_top = 0.331
+anchor_right = 0.502
+anchor_bottom = 0.331
+margin_left = -225.752
+margin_top = 0.319977
+margin_right = 221.248
+margin_bottom = 116.32
+theme = SubResource( 11 )
+align = 1
+placeholder_text = "Leaderboard Name"
+placeholder_alpha = 1.0
+script = ExtResource( 4 )
+
+[node name="LeaderboardButton" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.377
+anchor_right = 0.5
+anchor_bottom = 0.377
+margin_left = 250.0
+margin_top = -34.56
+margin_right = 322.0
+margin_bottom = 37.44
+rect_pivot_offset = Vector2( 88, 40 )
+custom_styles/focus = SubResource( 12 )
+text = ">"
+icon_align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -88,3 +140,4 @@ use_threads = true
 
 [connection signal="pressed" from="Panel/TryAgain" to="." method="_on_TryAgain_pressed"]
 [connection signal="pressed" from="Panel/TitleScren2" to="." method="_on_TitleScreen_pressed"]
+[connection signal="pressed" from="Panel/LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]
