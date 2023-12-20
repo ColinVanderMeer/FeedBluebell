@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assets/gui/buttonStart.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/gui/buttonCreditsHalf.png" type="Texture" id=13]
 [ext_resource path="res://assets/characters/happy_bbspr.png" type="Texture" id=14]
 [ext_resource path="res://Credits.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Leaderboard.tscn" type="PackedScene" id=16]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -276,9 +277,13 @@ visible = false
 [node name="Tutorial" parent="." instance=ExtResource( 5 )]
 visible = false
 
+[node name="Leaderboard" parent="." instance=ExtResource( 16 )]
+visible = false
+
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_TutorialButton_pressed"]
 [connection signal="pressed" from="Panel/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Panel/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="Panel/SettingsButtonHalf" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Panel/CreditsButtonHalf" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Panel/LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]

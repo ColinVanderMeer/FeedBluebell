@@ -43,7 +43,7 @@ LineEdit/styles/normal = SubResource( 10 )
 
 [sub_resource type="StyleBoxEmpty" id=12]
 
-[node name="Control" type="Control"]
+[node name="GameOver" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )

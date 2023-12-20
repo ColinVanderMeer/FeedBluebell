@@ -15,19 +15,19 @@ corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 485, 464 )
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 485, 464 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=8]
-Button/styles/hover = SubResource( 6 )
-Button/styles/normal = SubResource( 6 )
-Button/styles/pressed = SubResource( 7 )
+Button/styles/hover = SubResource( 16 )
+Button/styles/normal = SubResource( 16 )
+Button/styles/pressed = SubResource( 17 )
 
 [sub_resource type="StyleBoxEmpty" id=9]
 
@@ -41,13 +41,13 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=18]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 1584, 420 )
 
 [sub_resource type="Theme" id=11]
 Label/colors/font_color = Color( 0, 0, 0, 1 )
-Label/styles/normal = SubResource( 10 )
+Label/styles/normal = SubResource( 18 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 36
@@ -56,21 +56,21 @@ use_filter = true
 extra_spacing_top = 12
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 1584, 420 )
 
 [sub_resource type="Theme" id=13]
 Label/colors/font_color = Color( 0, 0, 0, 1 )
-Label/styles/normal = SubResource( 12 )
+Label/styles/normal = SubResource( 19 )
 
-[sub_resource type="StyleBoxTexture" id=14]
+[sub_resource type="StyleBoxTexture" id=20]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 1584, 1176 )
 
 [sub_resource type="Theme" id=15]
 Label/colors/font_color = Color( 0, 0, 0, 1 )
-Label/styles/normal = SubResource( 14 )
+Label/styles/normal = SubResource( 20 )
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0

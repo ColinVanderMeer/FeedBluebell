@@ -14,3 +14,6 @@ func _on_SettingsButton_pressed():
 
 func _on_CreditsButton_pressed():
 	$Credits.visible = true
+
+func _on_LeaderboardButton_pressed():
+	$Leaderboard.visible = true
