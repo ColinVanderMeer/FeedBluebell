@@ -273,6 +273,9 @@ visible = false
 [node name="Credits" parent="." instance=ExtResource( 15 )]
 visible = false
 
+[node name="Tutorial" parent="." instance=ExtResource( 5 )]
+visible = false
+
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_TutorialButton_pressed"]
 [connection signal="pressed" from="Panel/SettingsButton" to="." method="_on_SettingsButton_pressed"]

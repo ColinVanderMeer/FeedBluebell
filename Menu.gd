@@ -7,7 +7,7 @@ func _on_StartButton_pressed():
 	var _error = get_tree().change_scene_to(game)
 
 func _on_TutorialButton_pressed():
-	var _error = get_tree().change_scene_to(tutorial)
+	$Tutorial.visible = true
 
 func _on_SettingsButton_pressed():
 	$Settings.visible = true
