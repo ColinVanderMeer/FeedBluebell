@@ -15,13 +15,10 @@ onready var sfxBus := AudioServer.get_bus_index("SFX")
 
 # godot array with two values "mySoul" and "rainDown"
 var currentMusicIndex = 0
-var musicList = ["mySoul", "rainDown"]
 
 var currentSoundIndex = 0
-var soundList = ["sound1", "sound2"]
 
-var currentCostumeIndex = 0
-var costumeList = ["costume1", "costume2"]
+var currentSkinIndex = 0
 
 
 func _ready() -> void:
@@ -41,62 +38,49 @@ func _on_SfxSlider_value_changed(value: float) -> void:
 
 func _on_MusicRight_pressed() -> void:
 	currentMusicIndex += 1
-	if currentMusicIndex >= musicList.size():
-		currentMusicIndex = 0
-	if currentMusicIndex == 1 and not ScoreManager.unlock_data.has("703"):
+	if currentMusicIndex >= ScoreManager.music_data.size():
 		currentMusicIndex = 0
 	updateMusic()
 
 func _on_MusicLeft_pressed() -> void:
 	currentMusicIndex -= 1
 	if currentMusicIndex < 0:
-		currentMusicIndex = musicList.size() - 1
-	if currentMusicIndex == 1 and not ScoreManager.unlock_data.has("703"):
-		currentMusicIndex = 0
+		currentMusicIndex = ScoreManager.music_data.size() - 1
 	updateMusic()
 
 func _on_SoundRight_pressed() -> void:
 	currentSoundIndex += 1
-	if currentSoundIndex >= soundList.size():
+	if currentSoundIndex >= ScoreManager.sound_data.size():
 		currentSoundIndex = 0
 	updateSound()
 
 func _on_SoundLeft_pressed() -> void:
 	currentSoundIndex -= 1
 	if currentSoundIndex < 0:
-		currentSoundIndex = soundList.size() - 1
+		currentSoundIndex = ScoreManager.sound_data.size() - 1
 	updateSound()
 
-func _on_CostumeRight_pressed() -> void:
-	currentCostumeIndex += 1
-	if currentCostumeIndex >= costumeList.size():
-		currentCostumeIndex = 0
-	updateCostume()
+func _on_SkinRight_pressed() -> void:
+	currentSkinIndex += 1
+	if currentSkinIndex >= ScoreManager.skin_data.size():
+		currentSkinIndex = 0
+	updateSkin()
 
-func _on_CostumeLeft_pressed() -> void:
-	currentCostumeIndex -= 1
-	if currentCostumeIndex < 0:
-		currentCostumeIndex = costumeList.size() - 1
-	updateCostume()
+func _on_SkinLeft_pressed() -> void:
+	currentSkinIndex -= 1
+	if currentSkinIndex < 0:
+		currentSkinIndex = ScoreManager.skin_data.size() - 1
+	updateSkin()
 
 func updateMusic() -> void:
-	if currentMusicIndex == 0:
-		$Panel/Music/Label.text = "My Soul Cries Out"
-	if currentMusicIndex == 1:
-		$Panel/Music/Label.text = "Rain Down"
-	SoundManager.music = musicList[currentMusicIndex]
+	$Panel/Music/Label.text = ScoreManager.music_data[currentMusicIndex]
+	SoundManager.music = ScoreManager.music_data[currentMusicIndex]
 
 func updateSound() -> void:
-	if currentSoundIndex == 0:
-		$Panel/SoundPack/Label.text = "Sound 1"
-	if currentSoundIndex == 1:
-		$Panel/SoundPack/Label.text = "Sound 2"
-	SoundManager.sound = soundList[currentSoundIndex]
+	$Panel/SoundPack/Label.text = ScoreManager.sound_data[currentSoundIndex]
+	SoundManager.sound = ScoreManager.sound_data[currentSoundIndex]
 
-func updateCostume() -> void:
-	if currentCostumeIndex == 0:
-		$Panel/Costume/Label.text = "Costume 1"
-	if currentCostumeIndex == 1:
-		$Panel/Costume/Label.text = "Costume 2"
-	SoundManager.costume = costumeList[currentCostumeIndex]
+func updateSkin() -> void:
+	$Panel/Skin/Label.text = ScoreManager.skin_data[currentSkinIndex]
+	SoundManager.skin = ScoreManager.skin_data[currentSkinIndex]
 

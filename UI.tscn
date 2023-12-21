@@ -5,7 +5,7 @@
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/gui/buttonPause.png" type="Texture" id=4]
 [ext_resource path="res://assets/gui/buttonGeneric.png" type="Texture" id=5]
-[ext_resource path="res://assets/music/mySoul.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/music/My Soul Cries Out.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]

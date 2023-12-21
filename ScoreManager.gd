@@ -1,7 +1,10 @@
 extends Node
 
 const SAVE_FILE ="user://save_file.save"
-var unlock_data = []
+var music_data = ["My Soul Cries Out"]
+var sound_data = ["Default"]
+var skin_data = ["Default"]
+var unlock_data = [music_data, sound_data, skin_data]
 
 func _ready():
     load_data()
@@ -18,7 +21,9 @@ func save_data():
 func load_data():
     var file = File.new()
     if not file.file_exists(SAVE_FILE):
-        unlock_data = []
+        music_data = ["My Soul Cries Out"]
+        sound_data = ["Default"]
+        skin_data = ["Default"]
         save_data()
     file.open(SAVE_FILE, File.READ)
     unlock_data = file.get_var()

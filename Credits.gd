@@ -15,7 +15,7 @@ func _on_CodeButton_pressed():
 	match $Panel/CodeEntry.text:
 		"703":
 			$Panel/CodeEntry.text = "Rain Down Unlocked"
-			ScoreManager.unlock_data.append("703")
+			ScoreManager.music_data.append("Rain Down")
 		"retrobell":
 			$Panel/CodeEntry.text = "Retro Skin Unlocked"
 		"rainbow":
