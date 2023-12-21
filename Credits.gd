@@ -14,8 +14,11 @@ func _on_BackButton_pressed():
 func _on_CodeButton_pressed():
 	match $Panel/CodeEntry.text:
 		"703":
-			$Panel/CodeEntry.text = "Rain Down Unlocked"
-			ScoreManager.music_data.append("Rain Down")
+			if not ScoreManager.music_data.has("Rain Down"):
+				$Panel/CodeEntry.text = "Rain Down Unlocked"
+				ScoreManager.music_data.append("Rain Down")
+			else:
+				$Panel/CodeEntry.text = "Rain Down Already Unlocked"
 		"retrobell":
 			$Panel/CodeEntry.text = "Retro Skin Unlocked"
 		"rainbow":
