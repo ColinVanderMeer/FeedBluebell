@@ -22,12 +22,12 @@ func _ready():
 	type = $AnimatedSprite.type
 	
 func _on_Food_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton and !ScoreManager.pause:
+	if event is InputEventMouseButton and !Global.pause:
 		if event.is_pressed():
 			_start_detection(event.position)
 
 func _input(event):
-	if event is InputEventMouseButton and !ScoreManager.pause:
+	if event is InputEventMouseButton and !Global.pause:
 		if not timer.is_stopped():
 			_end_detection(event.position)
 		
@@ -60,7 +60,7 @@ func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float):
 	return r
 
 func _physics_process(delta):
-	if !ScoreManager.pause:
+	if !Global.pause:
 		if !detect:
 			# Follow curve to pig
 			t += delta * CURVE_SPEED

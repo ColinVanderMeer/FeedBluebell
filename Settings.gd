@@ -38,49 +38,49 @@ func _on_SfxSlider_value_changed(value: float) -> void:
 
 func _on_MusicRight_pressed() -> void:
 	currentMusicIndex += 1
-	if currentMusicIndex >= ScoreManager.music_data.size():
+	if currentMusicIndex >= Global.music_data.size():
 		currentMusicIndex = 0
 	updateMusic()
 
 func _on_MusicLeft_pressed() -> void:
 	currentMusicIndex -= 1
 	if currentMusicIndex < 0:
-		currentMusicIndex = ScoreManager.music_data.size() - 1
+		currentMusicIndex = Global.music_data.size() - 1
 	updateMusic()
 
 func _on_SoundRight_pressed() -> void:
 	currentSoundIndex += 1
-	if currentSoundIndex >= ScoreManager.sound_data.size():
+	if currentSoundIndex >= Global.sound_data.size():
 		currentSoundIndex = 0
 	updateSound()
 
 func _on_SoundLeft_pressed() -> void:
 	currentSoundIndex -= 1
 	if currentSoundIndex < 0:
-		currentSoundIndex = ScoreManager.sound_data.size() - 1
+		currentSoundIndex = Global.sound_data.size() - 1
 	updateSound()
 
 func _on_SkinRight_pressed() -> void:
 	currentSkinIndex += 1
-	if currentSkinIndex >= ScoreManager.skin_data.size():
+	if currentSkinIndex >= Global.skin_data.size():
 		currentSkinIndex = 0
 	updateSkin()
 
 func _on_SkinLeft_pressed() -> void:
 	currentSkinIndex -= 1
 	if currentSkinIndex < 0:
-		currentSkinIndex = ScoreManager.skin_data.size() - 1
+		currentSkinIndex = Global.skin_data.size() - 1
 	updateSkin()
 
 func updateMusic() -> void:
-	$Panel/Music/Label.text = ScoreManager.music_data[currentMusicIndex]
-	SoundManager.music = ScoreManager.music_data[currentMusicIndex]
+	$Panel/Music/Label.text = Global.music_data[currentMusicIndex]
+	Global.music = Global.music_data[currentMusicIndex]
 
 func updateSound() -> void:
-	$Panel/SoundPack/Label.text = ScoreManager.sound_data[currentSoundIndex]
-	SoundManager.sound = ScoreManager.sound_data[currentSoundIndex]
+	$Panel/SoundPack/Label.text = Global.sound_data[currentSoundIndex]
+	Global.sound = Global.sound_data[currentSoundIndex]
 
 func updateSkin() -> void:
-	$Panel/Skin/Label.text = ScoreManager.skin_data[currentSkinIndex]
-	SoundManager.skin = ScoreManager.skin_data[currentSkinIndex]
+	$Panel/Skin/Label.text = Global.skin_data[currentSkinIndex]
+	Global.skin = Global.skin_data[currentSkinIndex]
 

@@ -9,22 +9,22 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _on_BackButton_pressed():
 	self.visible = false
-	ScoreManager.save_data()
+	Global.save_data()
 
 func _on_CodeButton_pressed():
 	match $Panel/CodeEntry.text.to_upper():
 		"703":
-			if not ScoreManager.music_data.has("Rain Down"):
+			if not Global.music_data.has("Rain Down"):
 				$Panel/CodeEntry.text = "Rain Down Unlocked"
-				ScoreManager.music_data.append("Rain Down")
+				Global.music_data.append("Rain Down")
 			else:
 				$Panel/CodeEntry.text = "Rain Down Already Unlocked"
 		"RETROBELL":
 			$Panel/CodeEntry.text = "Retro Skin Unlocked"
 		"RAINBOW":
-			if not ScoreManager.skin_data.has("Rainbow"):
+			if not Global.skin_data.has("Rainbow"):
 				$Panel/CodeEntry.text = "Rainbow Skin Unlocked"
-				ScoreManager.skin_data.append("Rainbow")
+				Global.skin_data.append("Rainbow")
 			else:
 				$Panel/CodeEntry.text = "Rainbow Skin Already Unlocked"
 		_:

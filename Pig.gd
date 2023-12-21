@@ -22,7 +22,7 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.type:
-		$FoodSFX.stream = SoundManager.good_food
+		$FoodSFX.stream = Global.good_food
 		$FoodSFX.volume_db = -5.0 # TODO: why?
 		$AnimatedSprite.play("happy") # TODO: use better animation system
 		$Timer.start()
@@ -30,7 +30,7 @@ func _on_Area2D_body_entered(body):
 		$Ping.modulate = Color("#84f174")
 		ping = true
 	else:
-		$FoodSFX.stream = SoundManager.bad_food
+		$FoodSFX.stream = Global.bad_food
 		$FoodSFX.volume_db = 5.0
 		$AnimatedSprite.play("sad")
 		$Timer.start()

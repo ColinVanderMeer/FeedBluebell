@@ -20,8 +20,7 @@ config/icon="res://assets/characters/happy_bbspr.png"
 
 [autoload]
 
-ScoreManager="*res://ScoreManager.gd"
-SoundManager="*res://assets/sfx/SoundManager.gd"
+Global="*res://Global.gd"
 
 [display]
 

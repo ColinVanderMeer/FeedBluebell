@@ -12,10 +12,10 @@ func _ready():
 	play_random_animation()
 
 func play_random_animation():
-	if int(ScoreManager.score / 5) > 14:
+	if int(Global.score / 5) > 14:
 		animation_id = randi() % 16
 	else:	
-		animation_id = randi() % (2 + int(ScoreManager.score / 5))
+		animation_id = randi() % (2 + int(Global.score / 5))
 	var animation_name = foods[animation_id]
 	# TODO: bruh
 	if animation_name == "bottle"\
