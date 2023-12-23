@@ -31,6 +31,9 @@ func _make_post(url, data, ssl):
 
 
 func _on_LeaderboardButton_pressed():
-	LeaderboardName = $Panel/LeaderboardEntry.text
-	_make_post("http://127.0.0.1:8000/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":"test"}, false)
-	$Panel/LeaderboardButton.visible = false
+	if not len($Panel/Name.text) > 18:
+		LeaderboardName = $Panel/Name.text
+		_make_post("http://127.0.0.1:8000/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":"test"}, false)
+		$Panel/LeaderboardButton.visible = false
+	else:
+		OS.alert("Name must be less than 19 characters")

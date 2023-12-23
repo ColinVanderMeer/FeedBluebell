@@ -13,7 +13,7 @@ func _ready():
 
 func js_text_entry():
 	text = JavaScript.eval(
-			"prompt('%s', '%s');" % ["Please Enter Code:", text], 
+			"prompt('%s', '%s');" % ["Please Enter " + self.name + ":", text], 
 			true
 			)
 	

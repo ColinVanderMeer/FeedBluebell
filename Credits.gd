@@ -12,23 +12,23 @@ func _on_BackButton_pressed():
 	Global.save_data()
 
 func _on_CodeButton_pressed():
-	match $Panel/CodeEntry.text.to_upper():
+	match $Panel/Code.text.to_upper():
 		"703":
 			if not Global.music_data.has("Rain Down"):
-				$Panel/CodeEntry.text = "Rain Down Unlocked"
+				$Panel/Code.text = "Rain Down Unlocked"
 				Global.music_data.append("Rain Down")
 			else:
-				$Panel/CodeEntry.text = "Rain Down Already Unlocked"
+				$Panel/Code.text = "Rain Down Already Unlocked"
 		"RETROBELL":
-			$Panel/CodeEntry.text = "Retro Skin Unlocked"
+			$Panel/Code.text = "Retro Skin Unlocked"
 		"RAINBOW":
 			if not Global.skin_data.has("Rainbow"):
-				$Panel/CodeEntry.text = "Rainbow Skin Unlocked"
+				$Panel/Code.text = "Rainbow Skin Unlocked"
 				Global.skin_data.append("Rainbow")
 			else:
-				$Panel/CodeEntry.text = "Rainbow Skin Already Unlocked"
+				$Panel/Code.text = "Rainbow Skin Already Unlocked"
 		_:
-			$Panel/CodeEntry.text = "Incorrect"
+			$Panel/Code.text = "Incorrect"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
