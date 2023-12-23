@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Pig.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Food.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game.gd" type="Script" id=4]
-[ext_resource path="res://assets/backgroundTest2.png" type="Texture" id=5]
 [ext_resource path="res://Trash.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/background_to_try_cleanup.jpeg" type="Texture" id=7]
 [ext_resource path="res://SpawnPosition.gd" type="Script" id=8]
 [ext_resource path="res://assets/background3.png" type="Texture" id=9]
 
@@ -29,19 +27,6 @@ position = Vector2( 160, 584 )
 scale = Vector2( 1.02882, 1.02882 )
 texture = ExtResource( 9 )
 offset = Vector2( 217.725, 163.294 )
-
-[node name="BackgroundNew" type="Sprite" parent="."]
-visible = false
-position = Vector2( -208, 232 )
-scale = Vector2( 1.38576, 1.38576 )
-texture = ExtResource( 7 )
-centered = false
-
-[node name="Background" type="Sprite" parent="."]
-visible = false
-position = Vector2( 168, 368 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 5 )
 
 [node name="SpawnPosition" type="Position2D" parent="."]
 position = Vector2( -100, 640 )

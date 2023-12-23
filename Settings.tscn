@@ -43,7 +43,6 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=18]
 texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 1584, 420 )
 
 [sub_resource type="Theme" id=11]
 Label/colors/font_color = Color( 0, 0, 0, 1 )
@@ -58,7 +57,6 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 1584, 420 )
 
 [sub_resource type="Theme" id=13]
 Label/colors/font_color = Color( 0, 0, 0, 1 )
@@ -66,7 +64,6 @@ Label/styles/normal = SubResource( 19 )
 
 [sub_resource type="StyleBoxTexture" id=20]
 texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 1584, 1176 )
 
 [sub_resource type="Theme" id=15]
 Label/colors/font_color = Color( 0, 0, 0, 1 )

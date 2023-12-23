@@ -30,11 +30,9 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 
 [sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=14]
@@ -46,11 +44,9 @@ Button/styles/pressed = SubResource( 13 )
 
 [sub_resource type="StyleBoxTexture" id=18]
 texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 
 [sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=20]
@@ -62,11 +58,9 @@ Button/styles/pressed = SubResource( 19 )
 
 [sub_resource type="StyleBoxTexture" id=21]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 
 [sub_resource type="StyleBoxTexture" id=22]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=23]
@@ -78,11 +72,9 @@ Button/styles/pressed = SubResource( 22 )
 
 [sub_resource type="StyleBoxTexture" id=24]
 texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 
 [sub_resource type="StyleBoxTexture" id=25]
 texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=26]
