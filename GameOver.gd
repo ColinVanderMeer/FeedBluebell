@@ -6,6 +6,7 @@ export(String, FILE, "*.tscn") onready var title_screen
 var LeaderboardName = "Godot"
 
 func _ready():
+	
 	# Set final time based on score, format as human-readable
 	$Panel/FinalScore.text = "Time: " + str(int(Global.score / 60)) + " minutes\n" + str(int(Global.score) % 60) + " seconds"
 	$AudioStreamPlayer.stream = Global.game_over
@@ -31,5 +32,5 @@ func _make_post(url, data, ssl):
 
 func _on_LeaderboardButton_pressed():
 	LeaderboardName = $Panel/LeaderboardEntry.text
-	_make_post("http://127.0.0.1:8000/api/new/", {"score":Global.score, "name":LeaderboardName, "key":"test"}, false)
+	_make_post("http://127.0.0.1:8000/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":"test"}, false)
 	$Panel/LeaderboardButton.visible = false

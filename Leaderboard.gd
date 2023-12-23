@@ -31,7 +31,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 
 			# Calculate the time in minutes and seconds
 			var minutes = int(score / 60)
-			var seconds = int(int(score) % 60)
+			var seconds = int(score % 60)
 
 			# Display the information in the label
 			var display_text = "%s -- %dm %ds" % [name, minutes, seconds]
