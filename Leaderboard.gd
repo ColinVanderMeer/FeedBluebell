@@ -8,7 +8,7 @@ func _on_BackButton_pressed():
 func _ready():
 	
 	# Set up the request parameters
-	var url = "http://127.0.0.1:8000/api/scores"
+	var url = "https://bluebell.starlightt.xyz/api/scores"
 	var headers = []
 	
 	# Send the request
