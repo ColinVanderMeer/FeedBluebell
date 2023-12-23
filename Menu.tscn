@@ -86,11 +86,9 @@ Button/styles/pressed = SubResource( 25 )
 
 [sub_resource type="StyleBoxTexture" id=33]
 texture = ExtResource( 11 )
-region_rect = Rect2( 0, 0, 1109, 931 )
 
 [sub_resource type="StyleBoxTexture" id=34]
 texture = ExtResource( 11 )
-region_rect = Rect2( 0, 0, 1109, 931 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=35]
@@ -100,11 +98,9 @@ Button/styles/pressed = SubResource( 34 )
 
 [sub_resource type="StyleBoxTexture" id=36]
 texture = ExtResource( 13 )
-region_rect = Rect2( 0, 0, 1109, 931 )
 
 [sub_resource type="StyleBoxTexture" id=37]
 texture = ExtResource( 13 )
-region_rect = Rect2( 0, 0, 1109, 931 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=38]
@@ -114,11 +110,9 @@ Button/styles/pressed = SubResource( 37 )
 
 [sub_resource type="StyleBoxTexture" id=30]
 texture = ExtResource( 12 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 
 [sub_resource type="StyleBoxTexture" id=31]
 texture = ExtResource( 12 )
-region_rect = Rect2( 0, 0, 2745, 1172 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
 [sub_resource type="Theme" id=32]
