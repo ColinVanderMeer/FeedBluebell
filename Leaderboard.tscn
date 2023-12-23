@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/gui/xButton.png" type="Texture" id=3]
+[ext_resource path="res://Leaderboard.gd" type="Script" id=4]
+[ext_resource path="res://assets/gui/trophy.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.956863, 1, 0.960784, 1 )
@@ -34,10 +36,20 @@ use_filter = true
 extra_spacing_top = 20
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=21]
+size = 60
+outline_size = 4
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 5
+extra_spacing_bottom = 5
+font_data = ExtResource( 2 )
+
 [node name="Leaderboard" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -1250, 149 )
+script = ExtResource( 4 )
 
 [node name="Background" type="Panel" parent="."]
 modulate = Color( 0, 0, 0, 0.294118 )
@@ -69,26 +81,61 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="Panel"]
 anchor_left = 0.114
-anchor_top = 0.076
+anchor_top = 0.108
 anchor_right = 0.852
-anchor_bottom = 0.93
+anchor_bottom = 0.962
 margin_left = 0.0559921
-margin_top = -0.480003
-margin_right = 71.208
-margin_bottom = -0.400085
+margin_top = 0.159996
+margin_right = 0.207977
+margin_bottom = 0.239929
 custom_fonts/font = SubResource( 20 )
-text = "Literally just put all the people
-here seperated by line breaks
-this can fit 15 rows
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15"
+text = "Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading"
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label2" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -216.0
+margin_top = 26.0
+margin_right = 216.0
+margin_bottom = 97.0
+custom_colors/font_color = Color( 1, 0.819608, 0.380392, 1 )
+custom_colors/font_outline_modulate = Color( 0.52, 0.3016, 0.3562, 1 )
+custom_fonts/font = SubResource( 21 )
+text = "Leaderboard"
+align = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label2"]
+anchor_left = 0.5
+anchor_top = -0.338
+anchor_right = 0.5
+anchor_bottom = -0.338
+margin_left = -312.0
+margin_top = -40.002
+margin_right = -176.0
+margin_bottom = 118.998
+texture = ExtResource( 5 )
+expand = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
