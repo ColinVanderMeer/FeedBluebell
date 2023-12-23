@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform bool hide = false;
+uniform vec4 color : hint_color = vec4(1);
+uniform float strength = 0.2;
+
+uniform float fade_amount : hint_range(-1, 1) = 1.0;
+
+void fragment(){
+	vec4 pixel = texture(SCREEN_TEXTURE, SCREEN_UV);
+        COLOR = pixel;
+	if (hide == false){ 
+		
+		vec3 grayscale_value = vec3(dot(pixel.rgb, vec3(0.299, 0.587, 0.114)));
+		
+//		COLOR.rgb = vec3(dot(pixel.rgb, vec3(0.299, 0.587, 0.114)));
+		    // apply fade based on the fade_amount uniform
+//		COLOR.rgb += fade_amount;
+		
+//		float range = 1.0 - step(distance(pixel.rgb, color.rgb), strength);
+		COLOR.rgb = mix(pixel.rgb, grayscale_value, fade_amount);
+	}
+	
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/hide = false
+shader_param/color = Color( 0, 0, 0, 1 )
+shader_param/strength = 0.0
+shader_param/fade_amount = 0.0

@@ -3,7 +3,7 @@ extends Control
 export(PackedScene) var game_over
 export(String, FILE, "*.tscn") var title_screen
 export var STEP = 20
-export var TIMER_STEP = 14
+export var TIMER_STEP = 17
 var game_time = 0
 var coyote = 0
 
@@ -37,10 +37,12 @@ func _process(delta):
 		if $ProgressBar.value <= 0:
 			# Gameover when progress bar is empty
 			coyote += delta
-			if coyote > 0.5:
+			$CanvasLayer/GrayRect.material.set_shader_param("fade_amount", coyote)
+			if coyote > 1:
 				var _error = get_tree().change_scene_to(game_over)
 		else:
 			coyote = 0
+			$CanvasLayer/GrayRect.material.set_shader_param("fade_amount", 0)
 
 func _on_Button_pressed():
 	# Pause Button
