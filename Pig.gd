@@ -8,6 +8,13 @@ var ping = false
 var scaling = Vector2(0.025,0.025)
 var max_scale = Vector2(0.625,0.625)
 
+func _ready():
+	match Global.skin:
+		"Rainbow":
+			$AnimatedSprite.material = load("res://assets/shaders/gayyy.tres")
+		_:
+			pass
+
 func _process(delta):
 	# Ensure always on the bottom of screen
 	self.position.y = get_viewport().get_visible_rect().size.y - 150
