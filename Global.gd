@@ -12,8 +12,8 @@ enum SOUND_PACK {DEFAULT}
 # Set the default soundpack
 var soundpack = SOUND_PACK.DEFAULT
 var music = "My Soul Cries Out"
-var sound = "0"
-var skin = "0"
+var sound = "Default"
+var skin = "Default"
 
 # TODO: Make these an array/hashmap of some kind?
 var good_food
@@ -28,8 +28,6 @@ func _ready():
 	match soundpack:
 		SOUND_PACK.DEFAULT:
 			path += "default/"
-		SOUND_PACK.JADEN:
-			path += "jaden/"
 
 	# TODO: Find better way to do this, rather than going through each manually
 	good_food = load(path+"good_food.wav")

@@ -24,6 +24,7 @@ var currentSkinIndex = 0
 func _ready() -> void:
 	$Panel/MusicSlider.value = db2linear(AudioServer.get_bus_volume_db(musicBus))
 	$Panel/SfxSlider.value = db2linear(AudioServer.get_bus_volume_db(sfxBus))
+	defaultText()
 
 
 func _on_MusicSlider_value_changed(value: float) -> void:
@@ -35,6 +36,11 @@ func _on_SfxSlider_value_changed(value: float) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func defaultText() -> void:
+	$Panel/Music/Label.text = Global.music
+	$Panel/SoundPack/Label.text = Global.sound
+	$Panel/Skin/Label.text = Global.skin
 
 func _on_MusicRight_pressed() -> void:
 	currentMusicIndex += 1
