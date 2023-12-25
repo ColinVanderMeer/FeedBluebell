@@ -14,7 +14,7 @@ dest_files=[ "res://.import/xButton.png-1ade2bbdbb386e660f1d645e44094088.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

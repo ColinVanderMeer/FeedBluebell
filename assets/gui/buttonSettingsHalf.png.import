@@ -14,7 +14,7 @@ dest_files=[ "res://.import/buttonSettingsHalf.png-68126e0426031a1b5105f962f34fe
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

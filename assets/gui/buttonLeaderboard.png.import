@@ -14,7 +14,7 @@ dest_files=[ "res://.import/buttonLeaderboard.png-6c5da0aaacfbacb7a09d043ebb12ab
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
