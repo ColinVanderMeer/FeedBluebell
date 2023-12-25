@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hunger-icon.svg-c906fc1134e7f211658177a791df2e28.stex"
+path="res://.import/healthBar.png-f10ccbaf50b58384793b5458e6ea85ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/hunger-icon.svg"
-dest_files=[ "res://.import/hunger-icon.svg-c906fc1134e7f211658177a791df2e28.stex" ]
+source_file="res://assets/gui/healthBar.png"
+dest_files=[ "res://.import/healthBar.png-f10ccbaf50b58384793b5458e6ea85ae.stex" ]
 
 [params]
 

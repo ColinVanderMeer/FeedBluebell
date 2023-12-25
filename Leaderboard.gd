@@ -27,7 +27,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		for item in json_data.result:
 			# Get name and score from the JSON data
 			var name = item.get("name")
-			var score = item.get("score")
+			var score = int(item.get("score"))
 
 			# Calculate the time in minutes and seconds
 			var minutes = int(score / 60)

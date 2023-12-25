@@ -8,33 +8,32 @@ var game_time = 0
 var coyote = 0
 
 func _ready():
-	$ProgressBar.value = 100
-	$ProgressBar.max_value = 100
+	$ProgressBar.value = 0
 	$AudioStreamPlayer.stream = load("res://assets/music/" + Global.music + ".ogg")
 
 	
 func _on_Pig_update_consumed(type):
 	if type:
-		$ProgressBar.value += STEP
-	else:
 		$ProgressBar.value -= STEP
+	else:
+		$ProgressBar.value += STEP
 
 # TODO: deprecated
 func _on_Trash_update_consumed(type):
 	if type:
-		$ProgressBar.value -= STEP
-	else:
 		$ProgressBar.value += STEP
+	else:
+		$ProgressBar.value -= STEP
 
 func _process(delta):
 	if !Global.pause:
 		# Update time based on current time passed
-		$Panel/Label.text = "Time: " + str(stepify(game_time, 0.01))
+		$Label.text = "Time: " + str(stepify(game_time, 0.01))
 		Global.score = game_time
 		game_time += delta
 
-		$ProgressBar.value -= TIMER_STEP * delta
-		if $ProgressBar.value <= 0:
+		$ProgressBar.value += TIMER_STEP * delta
+		if $ProgressBar.value >= 100:
 			# Gameover when progress bar is empty
 			coyote += delta
 			$CanvasLayer/GrayRect.material.set_shader_param("fade_amount", coyote)

@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=12 format=2]
+[gd_resource type="Theme" load_steps=13 format=2]
 
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/gui/slider.png" type="Texture" id=2]
 [ext_resource path="res://assets/gui/sliderActive.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/gui/healthBar.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=9]
 size = 42
@@ -46,8 +47,9 @@ expand_margin_bottom = 5.0
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.956863, 1, 0.960784, 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.847059, 0.435294, 0.603922, 1 )
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 180, 1068 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.4335, 0.85, 0.5168, 1 )
@@ -68,5 +70,5 @@ Panel/styles/panel = SubResource( 5 )
 ProgressBar/colors/font_color = Color( 0.298039, 0.309804, 0.411765, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = ExtResource( 1 )
-ProgressBar/styles/bg = SubResource( 6 )
+ProgressBar/styles/bg = SubResource( 11 )
 ProgressBar/styles/fg = SubResource( 7 )

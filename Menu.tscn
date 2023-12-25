@@ -201,6 +201,7 @@ theme = SubResource( 20 )
 custom_styles/focus = SubResource( 15 )
 
 [node name="SettingsButton" type="Button" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.579
 anchor_right = 0.5
@@ -214,6 +215,7 @@ theme = SubResource( 23 )
 custom_styles/focus = SubResource( 16 )
 
 [node name="CreditsButton" type="Button" parent="Panel"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.779
 anchor_right = 0.5
@@ -227,7 +229,6 @@ theme = SubResource( 26 )
 custom_styles/focus = SubResource( 17 )
 
 [node name="SettingsButtonHalf" type="Button" parent="Panel"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.779
 anchor_right = 0.5
@@ -241,7 +242,6 @@ theme = SubResource( 35 )
 custom_styles/focus = SubResource( 17 )
 
 [node name="CreditsButtonHalf" type="Button" parent="Panel"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.779
 anchor_right = 0.5
@@ -255,7 +255,6 @@ theme = SubResource( 38 )
 custom_styles/focus = SubResource( 17 )
 
 [node name="LeaderboardButton" type="Button" parent="Panel"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.579
 anchor_right = 0.5
