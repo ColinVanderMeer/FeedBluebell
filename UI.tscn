@@ -13,6 +13,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
+outline_size = 3
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 8 )
@@ -63,10 +64,11 @@ game_over = ExtResource( 3 )
 title_screen = "res://Menu.tscn"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 96.0
-margin_top = 16.0
-margin_right = 410.0
-margin_bottom = 105.0
+margin_left = 288.0
+margin_top = 24.0
+margin_right = 602.0
+margin_bottom = 113.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Time: 0.00"
 

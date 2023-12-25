@@ -32,7 +32,11 @@ func _process(delta):
 		Global.score = game_time
 		game_time += delta
 
-		$ProgressBar.value += TIMER_STEP * delta
+		if game_time > 120:
+			$ProgressBar.value += TIMER_STEP * delta * game_time / 120
+		else:
+			$ProgressBar.value += TIMER_STEP * delta
+		
 		if $ProgressBar.value >= 100:
 			# Gameover when progress bar is empty
 			coyote += delta
@@ -42,6 +46,9 @@ func _process(delta):
 		else:
 			coyote = 0
 			$CanvasLayer/GrayRect.material.set_shader_param("fade_amount", 0)
+			
+		if game_time < 2:
+			$ProgressBar.value = 0
 
 func _on_Button_pressed():
 	# Pause Button
