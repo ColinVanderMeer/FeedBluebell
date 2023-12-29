@@ -16,10 +16,27 @@ script = ExtResource( 4 )
 FOOD = ExtResource( 2 )
 BGSIZE = 380
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="."]
 margin_right = 876.0
 margin_bottom = 1280.0
+rect_pivot_offset = Vector2( -896, -288 )
+mouse_filter = 2
+color = Color( 0.309804, 0.509804, 0.658824, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 392.0
+margin_right = 876.0
+margin_bottom = 1672.0
+rect_pivot_offset = Vector2( -896, -288 )
+mouse_filter = 2
 color = Color( 0.411765, 0.647059, 0.831373, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_top = 384.0
+margin_right = 880.0
+margin_bottom = 400.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 440, 900.25 )
