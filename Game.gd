@@ -23,7 +23,7 @@ func _process(_delta):
 		$SpawnTimer.wait_time = 1 - log(Global.score) / (17 - Global.score / 55)
 		if Global.score > 600:
 			$SpawnTimer.wait_time = 0.3
-	$Background2.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
+	$Background.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
 
 func _on_Despawn_body_entered(body):
 	body.queue_free()
