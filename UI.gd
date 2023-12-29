@@ -12,6 +12,8 @@ func _ready():
 	$ProgressBar.value = 0
 	coyote_death = false
 	$AudioStreamPlayer.stream = load("res://assets/music/" + Global.music + ".ogg")
+	
+	game_time = 200
 
 	
 func _on_Pig_update_consumed(type):
@@ -40,6 +42,8 @@ func _process(delta):
 
 		if game_time > 120:
 			$ProgressBar.value += TIMER_STEP * delta * game_time / 120
+		elif game_time > 240:
+			$ProgressBar.value += TIMER_STEP * delta * 240 / 120
 		else:
 			$ProgressBar.value += TIMER_STEP * delta
 		
