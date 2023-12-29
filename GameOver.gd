@@ -11,6 +11,10 @@ func _ready():
 	$Panel/FinalScore.text = "Time: " + str(int(Global.score / 60)) + " minutes\n" + str(int(Global.score) % 60) + " seconds"
 	$AudioStreamPlayer.stream = Global.game_over
 	$AudioStreamPlayer.play()
+	
+	if OS.get_name() == "HTML5":
+		$Panel/LeaderboardButton.visible = false
+		var _error = $Panel/LeaderboardEntry.connect("focus_exited", self, "_on_LeaderboardButton_pressed")
 
 	
 
@@ -31,9 +35,10 @@ func _make_post(url, data, ssl):
 
 
 func _on_LeaderboardButton_pressed():
-	if not len($Panel/Name.text) > 18:
-		LeaderboardName = $Panel/Name.text
+	if not len($Panel/LeaderboardEntry.text) > 18:
+		LeaderboardName = $Panel/LeaderboardEntry.text
 		_make_post("https://bluebell.vandermeer.tech/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":"test"}, true)
 		$Panel/LeaderboardButton.visible = false
+		$Panel/LeaderboardEntry.modulate = Color(110 / 255, 255 / 255, 0)
 	else:
 		OS.alert("Name must be less than 19 characters")

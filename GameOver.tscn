@@ -3,7 +3,7 @@
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://CodeEntry.gd" type="Script" id=4]
+[ext_resource path="res://LeaderboardEntry.gd" type="Script" id=4]
 [ext_resource path="res://assets/gui/yellowRect.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -104,7 +104,7 @@ rect_pivot_offset = Vector2( 280, 64 )
 custom_styles/focus = SubResource( 4 )
 text = "Title Screen"
 
-[node name="Name" type="LineEdit" parent="Panel"]
+[node name="LeaderboardEntry" type="LineEdit" parent="Panel"]
 anchor_left = 0.502
 anchor_top = 0.331
 anchor_right = 0.502
