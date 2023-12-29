@@ -12,8 +12,6 @@ func _ready():
 	$ProgressBar.value = 0
 	coyote_death = false
 	$AudioStreamPlayer.stream = load("res://assets/music/" + Global.music + ".ogg")
-	
-	game_time = 200
 
 	
 func _on_Pig_update_consumed(type):
