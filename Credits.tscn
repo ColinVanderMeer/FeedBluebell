@@ -76,14 +76,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Panel" type="Panel" parent="."]
-anchor_left = 0.16
-anchor_top = 0.117
-anchor_right = 0.84
-anchor_bottom = 0.883
-margin_left = -0.160004
-margin_top = 0.23999
-margin_right = 0.159973
-margin_bottom = -0.23999
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -322.0
+margin_top = 150.0
+margin_right = 322.0
+margin_bottom = -150.0
 theme = ExtResource( 1 )
 custom_styles/panel = SubResource( 1 )
 
