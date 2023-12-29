@@ -4,7 +4,7 @@
 [ext_resource path="res://Food.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game.gd" type="Script" id=4]
-[ext_resource path="res://assets/Pig-game-background.png" type="Texture" id=5]
+[ext_resource path="res://assets/Edited_Sign_Pig-game-background.png" type="Texture" id=5]
 [ext_resource path="res://Trash.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SpawnPosition.gd" type="Script" id=8]
 
@@ -14,7 +14,7 @@ extents = Vector2( 115.375, 592 )
 [node name="Game" type="Node2D"]
 script = ExtResource( 4 )
 FOOD = ExtResource( 2 )
-BGSIZE = 380
+BGSIZE = 436
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_right = 876.0
@@ -39,8 +39,8 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 440, 900.25 )
-scale = Vector2( 0.121262, 0.186306 )
+position = Vector2( 440, 848 )
+scale = Vector2( 0.858536, 1.06863 )
 texture = ExtResource( 5 )
 
 [node name="SpawnPosition" type="Position2D" parent="."]
