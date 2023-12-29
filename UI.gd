@@ -6,9 +6,11 @@ export var STEP = 20
 export var TIMER_STEP = 17
 var game_time = 0
 var coyote = 0
+var coyote_death = false
 
 func _ready():
 	$ProgressBar.value = 0
+	coyote_death = false
 	$AudioStreamPlayer.stream = load("res://assets/music/" + Global.music + ".ogg")
 
 	
@@ -17,11 +19,15 @@ func _on_Pig_update_consumed(type):
 		$ProgressBar.value -= STEP
 	else:
 		$ProgressBar.value += STEP
+		if $ProgressBar.value == 100 and coyote > 0.2:
+			coyote_death = true
 
 # TODO: deprecated
 func _on_Trash_update_consumed(type):
 	if type:
 		$ProgressBar.value += STEP
+		if $ProgressBar.value == 100 and coyote > 0.2:
+			coyote_death = true
 	else:
 		$ProgressBar.value -= STEP
 
@@ -40,8 +46,8 @@ func _process(delta):
 		if $ProgressBar.value >= 100:
 			# Gameover when progress bar is empty
 			coyote += delta
-			$CanvasLayer/GrayRect.material.set_shader_param("fade_amount", coyote)
-			if coyote > 1:
+			$CanvasLayer/GrayRect.material.set_shader_param("fade_amount", coyote / 0.75)
+			if coyote > 0.75 or coyote_death:
 				var _error = get_tree().change_scene_to(game_over)
 		else:
 			coyote = 0

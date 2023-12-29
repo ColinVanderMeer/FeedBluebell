@@ -13,11 +13,17 @@ func _on_Area2D_body_entered(body):
 		# TODO: remove these, and make sure audio is normalized
 		$FoodSFX.volume_db = -5.0
 		
+		$Ping.scale = scaling
+		$Ping.modulate.a = 1
+		
 		$Ping.modulate = Color("#84f174")
 		ping = true
 	else:
 		$FoodSFX.stream = Global.bad_food
 		$FoodSFX.volume_db = 5.0
+		
+		$Ping.scale = scaling
+		$Ping.modulate.a = 1
 		
 		$Ping.modulate = Color("#f17486")
 		ping = true

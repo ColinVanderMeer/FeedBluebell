@@ -34,6 +34,9 @@ func _on_Area2D_body_entered(body):
 		$AnimatedSprite.play("happy") # TODO: use better animation system
 		$Timer.start()
 		
+		$Ping.scale = scaling
+		$Ping.modulate.a = 1
+		
 		$Ping.modulate = Color("#84f174")
 		ping = true
 	else:
@@ -41,6 +44,9 @@ func _on_Area2D_body_entered(body):
 		$FoodSFX.volume_db = 5.0
 		$AnimatedSprite.play("sad")
 		$Timer.start()
+		
+		$Ping.scale = scaling
+		$Ping.modulate.a = 1
 		
 		$Ping.modulate = Color("#f17486")
 		ping = true
