@@ -164,7 +164,7 @@ margin_top = 560.16
 margin_right = 319.736
 margin_bottom = 615.16
 custom_fonts/font = SubResource( 13 )
-text = "thrid party licenses"
+text = "third party licenses"
 
 [node name="ThirdParty" type="Panel" parent="."]
 visible = false
