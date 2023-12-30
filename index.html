@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <title>Feed Bluebell</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap">
   <style type="text/css">
     body {
       touch-action: none;
@@ -12,11 +13,36 @@
       border: 0 none;
       padding: 0;
       text-align: center;
-      background-image: url("http://rockway.ca/feedbluebell/pigBG.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: top center;
-      height: 100vh;
+      background: #69a5d4; /* Set background color */
+      overflow: hidden; /* Hide overflow to prevent scrolling */
+    }
+
+    h1 {
+      font-family: "Luckiest Guy", cursive;
+      font-size: 15vw;
+      color: #e0e0e0;
+      text-shadow: 0 0 10px #000000;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0;
+      z-index: -1; /* Bring the text to the foreground */
+    }
+
+    #bottomImage {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: -2; /* Send the image to the background */
+    }
+
+    /* Additional styling for the image */
+    #bottomImage img {
+      width: 100%;
+      height: auto;
     }
 
     #canvas {
@@ -108,8 +134,12 @@
     HTML5 canvas appears to be unsupported in the current browser.<br />
     Please try updating or use a different browser.
   </canvas>
+  <div id="bottomImage">
+    <img src="http://rockway.ca/feedbluebell/pigBG.png" alt="Bottom Image">
+  </div>
   <div id="status">
     <div id="status-progress" style="display: none" oncontextmenu="event.preventDefault();">
+      <h1>LOADING</h1>
       <div id="status-progress-inner"></div>
     </div>
     <div id="status-indeterminate" style="display: none" oncontextmenu="event.preventDefault();" style="display: none">
