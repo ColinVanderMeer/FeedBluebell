@@ -8,10 +8,14 @@ var ping = false
 var scaling = Vector2(0.025,0.025)
 var max_scale = Vector2(0.625,0.625)
 
+
 func _ready():
 	match Global.skin:
 		"Rainbow":
 			$AnimatedSprite.material = load("res://assets/shaders/gayyy.tres")
+		"Merch":
+		# change happy and sad sprites to merch
+			$AnimatedSprite.frames = load("res://assets/characters/sunglasses/merchFrames.tres")
 		_:
 			pass
 

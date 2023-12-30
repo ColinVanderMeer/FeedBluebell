@@ -1,0 +1,21 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=2]
+
+[ext_resource path="res://assets/characters/sunglasses/neutral_bbspr.png" type="Texture" id=1]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "happy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "neutral",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "sad",
+"speed": 5.0
+} ]
