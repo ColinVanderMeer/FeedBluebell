@@ -100,9 +100,9 @@ margin_bottom = 456.0
 
 [node name="Panel2" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 188.0
+margin_top = 187.0
 margin_right = 592.0
-margin_bottom = 216.0
+margin_bottom = 215.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
@@ -115,41 +115,41 @@ theme = SubResource( 24 )
 
 [node name="Panel3" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 300.0
+margin_top = 298.0
 margin_right = 592.0
-margin_bottom = 328.0
+margin_bottom = 326.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
 [node name="Panel4" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 412.0
+margin_top = 409.0
 margin_right = 592.0
-margin_bottom = 440.0
+margin_bottom = 437.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
 [node name="Panel5" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 524.0
+margin_top = 520.0
 margin_right = 592.0
-margin_bottom = 552.0
+margin_bottom = 548.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
 [node name="Panel6" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 636.0
+margin_top = 631.0
 margin_right = 592.0
-margin_bottom = 664.0
+margin_bottom = 659.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
 [node name="Panel7" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 748.0
+margin_top = 742.0
 margin_right = 592.0
-margin_bottom = 776.0
+margin_bottom = 770.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
