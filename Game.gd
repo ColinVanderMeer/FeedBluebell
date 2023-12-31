@@ -13,8 +13,8 @@ func _ready():
 	match Global.soundpack:
 		"Default":
 			Global.good_food.append(load("res://assets/sfx/default/good_food.wav"))
-			Global.bad_food.append(load("res://assets/sfx/default/good_food.wav"))
-			Global.game_over.append(load("res://assets/sfx/default/good_food.wav"))
+			Global.bad_food.append(load("res://assets/sfx/default/bad_food.wav"))
+			Global.game_over.append(load("res://assets/sfx/default/game_over.wav"))
 		"Penny":
 			Global.good_food.append(load("res://assets/sfx/penny/good_food_1.wav"))
 			Global.good_food.append(load("res://assets/sfx/penny/good_food_2.wav"))
