@@ -8,23 +8,21 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _on_BackButton_pressed():
 	self.visible = false
+	Global.save_data()
 
 
 onready var musicBus := AudioServer.get_bus_index("Music")
 onready var sfxBus := AudioServer.get_bus_index("SFX")
 
 # godot array with two values "mySoul" and "rainDown"
-var currentMusicIndex = 0
-
-var currentSoundIndex = 0
-
-var currentSkinIndex = 0
 
 
 func _ready() -> void:
 	$Panel/MusicSlider.value = db2linear(AudioServer.get_bus_volume_db(musicBus))
 	$Panel/SfxSlider.value = db2linear(AudioServer.get_bus_volume_db(sfxBus))
-	defaultText()
+	updateMusic()
+	updateSound()
+	updateSkin()
 
 
 func _on_MusicSlider_value_changed(value: float) -> void:
@@ -33,65 +31,56 @@ func _on_MusicSlider_value_changed(value: float) -> void:
 func _on_SfxSlider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfxBus, linear2db(value))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-func defaultText() -> void:
-	$Panel/Music/Label.text = Global.music
-	$Panel/SoundPack/Label.text = Global.soundpack
-	$Panel/Skin/Label.text = Global.skin
-
 func _on_MusicRight_pressed() -> void:
-	currentMusicIndex += 1
-	if currentMusicIndex >= Global.music_data.size():
-		currentMusicIndex = 0
+	Global.currentMusicIndex += 1
+	if Global.currentMusicIndex >= Global.music_data.size():
+		Global.currentMusicIndex = 0
 	updateMusic()
 
 func _on_MusicLeft_pressed() -> void:
-	currentMusicIndex -= 1
-	if currentMusicIndex < 0:
-		currentMusicIndex = Global.music_data.size() - 1
+	Global.currentMusicIndex -= 1
+	if Global.currentMusicIndex < 0:
+		Global.currentMusicIndex = Global.music_data.size() - 1
 	updateMusic()
 
 func _on_SoundRight_pressed() -> void:
-	currentSoundIndex += 1
-	if currentSoundIndex >= Global.sound_data.size():
-		currentSoundIndex = 0
+	Global.currentSoundIndex += 1
+	if Global.currentSoundIndex >= Global.sound_data.size():
+		Global.currentSoundIndex = 0
 	updateSound()
 
 func _on_SoundLeft_pressed() -> void:
-	currentSoundIndex -= 1
-	if currentSoundIndex < 0:
-		currentSoundIndex = Global.sound_data.size() - 1
+	Global.currentSoundIndex -= 1
+	if Global.currentSoundIndex < 0:
+		Global.currentSoundIndex = Global.sound_data.size() - 1
 	updateSound()
 
 func _on_SkinRight_pressed() -> void:
-	currentSkinIndex += 1
-	if currentSkinIndex >= Global.skin_data.size():
-		currentSkinIndex = 0
+	Global.currentSkinIndex += 1
+	if Global.currentSkinIndex >= Global.skin_data.size():
+		Global.currentSkinIndex = 0
 	updateSkin()
 
 func _on_SkinLeft_pressed() -> void:
-	currentSkinIndex -= 1
-	if currentSkinIndex < 0:
-		currentSkinIndex = Global.skin_data.size() - 1
+	Global.currentSkinIndex -= 1
+	if Global.currentSkinIndex < 0:
+		Global.currentSkinIndex = Global.skin_data.size() - 1
 	updateSkin()
 
 func updateMusic() -> void:
-	$Panel/Music/Label.text = Global.music_data[currentMusicIndex]
-	Global.music = Global.music_data[currentMusicIndex]
+	$Panel/Music/Label.text = Global.music_data[Global.currentMusicIndex]
+	Global.music = Global.music_data[Global.currentMusicIndex]
 
 func updateSound() -> void:
-	$Panel/SoundPack/Label.text = Global.sound_data[currentSoundIndex]
-	Global.soundpack = Global.sound_data[currentSoundIndex]
+	$Panel/SoundPack/Label.text = Global.sound_data[Global.currentSoundIndex]
+	Global.soundpack = Global.sound_data[Global.currentSoundIndex]
 
 func updateSkin() -> void:
 	$Panel/Skin/TextureRect.texture = load("res://assets/characters/neutral_bbspr.png")
 	$Panel/Skin/TextureRect.material = null
 	$Panel/Skin/TextureRect.rect_scale = Vector2(1,1)
 	$Panel/Skin/TextureRect.rect_position.x = 171.824
-	match Global.skin_data[currentSkinIndex]:
+	match Global.skin_data[Global.currentSkinIndex]:
 		"Rainbow":
 			$Panel/Skin/TextureRect.material = load("res://assets/shaders/gayyy.tres")
 		"Merch":
@@ -103,5 +92,5 @@ func updateSkin() -> void:
 			$Panel/Skin/TextureRect.rect_position.x = 67.824
 		_:
 			pass
-	Global.skin = Global.skin_data[currentSkinIndex]
+	Global.skin = Global.skin_data[Global.currentSkinIndex]
 
