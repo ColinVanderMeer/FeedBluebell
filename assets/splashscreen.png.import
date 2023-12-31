@@ -15,7 +15,7 @@ dest_files=[ "res://.import/splashscreen.png-4d64d94ac20a34e94080da68d59c9d2d.st
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.4
+compress/lossy_quality=0.01
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

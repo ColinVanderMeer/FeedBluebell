@@ -6,7 +6,7 @@
 [ext_resource path="res://Game.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tutorial.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Settings.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/background3.png" type="Texture" id=7]
+[ext_resource path="res://assets/Edited_Sign_Pig-game-background.png" type="Texture" id=7]
 [ext_resource path="res://assets/gui/buttonSettings.png" type="Texture" id=8]
 [ext_resource path="res://assets/gui/buttonHow.png" type="Texture" id=9]
 [ext_resource path="res://assets/gui/buttonCredits.png" type="Texture" id=10]
@@ -146,12 +146,22 @@ tutorial = ExtResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="ColorRect" type="ColorRect" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0.411765, 0.647059, 0.831373, 1 )
+
+[node name="Background" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -440.0
+margin_top = -868.0
+margin_right = 442.0
+margin_bottom = 8.0
 texture = ExtResource( 7 )
 expand = true
-stretch_mode = 1
 
 [node name="Label" type="Label" parent="Panel"]
 anchor_left = 0.5
