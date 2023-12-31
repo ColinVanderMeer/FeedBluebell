@@ -26,6 +26,23 @@ func _ready():
 			Global.game_over.append(load("res://assets/sfx/penny/game_over_1.wav"))
 			Global.game_over.append(load("res://assets/sfx/penny/game_over_2.wav"))
 			Global.game_over.append(load("res://assets/sfx/penny/game_over_3.wav"))
+		"Rempel":
+			Global.good_food.append(load("res://assets/sfx/rempel/good_food_1.wav"))
+			Global.good_food.append(load("res://assets/sfx/rempel/good_food_2.wav"))
+			Global.good_food.append(load("res://assets/sfx/rempel/good_food_3.wav"))
+			Global.bad_food.append(load("res://assets/sfx/rempel/bad_food_1.wav"))
+			Global.game_over.append(load("res://assets/sfx/rempel/game_over_1.wav"))
+		"Scott":
+			Global.good_food.append(load("res://assets/sfx/scott/good_food_1.wav"))
+			Global.good_food.append(load("res://assets/sfx/scott/good_food_2.wav"))
+			Global.good_food.append(load("res://assets/sfx/scott/good_food_3.wav"))
+			Global.bad_food.append(load("res://assets/sfx/scott/bad_food_1.wav"))
+			Global.bad_food.append(load("res://assets/sfx/scott/bad_food_2.wav"))
+			Global.bad_food.append(load("res://assets/sfx/scott/bad_food_3.wav"))
+			Global.bad_food.append(load("res://assets/sfx/scott/bad_food_4.wav"))
+			Global.game_over.append(load("res://assets/sfx/scott/game_over_1.wav"))
+			Global.game_over.append(load("res://assets/sfx/scott/game_over_2.wav"))
+			
 
 			
 

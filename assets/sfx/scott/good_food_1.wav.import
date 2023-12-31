@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/good_food_1.wav-de34c95ad72baec875fb76f95bd3bcb8.sample"
+
+[deps]
+
+source_file="res://assets/sfx/scott/good_food_1.wav"
+dest_files=[ "res://.import/good_food_1.wav-de34c95ad72baec875fb76f95bd3bcb8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=1
