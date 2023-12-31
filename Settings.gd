@@ -8,6 +8,8 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _on_BackButton_pressed():
 	self.visible = false
+	Global.musicVolume = $Panel/MusicSlider.value
+	Global.soundVolume = $Panel/SfxSlider.value
 	Global.save_data()
 
 
@@ -18,6 +20,8 @@ onready var sfxBus := AudioServer.get_bus_index("SFX")
 
 
 func _ready() -> void:
+	AudioServer.set_bus_volume_db(musicBus, linear2db(Global.musicVolume))
+	AudioServer.set_bus_volume_db(sfxBus, linear2db(Global.soundVolume))
 	$Panel/MusicSlider.value = db2linear(AudioServer.get_bus_volume_db(musicBus))
 	$Panel/SfxSlider.value = db2linear(AudioServer.get_bus_volume_db(sfxBus))
 	updateMusic()

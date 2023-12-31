@@ -1,28 +1,61 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://LeaderboardEntry.gd" type="Script" id=4]
 [ext_resource path="res://assets/gui/yellowRect.png" type="Texture" id=5]
+[ext_resource path="res://assets/Edited_Sign_Pig-game-background.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/buttonGeneric.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 98
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 58
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 86
+size = 135
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 52
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 1324, 466 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 1324, 466 )
+modulate_color = Color( 0.75, 0.75, 0.75, 1 )
+
+[sub_resource type="Theme" id=8]
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/fonts/font = SubResource( 5 )
+Button/styles/hover = SubResource( 6 )
+Button/styles/normal = SubResource( 6 )
+Button/styles/pressed = SubResource( 7 )
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=13]
 size = 32
 use_mipmaps = true
 use_filter = true
@@ -34,10 +67,10 @@ region_rect = Rect2( 0, 0, 792, 210 )
 
 [sub_resource type="Theme" id=11]
 Label/colors/font_color = Color( 0, 0, 0, 1 )
-Label/fonts/font = SubResource( 5 )
+Label/fonts/font = SubResource( 13 )
 Label/styles/normal = SubResource( 10 )
 LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
-LineEdit/fonts/font = SubResource( 5 )
+LineEdit/fonts/font = SubResource( 13 )
 LineEdit/styles/focus = SubResource( 10 )
 LineEdit/styles/normal = SubResource( 10 )
 
@@ -51,31 +84,73 @@ script = ExtResource( 1 )
 game = "res://Game.tscn"
 title_screen = "res://Menu.tscn"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -896, -288 )
+mouse_filter = 2
+color = Color( 0.411765, 0.647059, 0.831373, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -440.0
+margin_top = -868.0
+margin_right = 442.0
+margin_bottom = 8.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Background" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 0.294118 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="FinalScore" type="Label" parent="Panel"]
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="FinalScore" type="Label" parent="Control"]
 anchor_left = 0.333
 anchor_right = 0.666
-margin_left = -428.24
+margin_left = -441.56
 margin_top = 247.0
-margin_right = 427.52
-margin_bottom = 329.0
+margin_right = 414.2
+margin_bottom = 346.0
 rect_pivot_offset = Vector2( 299, 41 )
 theme = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "dsfdsfd"
+text = "Time: 44:44"
 align = 1
 valign = 1
 
-[node name="YouFailed" type="Label" parent="Panel"]
+[node name="BestScore" type="Label" parent="Control"]
 anchor_left = 0.333
 anchor_right = 0.666
-margin_left = -426.24
-margin_top = 137.0
-margin_right = 455.52
-margin_bottom = 219.0
+margin_left = -441.028
+margin_top = 344.0
+margin_right = 414.732
+margin_bottom = 443.0
+rect_pivot_offset = Vector2( 299, 41 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0.75, 0.75, 0.75, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "personal best: 44:44"
+align = 1
+valign = 1
+
+[node name="YouFailed" type="Label" parent="Control"]
+anchor_left = 0.333
+anchor_right = 0.666
+margin_left = -441.028
+margin_top = 96.0
+margin_right = 440.732
+margin_bottom = 232.0
 rect_pivot_offset = Vector2( 964, 345 )
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0.913725, 0.235294, 0.235294, 1 )
@@ -84,60 +159,67 @@ text = "Game Over"
 align = 1
 valign = 1
 
-[node name="TryAgain" type="Button" parent="Panel"]
-anchor_left = 0.245
-anchor_top = 0.459
-anchor_right = 0.755
-anchor_bottom = 0.659
-margin_left = -0.23999
-margin_right = -0.47998
+[node name="TryAgain" type="Button" parent="Control"]
+anchor_left = 0.489
+anchor_top = 0.582
+anchor_right = 0.489
+anchor_bottom = 0.582
+margin_left = -231.924
+margin_top = -0.240051
+margin_right = 235.076
+margin_bottom = 171.76
+theme = SubResource( 8 )
 custom_styles/focus = SubResource( 3 )
 text = "Try Again?"
 
-[node name="TitleScren2" type="Button" parent="Panel"]
-anchor_left = 0.245
-anchor_top = 0.693
-anchor_right = 0.755
-anchor_bottom = 0.893
-margin_left = -0.23999
-margin_right = -0.47998
+[node name="TitleScren2" type="Button" parent="Control"]
+anchor_left = 0.489
+anchor_top = 0.739
+anchor_right = 0.489
+anchor_bottom = 0.739
+margin_left = -231.924
+margin_top = -0.480042
+margin_right = 235.076
+margin_bottom = 168.52
 rect_pivot_offset = Vector2( 280, 64 )
+theme = SubResource( 8 )
 custom_styles/focus = SubResource( 4 )
 text = "Back to menu"
 
-[node name="LeaderboardEntry" type="LineEdit" parent="Panel"]
+[node name="LeaderboardEntry" type="LineEdit" parent="Control"]
 anchor_left = 0.502
-anchor_top = 0.331
+anchor_top = 0.43
 anchor_right = 0.502
-anchor_bottom = 0.331
-margin_left = -225.752
-margin_top = 0.319977
-margin_right = 221.248
-margin_bottom = 116.32
+anchor_bottom = 0.43
+margin_left = -233.832
+margin_top = 0.399963
+margin_right = 213.168
+margin_bottom = 116.4
 theme = SubResource( 11 )
 align = 1
 placeholder_text = "Enter leaderboard name"
 placeholder_alpha = 1.0
 script = ExtResource( 4 )
 
-[node name="LeaderboardButton" type="Button" parent="Panel"]
+[node name="LeaderboardButton" type="Button" parent="Control"]
 anchor_left = 0.5
-anchor_top = 0.377
+anchor_top = 0.43
 anchor_right = 0.5
-anchor_bottom = 0.377
-margin_left = 250.0
-margin_top = -34.56
-margin_right = 322.0
-margin_bottom = 37.44
+anchor_bottom = 0.43
+margin_left = 242.0
+margin_top = 24.4
+margin_right = 314.0
+margin_bottom = 96.4
 rect_pivot_offset = Vector2( 88, 40 )
 custom_styles/focus = SubResource( 12 )
 text = ">"
 icon_align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="Panel/TryAgain" to="." method="_on_TryAgain_pressed"]
-[connection signal="pressed" from="Panel/TitleScren2" to="." method="_on_TitleScreen_pressed"]
-[connection signal="pressed" from="Panel/LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]
+[connection signal="pressed" from="Control/TryAgain" to="." method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="Control/TitleScren2" to="." method="_on_TitleScreen_pressed"]
+[connection signal="pressed" from="Control/LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]

@@ -8,13 +8,18 @@ var LeaderboardName = "Godot"
 func _ready():
 	
 	# Set final time based on score, format as human-readable
-	$Panel/FinalScore.text = "Time: " + str(int(Global.score / 60)) + " minutes\n" + str(int(Global.score) % 60) + " seconds"
+	$Control/FinalScore.text = "Time: " + str(int(Global.score / 60)) + ":" + str(int(Global.score) % 60).pad_zeros(2)
+	$Control/BestScore.text = "Personal Best: " + str(int(Global.bestScore / 60)) + ":" + str(int(Global.bestScore) % 60).pad_zeros(2)
 	$AudioStreamPlayer.stream = Global.game_over[randi() % Global.game_over.size()]
 	$AudioStreamPlayer.play()
+
+	if Global.score > Global.bestScore:
+		Global.bestScore = Global.score
+		Global.save_data()
 	
 	if OS.get_name() == "HTML5":
-		$Panel/LeaderboardButton.visible = false
-		var _error = $Panel/LeaderboardEntry.connect("focus_exited", self, "_on_LeaderboardButton_pressed")
+		$Control/LeaderboardButton.visible = false
+		var _error = $Control/LeaderboardEntry.connect("focus_exited", self, "_on_LeaderboardButton_pressed")
 
 	
 
@@ -35,10 +40,10 @@ func _make_post(url, data, ssl):
 
 
 func _on_LeaderboardButton_pressed():
-	if not len($Panel/LeaderboardEntry.text) > 18:
-		LeaderboardName = $Panel/LeaderboardEntry.text
+	if not len($Control/LeaderboardEntry.text) > 18:
+		LeaderboardName = $Control/LeaderboardEntry.text
 		_make_post("https://bluebell.vandermeer.tech/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":"test"}, true)
-		$Panel/LeaderboardButton.visible = false
-		$Panel/LeaderboardEntry.modulate = Color(110 / 255, 255 / 255, 0)
+		$Control/LeaderboardButton.visible = false
+		$Control/LeaderboardEntry.modulate = Color(110 / 255, 255 / 255, 0)
 	else:
 		OS.alert("Name must be less than 19 characters")
