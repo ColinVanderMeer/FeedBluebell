@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bad_food.wav-28e31e0d7cb1069669300fbc92698bfe.sample"
+path="res://.import/bad_food_4.wav-191c028107dbc4c2e086f100bfcbeb25.sample"
 
 [deps]
 
-source_file="res://assets/sfx/default/bad_food.wav"
-dest_files=[ "res://.import/bad_food.wav-28e31e0d7cb1069669300fbc92698bfe.sample" ]
+source_file="res://assets/sfx/penny/bad_food_4.wav"
+dest_files=[ "res://.import/bad_food_4.wav-191c028107dbc4c2e086f100bfcbeb25.sample" ]
 
 [params]
 
@@ -20,4 +20,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=0
+compress/mode=1

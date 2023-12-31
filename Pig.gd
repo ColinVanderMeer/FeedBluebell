@@ -33,8 +33,7 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.type:
-		$FoodSFX.stream = Global.good_food
-		$FoodSFX.volume_db = -5.0 # TODO: why?
+		$FoodSFX.stream = Global.good_food[randi() % Global.good_food.size()]
 		$AnimatedSprite.play("happy") # TODO: use better animation system
 		$Timer.start()
 		
@@ -44,8 +43,7 @@ func _on_Area2D_body_entered(body):
 		$Ping.modulate = Color("#84f174")
 		ping = true
 	else:
-		$FoodSFX.stream = Global.bad_food
-		$FoodSFX.volume_db = 5.0
+		$FoodSFX.stream = Global.bad_food[randi() % Global.bad_food.size()]
 		$AnimatedSprite.play("sad")
 		$Timer.start()
 		

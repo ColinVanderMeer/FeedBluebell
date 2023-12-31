@@ -33,6 +33,12 @@ func _on_CodeButton_pressed():
 				Global.skin_data.append("Merch")
 			else:
 				$Panel/Code.text = "Rockway Merch Already Unlocked"
+		"COPPER":
+			if not Global.sound_data.has("Penny"):
+				$Panel/Code.text = "Mr. Penny SFX Unlocked"
+				Global.sound_data.append("Penny")
+			else:
+				$Panel/Code.text = "Penny Already Unlocked"
 		_:
 			$Panel/Code.text = "Incorrect"
 

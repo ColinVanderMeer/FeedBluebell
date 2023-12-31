@@ -39,7 +39,7 @@ func _on_SfxSlider_value_changed(value: float) -> void:
 
 func defaultText() -> void:
 	$Panel/Music/Label.text = Global.music
-	$Panel/SoundPack/Label.text = Global.sound
+	$Panel/SoundPack/Label.text = Global.soundpack
 	$Panel/Skin/Label.text = Global.skin
 
 func _on_MusicRight_pressed() -> void:
@@ -84,7 +84,7 @@ func updateMusic() -> void:
 
 func updateSound() -> void:
 	$Panel/SoundPack/Label.text = Global.sound_data[currentSoundIndex]
-	Global.sound = Global.sound_data[currentSoundIndex]
+	Global.soundpack = Global.sound_data[currentSoundIndex]
 
 func updateSkin() -> void:
 	$Panel/Skin/Label.text = Global.skin_data[currentSkinIndex]

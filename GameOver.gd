@@ -9,7 +9,7 @@ func _ready():
 	
 	# Set final time based on score, format as human-readable
 	$Panel/FinalScore.text = "Time: " + str(int(Global.score / 60)) + " minutes\n" + str(int(Global.score) % 60) + " seconds"
-	$AudioStreamPlayer.stream = Global.game_over
+	$AudioStreamPlayer.stream = Global.game_over[randi() % Global.game_over.size()]
 	$AudioStreamPlayer.play()
 	
 	if OS.get_name() == "HTML5":
