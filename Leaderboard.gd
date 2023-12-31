@@ -18,11 +18,12 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code == 200:
 		# Parse the JSON response
 		var body_string = body.get_string_from_utf8()
-		
+
 		var json_data = JSON.parse(body_string)
-		
-		$Panel/Label.text = ""
-		
+
+		$Panel/NameLabel.text = ""
+		$Panel/ScoreLabel.text = ""
+
 		# Iterate through each item in the JSON array
 		for item in json_data.result:
 			# Get name and score from the JSON data
@@ -35,7 +36,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 
 			# Display the information in the label
 			var display_text = "%s -- %dm %ds" % [name, minutes, seconds]
-			$Panel/Label.text += display_text + "\n"
+			$Panel/NameLabel.text += name + "\n"
+			$Panel/ScoreLabel.text += "%dm %ds" % [minutes, seconds] + "\n"
 	else:
 		print("HTTP request failed with response code:", response_code)
 		print("Error body:", body)

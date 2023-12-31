@@ -78,6 +78,7 @@ margin_right = 455.52
 margin_bottom = 219.0
 rect_pivot_offset = Vector2( 964, 345 )
 theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0.913725, 0.235294, 0.235294, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Game Over"
 align = 1
@@ -102,7 +103,7 @@ margin_left = -0.23999
 margin_right = -0.47998
 rect_pivot_offset = Vector2( 280, 64 )
 custom_styles/focus = SubResource( 4 )
-text = "Title Screen"
+text = "Back to menu"
 
 [node name="LeaderboardEntry" type="LineEdit" parent="Panel"]
 anchor_left = 0.502
@@ -115,7 +116,7 @@ margin_right = 221.248
 margin_bottom = 116.32
 theme = SubResource( 11 )
 align = 1
-placeholder_text = "Leaderboard Name"
+placeholder_text = "Enter leaderboard name"
 placeholder_alpha = 1.0
 script = ExtResource( 4 )
 

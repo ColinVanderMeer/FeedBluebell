@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=2]
@@ -12,6 +12,20 @@ corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0, 0, 0, 0.117647 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="Theme" id=24]
+Panel/styles/panel = SubResource( 23 )
 
 [sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 3 )
@@ -28,6 +42,13 @@ Button/styles/normal = SubResource( 16 )
 Button/styles/pressed = SubResource( 17 )
 
 [sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="DynamicFont" id=22]
+size = 32
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 22
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=20]
 size = 32
@@ -67,6 +88,71 @@ margin_bottom = -150.0
 theme = ExtResource( 1 )
 custom_styles/panel = SubResource( 1 )
 
+[node name="Control" type="Control" parent="Panel"]
+anchor_left = 0.068
+anchor_top = 0.5
+anchor_right = 0.068
+anchor_bottom = 0.5
+margin_left = -15.792
+margin_top = -384.0
+margin_right = 600.208
+margin_bottom = 456.0
+
+[node name="Panel2" type="Panel" parent="Panel/Control"]
+margin_left = 16.0
+margin_top = 188.0
+margin_right = 592.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 176, 16 )
+theme = SubResource( 24 )
+
+[node name="Panel" type="Panel" parent="Panel/Control"]
+margin_left = 16.0
+margin_top = 76.0
+margin_right = 592.0
+margin_bottom = 104.0
+theme = SubResource( 24 )
+
+[node name="Panel3" type="Panel" parent="Panel/Control"]
+margin_left = 16.0
+margin_top = 300.0
+margin_right = 592.0
+margin_bottom = 328.0
+rect_pivot_offset = Vector2( 176, 16 )
+theme = SubResource( 24 )
+
+[node name="Panel4" type="Panel" parent="Panel/Control"]
+margin_left = 16.0
+margin_top = 412.0
+margin_right = 592.0
+margin_bottom = 440.0
+rect_pivot_offset = Vector2( 176, 16 )
+theme = SubResource( 24 )
+
+[node name="Panel5" type="Panel" parent="Panel/Control"]
+margin_left = 16.0
+margin_top = 524.0
+margin_right = 592.0
+margin_bottom = 552.0
+rect_pivot_offset = Vector2( 176, 16 )
+theme = SubResource( 24 )
+
+[node name="Panel6" type="Panel" parent="Panel/Control"]
+margin_left = 16.0
+margin_top = 636.0
+margin_right = 592.0
+margin_bottom = 664.0
+rect_pivot_offset = Vector2( 176, 16 )
+theme = SubResource( 24 )
+
+[node name="Panel7" type="Panel" parent="Panel/Control"]
+margin_left = 16.0
+margin_top = 748.0
+margin_right = 592.0
+margin_bottom = 776.0
+rect_pivot_offset = Vector2( 176, 16 )
+theme = SubResource( 24 )
+
 [node name="BackButton" type="Button" parent="Panel"]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -79,18 +165,20 @@ custom_styles/focus = SubResource( 19 )
 icon_align = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="NameLabel" type="RichTextLabel" parent="Panel"]
 anchor_left = 0.068
-anchor_top = 0.108
-anchor_right = 0.938
-anchor_bottom = 0.962
+anchor_top = 0.5
+anchor_right = 0.068
+anchor_bottom = 0.5
 margin_left = 0.207996
-margin_top = 0.159996
-margin_right = -0.0720215
-margin_bottom = 0.23999
-custom_fonts/font = SubResource( 20 )
-text = "Loading
-Loading
+margin_top = -384.0
+margin_right = 480.208
+margin_bottom = 453.0
+custom_colors/default_color = Color( 0.298039, 0.309804, 0.411765, 1 )
+custom_fonts/normal_font = SubResource( 22 )
+bbcode_enabled = true
+bbcode_text = "1. name here
+2. more name
 Loading
 Loading
 Loading
@@ -104,7 +192,51 @@ Loading
 Loading
 Loading
 Loading"
-valign = 1
+text = "1. name here
+2. more name
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading
+Loading"
+scroll_active = false
+
+[node name="ScoreLabel" type="Label" parent="Panel"]
+anchor_left = 0.801
+anchor_top = 0.5
+anchor_right = 0.801
+anchor_bottom = 0.5
+margin_left = -15.8441
+margin_top = -380.0
+margin_right = 104.156
+margin_bottom = 569.0
+custom_colors/font_color = Color( 0.411765, 0.647059, 0.831373, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+44m 44s
+
+"
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 margin_right = 40.0
