@@ -87,6 +87,21 @@ func updateSound() -> void:
 	Global.soundpack = Global.sound_data[currentSoundIndex]
 
 func updateSkin() -> void:
-	$Panel/Skin/Label.text = Global.skin_data[currentSkinIndex]
+	$Panel/Skin/TextureRect.texture = load("res://assets/characters/neutral_bbspr.png")
+	$Panel/Skin/TextureRect.material = null
+	$Panel/Skin/TextureRect.rect_scale = Vector2(1,1)
+	$Panel/Skin/TextureRect.rect_position.x = 171.824
+	match Global.skin_data[currentSkinIndex]:
+		"Rainbow":
+			$Panel/Skin/TextureRect.material = load("res://assets/shaders/gayyy.tres")
+		"Merch":
+			$Panel/Skin/TextureRect.texture = load("res://assets/characters/sunglasses/neutral_bbspr.png")
+		"Fumo":
+			$Panel/Skin/TextureRect.texture = load("res://assets/characters/funnyFumo/FunnyFumo.png")
+		"Wide":
+			$Panel/Skin/TextureRect.rect_scale = Vector2(2,1)
+			$Panel/Skin/TextureRect.rect_position.x = 67.824
+		_:
+			pass
 	Global.skin = Global.skin_data[currentSkinIndex]
 
