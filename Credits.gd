@@ -51,6 +51,18 @@ func _on_CodeButton_pressed():
 				Global.sound_data.append("Scott")
 			else:
 				$Panel/Code.text = "Scott Already Unlocked"
+		"FUNNY FUMO FUNCTION":
+			if not Global.skin_data.has("Fumo"):
+				$Panel/Code.text = ":3"
+				Global.skin_data.append("Fumo")
+			else:
+				$Panel/Code.text = ":("
+		"WIDE":
+			if not Global.skin_data.has("Wide"):
+				$Panel/Code.text = "W I D E"
+				Global.skin_data.append("Wide")
+			else:
+				$Panel/Code.text = "You are already W I D E"
 		_:
 			$Panel/Code.text = "Incorrect"
 

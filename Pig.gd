@@ -16,6 +16,11 @@ func _ready():
 		"Merch":
 		# change happy and sad sprites to merch
 			$AnimatedSprite.frames = load("res://assets/characters/sunglasses/merchFrames.tres")
+		"Fumo":
+			$AnimatedSprite.frames = load("res://assets/characters/funnyFumo/fumo.tres")
+			$AnimatedSprite.scale = Vector2(2,2)
+		"Wide":
+			$AnimatedSprite.scale = Vector2(0.408,0.204)
 		_:
 			pass
 
