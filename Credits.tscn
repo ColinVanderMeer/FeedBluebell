@@ -242,7 +242,7 @@ scroll_horizontal_enabled = false
 
 [node name="Label" type="Label" parent="ThirdParty/ScrollContainer"]
 margin_right = 552.0
-margin_bottom = 3921.0
+margin_bottom = 4029.0
 rect_min_size = Vector2( 552, 0 )
 size_flags_horizontal = 2
 text = "Luckiest guy font:
@@ -257,7 +257,7 @@ text = "Luckiest guy font:
 	
 	
 	
-	Godot:
+Godot:
 
     This game uses Godot Engine, available under the following license:
 
@@ -282,7 +282,9 @@ Portions of this software are copyright © 2022 The FreeType Project (www.freety
     http://www.apache.org/licenses/LICENSE-2.0
 
     Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+	
 
+Uses Material Design icons by Google
 "
 autowrap = true
 

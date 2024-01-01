@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/gui/xButton.png" type="Texture" id=3]
 [ext_resource path="res://Leaderboard.gd" type="Script" id=4]
 [ext_resource path="res://assets/gui/trophy.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/iconPeople.svg" type="Texture" id=6]
+[ext_resource path="res://assets/gui/iconGlobe.svg" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.956863, 1, 0.960784, 1 )
@@ -43,18 +45,33 @@ Button/styles/pressed = SubResource( 17 )
 
 [sub_resource type="StyleBoxEmpty" id=19]
 
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0, 0, 0, 0.27451 )
+corner_radius_top_left = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0, 0, 0, 0.470588 )
+corner_radius_top_left = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="Theme" id=25]
+Button/styles/hover = SubResource( 26 )
+Button/styles/normal = SubResource( 26 )
+Button/styles/pressed = SubResource( 27 )
+
 [sub_resource type="DynamicFont" id=22]
 size = 32
 use_mipmaps = true
 use_filter = true
-extra_spacing_top = 22
+extra_spacing_top = 19
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=20]
 size = 32
 use_mipmaps = true
 use_filter = true
-extra_spacing_top = 20
+extra_spacing_top = 17
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=21]
@@ -97,12 +114,13 @@ margin_left = -15.792
 margin_top = -384.0
 margin_right = 600.208
 margin_bottom = 456.0
+mouse_filter = 2
 
 [node name="Panel2" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 187.0
+margin_top = 174.0
 margin_right = 592.0
-margin_bottom = 215.0
+margin_bottom = 202.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
@@ -115,41 +133,41 @@ theme = SubResource( 24 )
 
 [node name="Panel3" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 298.0
+margin_top = 280.0
 margin_right = 592.0
-margin_bottom = 326.0
+margin_bottom = 308.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
 [node name="Panel4" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 409.0
+margin_top = 384.0
 margin_right = 592.0
-margin_bottom = 437.0
+margin_bottom = 412.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
 [node name="Panel5" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 520.0
+margin_top = 490.0
 margin_right = 592.0
-margin_bottom = 548.0
+margin_bottom = 518.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
 [node name="Panel6" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 631.0
+margin_top = 595.0
 margin_right = 592.0
-margin_bottom = 659.0
+margin_bottom = 623.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
 [node name="Panel7" type="Panel" parent="Panel/Control"]
 margin_left = 16.0
-margin_top = 742.0
+margin_top = 700.0
 margin_right = 592.0
-margin_bottom = 770.0
+margin_bottom = 728.0
 rect_pivot_offset = Vector2( 176, 16 )
 theme = SubResource( 24 )
 
@@ -165,6 +183,74 @@ custom_styles/focus = SubResource( 19 )
 icon_align = 1
 expand_icon = true
 
+[node name="Button2" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -106.0
+margin_top = -39.0
+margin_right = 140.0
+margin_bottom = 16.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 176, 12 )
+theme = SubResource( 25 )
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Button2"]
+anchor_left = 0.504
+anchor_right = 0.504
+margin_left = 117.016
+margin_top = 57.0
+margin_right = 173.016
+margin_bottom = 113.0
+rect_rotation = 180.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/Button2"]
+margin_left = 180.0
+margin_top = 39.0
+margin_right = 352.0
+margin_bottom = 72.0
+rect_rotation = 180.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "around me"
+
+[node name="Button" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -246.0
+margin_top = -70.0
+margin_bottom = -15.0
+rect_pivot_offset = Vector2( 176, 12 )
+theme = SubResource( 25 )
+custom_styles/focus = SubResource( 19 )
+toggle_mode = true
+pressed = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Button"]
+anchor_left = 0.504
+anchor_right = 0.504
+margin_left = -91.984
+margin_right = -35.984
+margin_bottom = 56.0
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Label2" type="Label" parent="Panel/Button"]
+margin_left = 96.0
+margin_top = 16.0
+margin_right = 268.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "All Time"
+
 [node name="NameLabel" type="RichTextLabel" parent="Panel"]
 anchor_left = 0.068
 anchor_top = 0.5
@@ -174,11 +260,12 @@ margin_left = 0.207996
 margin_top = -384.0
 margin_right = 480.208
 margin_bottom = 453.0
+mouse_filter = 2
 custom_colors/default_color = Color( 0.298039, 0.309804, 0.411765, 1 )
 custom_fonts/normal_font = SubResource( 22 )
 bbcode_enabled = true
-bbcode_text = "1. name here
-2. more name
+bbcode_text = "Loading
+Loading
 Loading
 Loading
 Loading
@@ -192,8 +279,8 @@ Loading
 Loading
 Loading
 Loading"
-text = "1. name here
-2. more name
+text = "Loading
+Loading
 Loading
 Loading
 Loading
@@ -208,6 +295,9 @@ Loading
 Loading
 Loading"
 scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ScoreLabel" type="Label" parent="Panel"]
 anchor_left = 0.801
@@ -220,23 +310,21 @@ margin_right = 104.156
 margin_bottom = 569.0
 custom_colors/font_color = Color( 0.411765, 0.647059, 0.831373, 1 )
 custom_fonts/font = SubResource( 20 )
-text = "44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-44m 44s
-
-"
+text = "0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s
+0m 0s"
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 margin_right = 40.0
