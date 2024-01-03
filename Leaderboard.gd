@@ -22,19 +22,14 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 
 		var json_data = JSON.parse(body_string)
 
-		print(body_string)
-
 		$Panel/NameLabel.text = ""
 		$Panel/ScoreLabel.text = ""
-
-		print("playerRanking" in json_data)
 
 		if json_data.result.has("playerRanking"):
 			# Access the value of "playerRanking"
 			var player_ranking = json_data.result["playerRanking"]
 			i = 1
 			for item in json_data.result["scores"]:
-				print(item)
 				# Get name and score from the JSON data
 				var name = item.get("name")
 				var score = int(item.get("score"))
