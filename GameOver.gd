@@ -44,7 +44,9 @@ func _make_post(url, data, ssl):
 func _on_LeaderboardButton_pressed():
 	if not len($Control/LeaderboardEntry.text) > 18:
 		LeaderboardName = $Control/LeaderboardEntry.text
-		_make_post("https://bluebell.vandermeer.tech/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":"test"}, true)
+		var keyHash = str(int(Global.score)) + LeaderboardName
+		keyHash = keyHash.sha256_text()
+		_make_post("https://bluebell.vandermeer.tech/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":keyHash}, true)
 		$Control/LeaderboardButton.visible = false
 		$Control/LeaderboardEntry.modulate = Color(110 / 255, 255 / 255, 0)
 		if Global.score == Global.bestScore:
