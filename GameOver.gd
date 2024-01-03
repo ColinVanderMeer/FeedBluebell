@@ -7,15 +7,17 @@ var LeaderboardName = "Godot"
 
 func _ready():
 	
+	if Global.score > Global.bestScore:
+		Global.bestScore = Global.score
+		Global.save_data()
+
 	# Set final time based on score, format as human-readable
 	$Control/FinalScore.text = "Time: " + str(int(Global.score / 60)) + ":" + str(int(Global.score) % 60).pad_zeros(2)
 	$Control/BestScore.text = "Personal Best: " + str(int(Global.bestScore / 60)) + ":" + str(int(Global.bestScore) % 60).pad_zeros(2)
 	$AudioStreamPlayer.stream = Global.game_over[randi() % Global.game_over.size()]
 	$AudioStreamPlayer.play()
 
-	if Global.score > Global.bestScore:
-		Global.bestScore = Global.score
-		Global.save_data()
+
 	
 	if OS.get_name() == "HTML5":
 		$Control/LeaderboardButton.visible = false
@@ -45,7 +47,9 @@ func _on_LeaderboardButton_pressed():
 		_make_post("https://bluebell.vandermeer.tech/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":"test"}, true)
 		$Control/LeaderboardButton.visible = false
 		$Control/LeaderboardEntry.modulate = Color(110 / 255, 255 / 255, 0)
-		Global.bestName = LeaderboardName
+		if Global.score == Global.bestScore:
+			Global.bestName = LeaderboardName
+			Global.save_data()
 	else:
 		OS.alert("Name must be less than 19 characters")
 
