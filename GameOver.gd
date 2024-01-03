@@ -36,7 +36,6 @@ func _on_TitleScreen_pressed():
 
 func _make_post(url, data, ssl):
 	var query = JSON.print(data)
-	print(query)
 	var headers = ["Content-Type: application/json"]
 	$HTTPRequest.request(url, headers, ssl, HTTPClient.METHOD_POST, query)
 
