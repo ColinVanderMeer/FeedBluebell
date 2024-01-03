@@ -20,7 +20,7 @@ func _ready():
 			$AnimatedSprite.frames = load("res://assets/characters/funnyFumo/fumo.tres")
 			$AnimatedSprite.scale = Vector2(2,2)
 		"Wide":
-			$AnimatedSprite.scale = Vector2(0.408,0.204)
+			$AnimatedSprite.scale = Vector2(0.816,0.408)
 		_:
 			pass
 
