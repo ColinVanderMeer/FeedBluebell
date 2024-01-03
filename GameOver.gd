@@ -45,5 +45,13 @@ func _on_LeaderboardButton_pressed():
 		_make_post("https://bluebell.vandermeer.tech/api/new/", {"name":LeaderboardName, "score":int(Global.score), "key":"test"}, true)
 		$Control/LeaderboardButton.visible = false
 		$Control/LeaderboardEntry.modulate = Color(110 / 255, 255 / 255, 0)
+		Global.bestName = LeaderboardName
 	else:
 		OS.alert("Name must be less than 19 characters")
+
+
+
+func _on_ButtonEnabler_timeout():
+	# This is so that people don't accidentally try again after the game ends
+	$Control/TryAgain.disabled = false
+	$Control/TitleScren.disabled = false

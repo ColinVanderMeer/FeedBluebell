@@ -33,20 +33,22 @@ use_filter = true
 extra_spacing_top = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 1324, 466 )
-
 [sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 1324, 466 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 1324, 466 )
+
 [sub_resource type="Theme" id=8]
 Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 0, 0, 0, 0.54902 )
 Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/fonts/font = SubResource( 5 )
+Button/styles/disabled = SubResource( 7 )
 Button/styles/hover = SubResource( 6 )
 Button/styles/normal = SubResource( 6 )
 Button/styles/pressed = SubResource( 7 )
@@ -170,9 +172,10 @@ margin_right = 235.076
 margin_bottom = 171.76
 theme = SubResource( 8 )
 custom_styles/focus = SubResource( 3 )
+disabled = true
 text = "Try Again?"
 
-[node name="TitleScren2" type="Button" parent="Control"]
+[node name="TitleScren" type="Button" parent="Control"]
 anchor_left = 0.489
 anchor_top = 0.739
 anchor_right = 0.489
@@ -184,6 +187,7 @@ margin_bottom = 168.52
 rect_pivot_offset = Vector2( 280, 64 )
 theme = SubResource( 8 )
 custom_styles/focus = SubResource( 4 )
+disabled = true
 text = "Back to menu"
 
 [node name="LeaderboardEntry" type="LineEdit" parent="Control"]
@@ -220,6 +224,12 @@ bus = "SFX"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[node name="ButtonEnabler" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="Control/TryAgain" to="." method="_on_TryAgain_pressed"]
-[connection signal="pressed" from="Control/TitleScren2" to="." method="_on_TitleScreen_pressed"]
+[connection signal="pressed" from="Control/TitleScren" to="." method="_on_TitleScreen_pressed"]
 [connection signal="pressed" from="Control/LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]
+[connection signal="timeout" from="ButtonEnabler" to="." method="_on_ButtonEnabler_timeout"]
