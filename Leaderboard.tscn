@@ -45,17 +45,18 @@ Button/styles/pressed = SubResource( 17 )
 
 [sub_resource type="StyleBoxEmpty" id=19]
 
-[sub_resource type="StyleBoxFlat" id=26]
-bg_color = Color( 0, 0, 0, 0.27451 )
-corner_radius_top_left = 1024
-corner_radius_bottom_left = 1024
-
 [sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 0, 0, 0, 0.470588 )
 corner_radius_top_left = 1024
 corner_radius_bottom_left = 1024
 
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0, 0, 0, 0.27451 )
+corner_radius_top_left = 1024
+corner_radius_bottom_left = 1024
+
 [sub_resource type="Theme" id=25]
+Button/styles/disabled = SubResource( 27 )
 Button/styles/hover = SubResource( 26 )
 Button/styles/normal = SubResource( 26 )
 Button/styles/pressed = SubResource( 27 )
@@ -183,7 +184,7 @@ custom_styles/focus = SubResource( 19 )
 icon_align = 1
 expand_icon = true
 
-[node name="Button2" type="Button" parent="Panel"]
+[node name="AroundMe" type="Button" parent="Panel"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -196,9 +197,8 @@ rect_rotation = 180.0
 rect_pivot_offset = Vector2( 176, 12 )
 theme = SubResource( 25 )
 custom_styles/focus = SubResource( 19 )
-toggle_mode = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Button2"]
+[node name="TextureRect" type="TextureRect" parent="Panel/AroundMe"]
 anchor_left = 0.504
 anchor_right = 0.504
 margin_left = 117.016
@@ -210,7 +210,7 @@ mouse_filter = 2
 texture = ExtResource( 6 )
 expand = true
 
-[node name="Label" type="Label" parent="Panel/Button2"]
+[node name="Label" type="Label" parent="Panel/AroundMe"]
 margin_left = 180.0
 margin_top = 39.0
 margin_right = 352.0
@@ -219,7 +219,7 @@ rect_rotation = 180.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "around me"
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="AllTime" type="Button" parent="Panel"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -230,10 +230,9 @@ margin_bottom = -15.0
 rect_pivot_offset = Vector2( 176, 12 )
 theme = SubResource( 25 )
 custom_styles/focus = SubResource( 19 )
-toggle_mode = true
-pressed = true
+disabled = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Button"]
+[node name="TextureRect" type="TextureRect" parent="Panel/AllTime"]
 anchor_left = 0.504
 anchor_right = 0.504
 margin_left = -91.984
@@ -243,7 +242,7 @@ mouse_filter = 2
 texture = ExtResource( 7 )
 expand = true
 
-[node name="Label2" type="Label" parent="Panel/Button"]
+[node name="Label2" type="Label" parent="Panel/AllTime"]
 margin_left = 96.0
 margin_top = 16.0
 margin_right = 268.0
@@ -264,40 +263,9 @@ mouse_filter = 2
 custom_colors/default_color = Color( 0.298039, 0.309804, 0.411765, 1 )
 custom_fonts/normal_font = SubResource( 22 )
 bbcode_enabled = true
-bbcode_text = "Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading"
-text = "Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading
-Loading"
+bbcode_text = "Loading..."
+text = "Loading..."
 scroll_active = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="ScoreLabel" type="Label" parent="Panel"]
 anchor_left = 0.801
@@ -310,21 +278,6 @@ margin_right = 104.156
 margin_bottom = 569.0
 custom_colors/font_color = Color( 0.411765, 0.647059, 0.831373, 1 )
 custom_fonts/font = SubResource( 20 )
-text = "0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s
-0m 0s"
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 margin_right = 40.0
@@ -358,4 +311,6 @@ expand = true
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Panel/AroundMe" to="." method="_on_AroundMe_pressed"]
+[connection signal="pressed" from="Panel/AllTime" to="." method="_on_AllTime_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

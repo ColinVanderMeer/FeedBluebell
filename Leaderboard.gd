@@ -1,6 +1,7 @@
 extends Control
 
 var http_request
+var i
 
 func _on_BackButton_pressed():
 	self.visible = false
@@ -8,7 +9,7 @@ func _on_BackButton_pressed():
 func _ready():
 	
 	# Set up the request parameters
-	var url = "https://bluebell.vandermeer.tech/api/scores"
+	var url = "https://bluebell.vandermeer.tech/api/scores/"
 	var headers = []
 	
 	# Send the request
@@ -21,23 +22,77 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 
 		var json_data = JSON.parse(body_string)
 
+		print(body_string)
+
 		$Panel/NameLabel.text = ""
 		$Panel/ScoreLabel.text = ""
 
-		# Iterate through each item in the JSON array
-		for item in json_data.result:
-			# Get name and score from the JSON data
-			var name = item.get("name")
-			var score = int(item.get("score"))
+		print("playerRanking" in json_data)
 
-			# Calculate the time in minutes and seconds
-			var minutes = int(score / 60)
-			var seconds = int(score % 60)
+		if json_data.result.has("playerRanking"):
+			# Access the value of "playerRanking"
+			var player_ranking = json_data.result["playerRanking"]
+			i = 1
+			for item in json_data.result["scores"]:
+				print(item)
+				# Get name and score from the JSON data
+				var name = item.get("name")
+				var score = int(item.get("score"))
+				var position = int(item.get("position"))
 
-			# Display the information in the label
-			var display_text = "%s -- %dm %ds" % [name, minutes, seconds]
-			$Panel/NameLabel.text += name + "\n"
-			$Panel/ScoreLabel.text += "%dm %ds" % [minutes, seconds] + "\n"
+				# Calculate the time in minutes and seconds
+				var minutes = int(score / 60)
+				var seconds = int(score % 60)
+
+				if position == player_ranking:
+					$Panel/NameLabel.append_bbcode("[color=#69a5d4]" + str(position) + ". " + name + "[/color]\n")
+					$Panel/ScoreLabel.text += "%dm %ds" % [minutes, seconds] + "\n"
+					continue
+				# Display the information in the label
+				$Panel/NameLabel.append_bbcode(str(position) + ". " + name + "\n")
+				$Panel/ScoreLabel.text += "%dm %ds" % [minutes, seconds] + "\n"
+		else:
+			i = 1
+			# Iterate through each item in the JSON array
+			for item in json_data.result:
+				# Get name and score from the JSON data
+				var name = item.get("name")
+				var score = int(item.get("score"))
+
+				# Calculate the time in minutes and seconds
+				var minutes = int(score / 60)
+				var seconds = int(score % 60)
+
+				# Display the information in the label
+				$Panel/NameLabel.text += str(i) + ". " + name + "\n"
+				$Panel/ScoreLabel.text += "%dm %ds" % [minutes, seconds] + "\n"
+				i += 1
 	else:
 		print("HTTP request failed with response code:", response_code)
 		print("Error body:", body)
+
+
+func _on_AllTime_pressed():
+	$Panel/AllTime.disabled = true
+	$Panel/AroundMe.disabled = false
+	$Panel/NameLabel.text = "Loading..."
+	$Panel/ScoreLabel.text = ""
+
+	var url = "https://bluebell.vandermeer.tech/api/scores"
+	var headers = []
+	
+	# Send the request
+	$HTTPRequest.request(url, headers)
+
+
+func _on_AroundMe_pressed():
+	$Panel/AllTime.disabled = false
+	$Panel/AroundMe.disabled = true
+	$Panel/NameLabel.text = "Loading..."
+	$Panel/ScoreLabel.text = ""
+
+	var url = "https://bluebell.vandermeer.tech/api/scores?name=" + Global.bestName
+	var headers = []
+	
+	# Send the request
+	$HTTPRequest.request(url, headers)
