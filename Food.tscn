@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://assets/food/broccoli.svg" type="Texture" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://assets/food/cupcake.svg" type="Texture" id=16]
 [ext_resource path="res://assets/food/fish.svg" type="Texture" id=17]
 [ext_resource path="res://assets/food/meat-rockway.svg" type="Texture" id=18]
+[ext_resource path="res://assets/food/sandwich-in-bag.svg" type="Texture" id=19]
+[ext_resource path="res://assets/food/cookie.svg" type="Texture" id=20]
+[ext_resource path="res://assets/food/cookie-bagged.svg" type="Texture" id=21]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 152.0
@@ -47,6 +50,16 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "cheese",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "cookie",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "cookieBag",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -94,6 +107,11 @@ animations = [ {
 "name": "sandwich",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "sandwichBag",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "spoon",
@@ -119,7 +137,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 2 )
-animation = "rockMeat"
+animation = "sandwichBag"
 script = ExtResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_Food_input_event"]
