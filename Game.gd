@@ -10,6 +10,8 @@ var max_scale = Vector2(0.625,0.625)
 func _ready():
 	$UI/AudioStreamPlayer.play(0)
 
+	$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
+
 	Global.good_food = []
 	Global.bad_food = []
 	Global.game_over = []
@@ -69,9 +71,10 @@ func _process(delta):
 		if Global.score > 600:
 			$SpawnTimer.wait_time = 0.3
 	$Background.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
-	$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
 	
-	$DamageRect.modulate.a -= 0.02 / 0.016667 * delta
+	$DamageRect.modulate.a -= 0.03 / 0.016667 * delta
+	$DamageRect.rect_scale.x -= 0.01 / 0.016667 * delta
+	$DamageRect.rect_position.y -= 1.5 / 0.016667 * delta
 
 func _on_Despawn_body_entered(body):
 	body.queue_free()
@@ -79,8 +82,12 @@ func _on_Despawn_body_entered(body):
 func _damageIndicator(healthy):
 	if healthy == true:
 		$DamageRect.modulate.a = 1
+		$DamageRect.rect_scale.x = 1
+		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
 		$DamageRect.modulate = Color("#84f174")
 	else:
 		$DamageRect.modulate.a = 1
+		$DamageRect.rect_scale.x = 1
+		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
 		$DamageRect.modulate = Color("#f17486")
 	
