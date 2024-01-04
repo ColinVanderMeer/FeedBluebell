@@ -3,6 +3,10 @@ extends Node2D
 export(PackedScene) var FOOD
 export(int) var BGSIZE
 
+var ping = false
+var scaling = Vector2(0.025,0.025)
+var max_scale = Vector2(0.625,0.625)
+
 func _ready():
 	$UI/AudioStreamPlayer.play(0)
 
@@ -53,9 +57,10 @@ func _on_SpawnTimer_timeout():
 	new_food.pig_target = $Pig.global_position
 	new_food.trash_target = $Trash.global_position
 	new_food.FALL_SPEED = 5 + Global.score / 16 # TODO: make this better
+	new_food.connect("onSwipe", self, "_damageIndicator")
 	add_child(new_food)
 
-func _process(_delta):
+func _process(delta):
 	if Global.pause:
 		$SpawnTimer.paused = true
 	else:
@@ -64,6 +69,18 @@ func _process(_delta):
 		if Global.score > 600:
 			$SpawnTimer.wait_time = 0.3
 	$Background.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
+	$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
+	
+	$DamageRect.modulate.a -= 0.02 / 0.016667 * delta
 
 func _on_Despawn_body_entered(body):
 	body.queue_free()
+	
+func _damageIndicator(healthy):
+	if healthy == true:
+		$DamageRect.modulate.a = 1
+		$DamageRect.modulate = Color("#84f174")
+	else:
+		$DamageRect.modulate.a = 1
+		$DamageRect.modulate = Color("#f17486")
+	

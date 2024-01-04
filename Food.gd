@@ -18,6 +18,8 @@ var swipe_start_position = Vector2()
 
 var type = true
 
+signal onSwipe(type)
+
 func _ready():
 	type = $AnimatedSprite.type
 	
@@ -42,8 +44,10 @@ func _end_detection(position):
 	if abs(direction.y) > 30:
 		if direction.y > 0:
 			target = pig_target
+			emit_signal("onSwipe", type)
 		else:
 			target = trash_target
+			emit_signal("onSwipe", !type)
 		detect = false
 
 func generate_curve(t: float):
