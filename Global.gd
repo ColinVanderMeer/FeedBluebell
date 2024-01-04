@@ -10,9 +10,13 @@ var currentSkinIndex = 0
 var musicVolume = 1
 var soundVolume = 1
 var bestScore = 0
-var bestName = ""
+var playerID = -1
+var bannerHammer = 0
+var banDate = 0
 
-var unlock_data = [music_data, sound_data, skin_data, 0, 0, 0, 1, 1, 0, ""]
+var unlock_data = [music_data, sound_data, skin_data, 0, 0, 0, 1, 1, 0, -1, 0, 0]
+
+var current_datetime = OS.get_date()
 
 # Set the default soundpack
 var music = "My Soul Cries Out"
@@ -26,12 +30,20 @@ var game_over = []
 
 func _ready():
 	load_data()
+	
+	if current_datetime.day != banDate and banDate != 0:
+		banDate = 0
+
+	
+func banDay():
+	banDate = current_datetime.day
+
 
 var score = 0
 var pause = false # this shouldn't be here, too bad
 
 func save_data():
-	unlock_data = [music_data, sound_data, skin_data, currentMusicIndex, currentSoundIndex, currentSkinIndex, musicVolume, soundVolume, bestScore, bestName]
+	unlock_data = [music_data, sound_data, skin_data, currentMusicIndex, currentSoundIndex, currentSkinIndex, musicVolume, soundVolume, bestScore, playerID, bannerHammer, banDate]
 	var file = File.new()
 	file.open(SAVE_FILE, File.WRITE)
 	file.store_var(unlock_data)
@@ -43,8 +55,8 @@ func load_data():
 		save_data()
 	file.open(SAVE_FILE, File.READ)
 	unlock_data = file.get_var()
-	if len(unlock_data) < 10:
-		unlock_data = [music_data, sound_data, skin_data, 0, 0, 0, 1, 1, 0, ""]
+	if len(unlock_data) < 12:
+		unlock_data = [music_data, sound_data, skin_data, 0, 0, 0, 1, 1, 0, -1, 0, 0]
 		save_data()
 	file.close()
 	
@@ -57,5 +69,7 @@ func load_data():
 	musicVolume = unlock_data[6]
 	soundVolume = unlock_data[7]
 	bestScore = unlock_data[8]
-	bestName = unlock_data[9]
+	playerID = unlock_data[9]
+	bannerHammer = unlock_data[10]
+	banDate = unlock_data[11]
 	

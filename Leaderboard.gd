@@ -15,6 +15,9 @@ func _ready():
 	# Send the request
 	$HTTPRequest.request(url, headers)
 
+	if Global.playerID == -1:
+		$Panel/AroundMe.disabled = true
+
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code == 200:
 		# Parse the JSON response
@@ -86,7 +89,7 @@ func _on_AroundMe_pressed():
 	$Panel/NameLabel.text = "Loading..."
 	$Panel/ScoreLabel.text = ""
 
-	var url = "https://bluebell.vandermeer.tech/api/scores?name=" + Global.bestName
+	var url = "https://bluebell.vandermeer.tech/api/scores?id=" + str(Global.playerID)
 	var headers = []
 	
 	# Send the request

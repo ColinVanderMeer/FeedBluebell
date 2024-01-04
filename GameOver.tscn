@@ -219,6 +219,22 @@ custom_styles/focus = SubResource( 12 )
 text = ">"
 icon_align = 1
 
+[node name="NewBestLeaderboard" type="Label" parent="Control"]
+visible = false
+anchor_left = 0.333
+anchor_right = 0.666
+margin_left = -441.028
+margin_top = 440.0
+margin_right = 414.732
+margin_bottom = 539.0
+rect_pivot_offset = Vector2( 299, 41 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0.75, 0.75, 0.75, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "New best: #43"
+align = 1
+valign = 1
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
 
@@ -232,4 +248,5 @@ autostart = true
 [connection signal="pressed" from="Control/TryAgain" to="." method="_on_TryAgain_pressed"]
 [connection signal="pressed" from="Control/TitleScren" to="." method="_on_TitleScreen_pressed"]
 [connection signal="pressed" from="Control/LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="timeout" from="ButtonEnabler" to="." method="_on_ButtonEnabler_timeout"]
