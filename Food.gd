@@ -44,10 +44,8 @@ func _end_detection(position):
 	if abs(direction.y) > 30:
 		if direction.y > 0:
 			target = pig_target
-			emit_signal("onSwipe", type)
 		else:
 			target = trash_target
-			emit_signal("onSwipe", !type)
 		detect = false
 
 func generate_curve(t: float):

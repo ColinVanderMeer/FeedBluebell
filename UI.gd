@@ -17,10 +17,19 @@ func _ready():
 func _on_Pig_update_consumed(type):
 	if type:
 		$ProgressBar.value -= STEP
+		$DamageRect.modulate.a = 1
+		$DamageRect.rect_scale.x = 1
+		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
+		$DamageRect.modulate = Color("#84f174")
 	else:
 		$ProgressBar.value += STEP
 		if $ProgressBar.value == 100 and coyote > 0.2:
 			coyote_death = true
+		$DamageRect.modulate.a = 1
+		$DamageRect.rect_scale.x = 1
+		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
+		$DamageRect.modulate = Color("#f17486")
+			
 
 # TODO: deprecated
 func _on_Trash_update_consumed(type):
@@ -28,8 +37,16 @@ func _on_Trash_update_consumed(type):
 		$ProgressBar.value += STEP
 		if $ProgressBar.value == 100 and coyote > 0.2:
 			coyote_death = true
+		$DamageRect.modulate.a = 1
+		$DamageRect.rect_scale.x = 1
+		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
+		$DamageRect.modulate = Color("#f17486")
 	else:
 		$ProgressBar.value -= STEP
+		$DamageRect.modulate.a = 1
+		$DamageRect.rect_scale.x = 1
+		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
+		$DamageRect.modulate = Color("#84f174")
 
 func _process(delta):
 	if !Global.pause:
@@ -57,6 +74,10 @@ func _process(delta):
 			
 		if game_time < 2:
 			$ProgressBar.value = 0
+
+		$DamageRect.modulate.a -= 0.03 / 0.016667 * delta
+		$DamageRect.rect_scale.x -= 0.01 / 0.016667 * delta
+		$DamageRect.rect_position.y -= 1.5 / 0.016667 * delta
 
 func _on_Button_pressed():
 	# Pause Button
