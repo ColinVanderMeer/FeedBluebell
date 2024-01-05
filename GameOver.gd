@@ -73,6 +73,7 @@ func _on_HTTPRequest_request_completed(_result:int, response_code:int, _headers:
 		if Global.score == Global.bestScore:
 			$Control/NewBestLeaderboard.visible = true
 			$Control/NewBestLeaderboard.text = "New Best: #" + str(json_data.result["position"])
+		Global.save_data()
 	if response_code == 400:
 		var body_string = body.get_string_from_utf8()
 
