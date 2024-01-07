@@ -33,6 +33,7 @@ func _ready():
 	
 	if current_datetime.day != banDate and banDate != 0:
 		banDate = 0
+		bannerHammer = 1
 
 	
 func banDay():

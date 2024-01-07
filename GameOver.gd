@@ -82,6 +82,7 @@ func _on_HTTPRequest_request_completed(_result:int, response_code:int, _headers:
 		if json_data.result["name"].has("Potentially nickname offensive held for review"):
 			OS.alert("Something in your nickname seemed not rockway appropriate. Subsequent failed attempts may result in leaderboard ban.")
 			banHammer += 1
+			Global.save_data()
 		else:
 			OS.alert("Something went wrong, please try again.")
 			
