@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://assets/food/broccoli.svg" type="Texture" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://assets/food/rockway-fish.svg" type="Texture" id=22]
 [ext_resource path="res://assets/food/cupcake-unwrapped.svg" type="Texture" id=23]
 [ext_resource path="res://assets/food/timmies.svg" type="Texture" id=24]
+[ext_resource path="res://assets/food/ds.png" type="Texture" id=25]
+[ext_resource path="res://assets/food/boehm.png" type="Texture" id=26]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 152.0
@@ -33,6 +35,11 @@ animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "apple",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "boehm",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -73,6 +80,11 @@ animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
 "name": "cupcakeUnwrapped",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "ds",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ) ],
@@ -155,7 +167,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 2 )
-animation = "rockFish"
+animation = "ds"
 script = ExtResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_Food_input_event"]

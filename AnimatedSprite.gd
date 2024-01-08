@@ -6,15 +6,15 @@ var animation_id = 0
 
 # NEED BAD FOOD AFTER CAROT AND ABOVE
 # TODO: what the hell is this
-var foods = ["apple", "bottle", "cookie", "milk", "rockMeat", "carrot", "wrapper", "cheese", "sandwichBag", "grapes", "meat", "granola", "fish", "pasta", "cupcake", "sandwich", "spoon", "cookieBag", "broccoli", "tim", "cupcakeUnwrapped", "rockFish"]
+var foods = ["apple", "bottle", "cookie", "milk", "rockMeat", "carrot", "wrapper", "cheese", "sandwichBag", "grapes", "meat", "granola", "fish", "pasta", "cupcake", "sandwich", "spoon", "cookieBag", "broccoli", "tim", "cupcakeUnwrapped", "rockFish", "boehm", "ds"]
 
 func _ready():
 	randomize()
 	play_random_animation()
 
 func play_random_animation():
-	if int(Global.score / 5) > 20:
-		animation_id = randi() % 22
+	if int(Global.score / 5) > 22:
+		animation_id = randi() % 24
 	else:	
 		animation_id = randi() % (2 + int(Global.score / 5))
 	var animation_name = foods[animation_id]
@@ -32,7 +32,7 @@ func play_random_animation():
 		type = false
 	if animation_name == "boehm"\
 	or animation_name == "ds":
-		if randi() % 2 == 0:
+		if randi() % 4 == 0:
 			animation_name = "apple"
 		else:
 			farmer = true
