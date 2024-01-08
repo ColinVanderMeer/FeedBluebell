@@ -100,6 +100,8 @@ func updateSkin() -> void:
 			$Panel/Skin/TextureRect.rect_position.x = 155.824
 		"Think":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/think/bluebell_game_THINK_neutral.png")
+		"Miku":
+			$Panel/Skin/TextureRect.texture = load("res://assets/characters/miku/neutral_bbspr.png")
 		_:
 			pass
 	Global.skin = Global.skin_data[Global.currentSkinIndex]

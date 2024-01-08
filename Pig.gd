@@ -25,6 +25,8 @@ func _ready():
 			$AnimatedSprite.frames = load("res://assets/characters/rainDown/rainFrame.tres")
 		"Think":
 			$AnimatedSprite.frames = load("res://assets/characters/think/thinkFrame.tres")
+		"Miku":
+			$AnimatedSprite.frames = load("res://assets/characters/miku/mikuFrame.tres")
 		_:
 			pass
 
