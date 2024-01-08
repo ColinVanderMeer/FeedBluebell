@@ -34,6 +34,12 @@ func _on_Pig_update_consumed(type):
 # TODO: deprecated
 func _on_Trash_update_consumed(type):
 	if type:
+		$ProgressBar.value -= STEP
+		$DamageRect.modulate.a = 1
+		$DamageRect.rect_scale.x = 1
+		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
+		$DamageRect.modulate = Color("#84f174")
+	else:
 		$ProgressBar.value += STEP
 		if $ProgressBar.value == 100 and coyote > 0.2:
 			coyote_death = true
@@ -41,12 +47,13 @@ func _on_Trash_update_consumed(type):
 		$DamageRect.rect_scale.x = 1
 		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
 		$DamageRect.modulate = Color("#f17486")
-	else:
-		$ProgressBar.value -= STEP
-		$DamageRect.modulate.a = 1
-		$DamageRect.rect_scale.x = 1
-		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
-		$DamageRect.modulate = Color("#84f174")
+
+func _on_Game_farmer_consumed():
+	$ProgressBar.value -= STEP
+	$DamageRect.modulate.a = 1
+	$DamageRect.rect_scale.x = 1
+	$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
+	$DamageRect.modulate = Color("#84f174")
 
 func _process(delta):
 	if !Global.pause:

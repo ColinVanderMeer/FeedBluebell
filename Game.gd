@@ -7,6 +7,8 @@ var ping = false
 var scaling = Vector2(0.025,0.025)
 var max_scale = Vector2(0.625,0.625)
 
+signal farmer_consumed()
+
 func _ready():
 	$UI/AudioStreamPlayer.play(0)
 
@@ -70,6 +72,8 @@ func _process(_delta):
 	$Background.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
 
 func _on_Despawn_body_entered(body):
+	if body.farmer:
+		emit_signal("farmer_consumed")
 	body.queue_free()
 	
 	

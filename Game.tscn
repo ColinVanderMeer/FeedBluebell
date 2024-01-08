@@ -63,11 +63,12 @@ autostart = true
 [node name="Despawn" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Despawn"]
-position = Vector2( 1400, 640 )
+position = Vector2( 1208, 640 )
 shape = SubResource( 4 )
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
 
+[connection signal="farmer_consumed" from="." to="UI" method="_on_Game_farmer_consumed"]
 [connection signal="update_consumed" from="Trash" to="UI" method="_on_Trash_update_consumed"]
 [connection signal="update_consumed" from="Pig" to="UI" method="_on_Pig_update_consumed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

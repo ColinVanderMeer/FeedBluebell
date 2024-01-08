@@ -37,7 +37,7 @@ func _process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	if body.type:
+	if body.type and !body.farmer:
 		$FoodSFX.stream = Global.good_food[randi() % Global.good_food.size()]
 		$AnimatedSprite.play("happy") # TODO: use better animation system
 		$Timer.start()
@@ -47,6 +47,8 @@ func _on_Area2D_body_entered(body):
 		
 		$Ping.modulate = Color("#84f174")
 		ping = true
+
+		emit_signal("update_consumed", true)
 	else:
 		$FoodSFX.stream = Global.bad_food[randi() % Global.bad_food.size()]
 		$AnimatedSprite.play("sad")
@@ -58,8 +60,9 @@ func _on_Area2D_body_entered(body):
 		$Ping.modulate = Color("#f17486")
 		ping = true
 
+		emit_signal("update_consumed", false)
+
 	$FoodSFX.play()
-	emit_signal("update_consumed", body.type)
 	body.queue_free()
 
 func _on_Timer_timeout():

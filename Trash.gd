@@ -8,7 +8,7 @@ var scaling = Vector2(0.025,0.025)
 var max_scale = Vector2(0.625,0.625)
 
 func _on_Area2D_body_entered(body):
-	if !body.type:
+	if !body.type and !body.farmer:
 		$FoodSFX.stream = Global.good_food[randi() % Global.good_food.size()]
 		# TODO: remove these, and make sure audio is normalized
 		
@@ -17,6 +17,8 @@ func _on_Area2D_body_entered(body):
 		
 		$Ping.modulate = Color("#84f174")
 		ping = true
+
+		emit_signal("update_consumed", true)
 	else:
 		$FoodSFX.stream = Global.bad_food[randi() % Global.bad_food.size()]
 		
@@ -25,9 +27,10 @@ func _on_Area2D_body_entered(body):
 		
 		$Ping.modulate = Color("#f17486")
 		ping = true
+
+		emit_signal("update_consumed", false)
 	
 	$FoodSFX.play()
-	emit_signal("update_consumed", body.type)
 	body.queue_free()
 
 func _process(delta):
