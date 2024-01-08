@@ -15,12 +15,16 @@ func _ready():
 			$AnimatedSprite.material = load("res://assets/shaders/gayyy.tres")
 		"Merch":
 		# change happy and sad sprites to merch
-			$AnimatedSprite.frames = load("res://assets/characters/sunglasses/merchFrames.tres")
+			$AnimatedSprite.frames = load("res://assets/characters/merch/merchFrame.tres")
 		"Fumo":
 			$AnimatedSprite.frames = load("res://assets/characters/funnyFumo/fumo.tres")
 			$AnimatedSprite.scale = Vector2(2,2)
 		"Wide":
 			$AnimatedSprite.scale = Vector2(0.816,0.408)
+		"Rain":
+			$AnimatedSprite.frames = load("res://assets/characters/rainDown/rainFrame.tres")
+		"Think":
+			$AnimatedSprite.frames = load("res://assets/characters/think/thinkFrame.tres")
 		_:
 			pass
 

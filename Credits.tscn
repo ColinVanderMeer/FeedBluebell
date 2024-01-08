@@ -135,7 +135,7 @@ anchor_right = 0.006
 anchor_bottom = 0.002
 margin_left = 24.136
 margin_top = 136.04
-margin_right = 606.136
+margin_right = 584.136
 margin_bottom = 816.04
 custom_colors/default_color = Color( 0.298039, 0.309804, 0.411765, 1 )
 custom_fonts/bold_font = SubResource( 14 )
@@ -145,8 +145,8 @@ bbcode_text = "[b]Main Development team: [/b]
 Colin VanderMeer, Erin Abicht
 
 [b]Graphics:[/b] 
-Enoch Lau, 
-Gabrielle Dominguez, A. Panda, Henry Modolo
+Enoch Lau, Gabrielle Dominguez, 
+A. Panda, Henry Modolo
 
 [b]Music:[/b]
 Oliver Berg
@@ -161,8 +161,8 @@ text = "Main Development team:
 Colin VanderMeer, Erin Abicht
 
 Graphics: 
-Enoch Lau, 
-Gabrielle Dominguez, A. Panda, Henry Modolo
+Enoch Lau, Gabrielle Dominguez, 
+A. Panda, Henry Modolo
 
 Music:
 Oliver Berg

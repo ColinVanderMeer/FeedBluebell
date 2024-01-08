@@ -88,12 +88,18 @@ func updateSkin() -> void:
 		"Rainbow":
 			$Panel/Skin/TextureRect.material = load("res://assets/shaders/gayyy.tres")
 		"Merch":
-			$Panel/Skin/TextureRect.texture = load("res://assets/characters/sunglasses/neutral_bbspr.png")
+			$Panel/Skin/TextureRect.texture = load("res://assets/characters/merch/bluebell_game_swag_neutral.png")
 		"Fumo":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/funnyFumo/FunnyFumo.png")
 		"Wide":
 			$Panel/Skin/TextureRect.rect_scale = Vector2(2,1)
 			$Panel/Skin/TextureRect.rect_position.x = 67.824
+		"Rain":
+			$Panel/Skin/TextureRect.texture = load("res://assets/characters/rainDown/bluebell_game_rain_down.png")
+			$Panel/Skin/TextureRect.rect_scale = Vector2(1.125,1)
+			$Panel/Skin/TextureRect.rect_position.x = 155.824
+		"Think":
+			$Panel/Skin/TextureRect.texture = load("res://assets/characters/think/bluebell_game_THINK_neutral.png")
 		_:
 			pass
 	Global.skin = Global.skin_data[Global.currentSkinIndex]

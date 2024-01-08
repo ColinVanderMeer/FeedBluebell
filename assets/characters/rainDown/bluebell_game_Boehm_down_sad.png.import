@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/neutral_bbspr.png-63c86f200b6d9914c10b5547facf0b83.stex"
+path="res://.import/bluebell_game_Boehm_down_sad.png-3b0564849a1c9fa0bc2c96d8f04c3cc7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/sunglasses/neutral_bbspr.png"
-dest_files=[ "res://.import/neutral_bbspr.png-63c86f200b6d9914c10b5547facf0b83.stex" ]
+source_file="res://assets/characters/rainDown/bluebell_game_Boehm_down_sad.png"
+dest_files=[ "res://.import/bluebell_game_Boehm_down_sad.png-3b0564849a1c9fa0bc2c96d8f04c3cc7.stex" ]
 
 [params]
 

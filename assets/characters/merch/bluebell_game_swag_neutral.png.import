@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/bluebell_game_swag_neutral.png-2f5108e56d25bed0b41cb174e2b9dcfd.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/characters/merch/bluebell_game_swag_neutral.png"
+dest_files=[ "res://.import/bluebell_game_swag_neutral.png-2f5108e56d25bed0b41cb174e2b9dcfd.stex" ]
+
+[params]
+
+compress/mode=1
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
