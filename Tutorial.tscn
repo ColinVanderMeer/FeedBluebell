@@ -117,13 +117,13 @@ bbcode_text = "Make Bluebell the pig happy by feeding her food scraps and keepin
 
 She can eat anything except meat from home. Be careful to never feed her any packaging or non-food items!
 
-[color=#d80807]Make sure to  leave the farmers alone
+[color=#d80807]Make sure to  leave the farmers alone...
 "
 text = "Make Bluebell the pig happy by feeding her food scraps and keeping them out of the landfill!
 
 She can eat anything except meat from home. Be careful to never feed her any packaging or non-food items!
 
-Make sure to  leave the farmers alone
+Make sure to  leave the farmers alone...
 "
 
 [node name="CodeBox2" type="Label" parent="Panel"]
