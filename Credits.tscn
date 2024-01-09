@@ -295,6 +295,16 @@ margin_right = 100.0
 margin_bottom = 73.0
 text = "<"
 
+[node name="Label" type="Label" parent="ThirdParty"]
+margin_left = 46.0
+margin_top = 938.0
+margin_right = 556.0
+margin_bottom = 971.0
+custom_colors/font_color = Color( 0, 0, 0, 0.294118 )
+text = "Feed bluebell -- <VersionHere>"
+align = 1
+valign = 1
+
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Panel/CodeButton" to="." method="_on_CodeButton_pressed"]
 [connection signal="pressed" from="Panel/ThirdPartyButton" to="." method="_on_ThirdPartyButton_pressed"]
