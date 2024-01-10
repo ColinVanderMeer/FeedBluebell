@@ -3,6 +3,7 @@ extends AnimatedSprite
 var type = true
 var farmer = false
 var animation_id = 0
+var sinceFarmer = 0
 
 # NEED BAD FOOD AFTER CAROT AND ABOVE
 # TODO: what the hell is this
@@ -32,8 +33,9 @@ func play_random_animation():
 		type = false
 	if animation_name == "boehm"\
 	or animation_name == "ds":
-		if randi() %  6 != 0:
+		if randi() %  6 != 0 or sinceFarmer < 8:
 			animation_name = "apple"
 		else:
 			farmer = true
+	sinceFarmer += 1
 	play(animation_name)
