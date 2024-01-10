@@ -32,7 +32,7 @@ func play_random_animation():
 		type = false
 	if animation_name == "boehm"\
 	or animation_name == "ds":
-		if randi() % 4 == 0:
+		if randi() %  6 != 0:
 			animation_name = "apple"
 		else:
 			farmer = true

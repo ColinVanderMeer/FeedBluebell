@@ -66,7 +66,7 @@ func _process(_delta):
 		$SpawnTimer.paused = true
 	else:
 		$SpawnTimer.paused = false
-		$SpawnTimer.wait_time = 1 - log(Global.score) / (16 - Global.score / 55)
+		$SpawnTimer.wait_time = 1 - log(Global.score) / (16 - Global.score / 40)
 		if Global.score > 600:
 			$SpawnTimer.wait_time = 0.3
 	$Background.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
