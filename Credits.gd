@@ -51,6 +51,12 @@ func _on_CodeButton_pressed():
 				Global.skin_data.append("Miku")
 			else:
 				$Panel/Code.text = "Miku Skin Already Unlocked"
+		"WEALTH":
+			if not Global.skin_data.has("Gold"):
+				$Panel/Code.text = "Gold Skin Unlocked"
+				Global.skin_data.append("Gold")
+			else:
+				$Panel/Code.text = "Miku Skin Already Unlocked"
 		"COPPER":
 			if not Global.sound_data.has("Penny"):
 				$Panel/Code.text = "Mr. Penny SFX Unlocked"
