@@ -209,35 +209,34 @@ anchor_left = 0.034
 anchor_top = 0.108
 anchor_right = 0.034
 anchor_bottom = 0.108
-margin_left = -1.89601
+margin_left = 6.10399
 margin_top = 640.16
-margin_right = 318.104
+margin_right = 326.104
 margin_bottom = 695.16
 custom_fonts/font = SubResource( 13 )
 text = "third party licenses"
 
 [node name="ThirdParty" type="Panel" parent="."]
 visible = false
-anchor_left = 0.16
-anchor_top = 0.117
-anchor_right = 0.84
-anchor_bottom = 0.883
-margin_left = -0.160004
-margin_top = 0.23999
-margin_right = 0.159973
-margin_bottom = -0.23999
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -310.0
+margin_top = 150.0
+margin_right = 298.0
+margin_bottom = -150.0
 theme = ExtResource( 1 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ThirdParty"]
-anchor_left = 0.034
+anchor_left = 0.053
 anchor_top = 0.092
 anchor_right = 0.98
 anchor_bottom = 0.941
-margin_left = -0.264002
+margin_left = -0.224003
 margin_top = -0.160004
-margin_right = -0.0800171
-margin_bottom = -0.180054
+margin_right = 0.159973
+margin_bottom = -0.179993
 scroll_horizontal_enabled = false
 
 [node name="Label" type="Label" parent="ThirdParty/ScrollContainer"]
@@ -296,10 +295,14 @@ margin_bottom = 73.0
 text = "<"
 
 [node name="Label" type="Label" parent="ThirdParty"]
-margin_left = 46.0
-margin_top = 938.0
-margin_right = 556.0
-margin_bottom = 971.0
+anchor_left = 0.505
+anchor_top = 0.991
+anchor_right = 0.505
+anchor_bottom = 0.991
+margin_left = -254.98
+margin_top = -33.1801
+margin_right = 255.02
+margin_bottom = -0.180054
 custom_colors/font_color = Color( 0, 0, 0, 0.294118 )
 text = "Feed bluebell -- <VersionHere>"
 align = 1
