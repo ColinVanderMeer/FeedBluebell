@@ -44,6 +44,9 @@ func _make_post(url, data, ssl):
 
 
 func _on_LeaderboardButton_pressed():
+	if $Control/LeaderboardEntry.text == "":
+		OS.alert("Please enter a name")
+		return
 	if not len($Control/LeaderboardEntry.text) > 18:
 		LeaderboardName = $Control/LeaderboardEntry.text
 		var keyHash = str(int(Global.score)) + LeaderboardName
