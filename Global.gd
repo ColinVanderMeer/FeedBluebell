@@ -73,10 +73,24 @@ func load_data():
 	playerID = unlock_data[9]
 	bannerHammer = unlock_data[10]
 	banDate = unlock_data[11]
-
+	
 func reset_data():
 	music_data = ["My Soul Cries Out"]
 	sound_data = ["Default"]
 	skin_data = ["Default"]
 	unlock_data = [music_data, sound_data, skin_data, 0, 0, 0, 1, 1, 0, -1, 0, 0]
+	
+	music_data = unlock_data[0]
+	sound_data = unlock_data[1]
+	skin_data = unlock_data[2]
+	currentMusicIndex = unlock_data[3]
+	currentSoundIndex = unlock_data[4]
+	currentSkinIndex = unlock_data[5]
+	musicVolume = unlock_data[6]
+	soundVolume = unlock_data[7]
+	bestScore = unlock_data[8]
+	playerID = unlock_data[9]
+	bannerHammer = unlock_data[10]
+	banDate = unlock_data[11]
+
 	save_data()
