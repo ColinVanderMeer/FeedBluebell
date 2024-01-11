@@ -15,7 +15,7 @@ dest_files=[ "res://.import/buttonPause.png-657f214fb645c697a04570c9853ca527.ste
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.7
+compress/lossy_quality=0.6
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
