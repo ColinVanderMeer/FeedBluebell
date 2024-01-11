@@ -11,7 +11,14 @@ func _on_BackButton_pressed():
 	self.visible = false
 	Global.save_data()
 
+func _ready():
+	if OS.get_name() == "HTML5":
+		$Panel/CodeButton.visible = false
+		$Panel/Code.margin_right = 274
+		var _error = $Panel/Code.connect("focus_exited", self, "_on_CodeButton_pressed")
+
 func _on_CodeButton_pressed():
+	$Panel/Code.modulate = Color(95/255, 1, 1, 1)
 	match $Panel/Code.text.to_upper():
 		"703":
 			if not Global.music_data.has("Rain Down"):
@@ -94,12 +101,18 @@ func _on_CodeButton_pressed():
 			OS.alert("Save Data has been reset")
 		_:
 			$Panel/Code.text = "Incorrect"
+			$Panel/Code.modulate = Color(1, 199/255, 1, 1)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(delta):
+	if $Panel/Code.modulate.r != 1:
+		$Panel/Code.modulate.r += 0.01 * delta / 0.016
+		if $Panel/Code.modulate.r > 1:
+			$Panel/Code.modulate.r = 1
+	if $Panel/Code.modulate.g != 1:
+		$Panel/Code.modulate.g += 0.01 * delta / 0.016
+		if $Panel/Code.modulate.g > 1:
+			$Panel/Code.modulate.g = 1
 
 
 
