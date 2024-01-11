@@ -108,7 +108,7 @@ func updateSkin() -> void:
 			$Panel/SkinLabel.text = "Skin: Think"
 		"Miku":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/miku/neutral_bbspr.png")
-			$Panel/SkinLabel.text = "Skin: Hatsune Pigku"
+			$Panel/SkinLabel.text = "Skin: Hogsune Miku"
 		"Gold":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/gold/neutral_bbspr.png")
 			$Panel/SkinLabel.text = "Skin: Golden Bell"
