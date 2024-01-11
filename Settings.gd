@@ -87,32 +87,32 @@ func updateSkin() -> void:
 	match Global.skin_data[Global.currentSkinIndex]:
 		"Rainbow":
 			$Panel/Skin/TextureRect.material = load("res://assets/shaders/gayyy.tres")
-			$Panel/SkinLabel.text = "Skin: Rainbow Pig"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Rainbow Pig"
 		"Merch":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/merch/bluebell_game_swag_neutral.png")
-			$Panel/SkinLabel.text = "Skin: Merch"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Merch"
 		"Fumo":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/funnyFumo/FunnyFumo.png")
-			$Panel/SkinLabel.text = "Fumo: Funny"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Fumo:[/b] Funny"
 		"Wide":
 			$Panel/Skin/TextureRect.rect_scale = Vector2(2,1)
 			$Panel/Skin/TextureRect.rect_position.x = 67.824
-			$Panel/SkinLabel.text = "Skin: W   I   D   E"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] W   I   D   E"
 		"Rain":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/rainDown/bluebell_game_rain_down.png")
 			$Panel/Skin/TextureRect.rect_scale = Vector2(1.125,1)
 			$Panel/Skin/TextureRect.rect_position.x = 155.824
-			$Panel/SkinLabel.text = "Skin: Rain Down"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Rain Down"
 		"Think":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/think/bluebell_game_THINK_neutral.png")
-			$Panel/SkinLabel.text = "Skin: Think"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Think"
 		"Miku":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/miku/neutral_bbspr.png")
-			$Panel/SkinLabel.text = "Skin: Hogsune Miku"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Hogsune Miku"
 		"Gold":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/gold/neutral_bbspr.png")
-			$Panel/SkinLabel.text = "Skin: Golden Bell"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Golden Bell"
 		_:
-			$Panel/SkinLabel.text = "Skin: Default"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Default"
 	Global.skin = Global.skin_data[Global.currentSkinIndex]
 
