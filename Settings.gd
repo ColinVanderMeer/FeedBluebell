@@ -87,24 +87,32 @@ func updateSkin() -> void:
 	match Global.skin_data[Global.currentSkinIndex]:
 		"Rainbow":
 			$Panel/Skin/TextureRect.material = load("res://assets/shaders/gayyy.tres")
+			$Panel/SkinLabel.text = "Skin: Rainbow Pig"
 		"Merch":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/merch/bluebell_game_swag_neutral.png")
+			$Panel/SkinLabel.text = "Skin: Merch"
 		"Fumo":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/funnyFumo/FunnyFumo.png")
+			$Panel/SkinLabel.text = "Fumo: Funny"
 		"Wide":
 			$Panel/Skin/TextureRect.rect_scale = Vector2(2,1)
 			$Panel/Skin/TextureRect.rect_position.x = 67.824
+			$Panel/SkinLabel.text = "Skin: W   I   D   E"
 		"Rain":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/rainDown/bluebell_game_rain_down.png")
 			$Panel/Skin/TextureRect.rect_scale = Vector2(1.125,1)
 			$Panel/Skin/TextureRect.rect_position.x = 155.824
+			$Panel/SkinLabel.text = "Skin: Rain Down"
 		"Think":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/think/bluebell_game_THINK_neutral.png")
+			$Panel/SkinLabel.text = "Skin: Think"
 		"Miku":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/miku/neutral_bbspr.png")
+			$Panel/SkinLabel.text = "Skin: Hatsune Pigku"
 		"Gold":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/gold/neutral_bbspr.png")
+			$Panel/SkinLabel.text = "Skin: Golden Bell"
 		_:
-			pass
+			$Panel/SkinLabel.text = "Skin: Default"
 	Global.skin = Global.skin_data[Global.currentSkinIndex]
 
