@@ -87,6 +87,10 @@ func _on_CodeButton_pressed():
 				Global.skin_data.append("Wide")
 			else:
 				$Panel/Code.text = "You are already W I D E"
+		"DEBUG PRINT SAVE":
+			OS.alert("Save Data:", str(Global.save_data()))
+		"DEBUG RESET SAVE":
+			Global.reset_data()
 		_:
 			$Panel/Code.text = "Incorrect"
 
