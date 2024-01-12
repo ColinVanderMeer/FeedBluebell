@@ -97,7 +97,7 @@ func _on_CodeButton_pressed():
 		"SAVE RESET":
 			Global.reset_data()
 			OS.alert("Save Data has been reset")
-		"SETTINGS RESET"
+		"SETTINGS RESET":
 			Global.currentMusicIndex = 0
 			Global.currentSoundIndex = 0
 			Global.currentSkinIndex = 0
