@@ -94,9 +94,14 @@ func _on_CodeButton_pressed():
 		# 		Global.skin_data.append("Wide")
 		# 	else:
 		# 		$Panel/Code.text = "You are already W I D E"
-		"RESET":
+		"SAVE RESET":
 			Global.reset_data()
 			OS.alert("Save Data has been reset")
+		"SETTINGS RESET"
+			Global.currentMusicIndex = 0
+			Global.currentSoundIndex = 0
+			Global.currentSkinIndex = 0
+			Global.save_data()
 		_:
 			$Panel/Code.text = "Incorrect"
 			$Panel/Code.modulate = Color(1, 199/255, 1, 1)
