@@ -171,5 +171,8 @@ rect_rotation = -89.9999
 mouse_filter = 2
 theme = SubResource( 14 )
 
+[node name="SFXplayer" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseScreen/Panel/MenuButton" to="." method="_on_MenuButton_pressed"]

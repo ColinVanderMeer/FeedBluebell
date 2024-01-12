@@ -49,10 +49,17 @@ func _on_Trash_update_consumed(type):
 		$DamageRect.modulate = Color("#f17486")
 
 func _on_Game_farmer_consumed():
+	$ProgressBar.value -= STEP
 	$DamageRect.modulate.a = 1
 	$DamageRect.rect_scale.x = 1
 	$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
 	$DamageRect.modulate = Color("#84f174")
+
+	$SFXplayer.stream = Global.good_food[randi() % Global.good_food.size()]
+	$SFXplayer.play()
+
+func _on_Game_farmer_spawn():
+	$ProgressBar.value -= STEP/2
 
 func _process(delta):
 	if !Global.pause:

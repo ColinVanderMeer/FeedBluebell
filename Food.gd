@@ -19,8 +19,6 @@ var swipe_start_position = Vector2()
 var type = true
 var farmer = false
 
-signal onSwipe(type)
-
 func _ready():
 	type = $AnimatedSprite.type
 	farmer = $AnimatedSprite.farmer

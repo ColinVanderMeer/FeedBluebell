@@ -42,6 +42,7 @@ func banDay():
 
 var score = 0
 var pause = false # this shouldn't be here, too bad
+var sinceFarmer = 8
 
 func save_data():
 	unlock_data = [music_data, sound_data, skin_data, currentMusicIndex, currentSoundIndex, currentSkinIndex, musicVolume, soundVolume, bestScore, playerID, bannerHammer, banDate]

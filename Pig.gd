@@ -57,6 +57,17 @@ func _on_Area2D_body_entered(body):
 		ping = true
 
 		emit_signal("update_consumed", true)
+	elif body.farmer:
+		$FoodSFX.stream = Global.bad_food[randi() % Global.bad_food.size()]
+		$AnimatedSprite.play("sad")
+		$Timer.start()
+		
+		$Ping.scale = scaling
+		$Ping.modulate.a = 1
+		
+		$Ping.modulate = Color("#f17486")
+		ping = true
+
 	else:
 		$FoodSFX.stream = Global.bad_food[randi() % Global.bad_food.size()]
 		$AnimatedSprite.play("sad")

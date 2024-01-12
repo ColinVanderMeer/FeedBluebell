@@ -8,9 +8,11 @@ var scaling = Vector2(0.025,0.025)
 var max_scale = Vector2(0.625,0.625)
 
 signal farmer_consumed()
+signal farmer_spawn()
 
 func _ready():
 	$UI/AudioStreamPlayer.play(0)
+	Global.sinceFarmer = 0
 
 	Global.good_food = []
 	Global.bad_food = []
@@ -60,6 +62,8 @@ func _on_SpawnTimer_timeout():
 	new_food.trash_target = $Trash.global_position
 	new_food.FALL_SPEED = 5 + Global.score / 16 # TODO: make this better
 	add_child(new_food)
+	if new_food.farmer:
+		emit_signal("farmer_spawn")
 
 func _process(_delta):
 	if Global.pause:
@@ -73,6 +77,7 @@ func _process(_delta):
 
 func _on_Despawn_body_entered(body):
 	if body.farmer:
+		print("farmer consumed")
 		emit_signal("farmer_consumed")
 	body.queue_free()
 	
