@@ -6,7 +6,7 @@ var animation_id = 0
 
 # NEED BAD FOOD AFTER CAROT AND ABOVE
 # TODO: what the hell is this
-var foods = ["apple", "bottle", "cookie", "milk", "rockMeat", "carrot", "wrapper", "cheese", "sandwichBag", "grapes", "meat", "granola", "fish", "pasta", "cupcake", "sandwich", "spoon", "cookieBag", "broccoli", "tim", "cupcakeUnwrapped", "rockFish", "ds", "boehm"]
+var foods = ["apple", "bottle", "cookie", "milk", "rockMeat", "carrot", "ds", "cheese", "wrapper", "grapes", "meat", "granola", "fish", "pasta", "cupcake", "sandwich", "spoon", "cookieBag", "broccoli", "tim", "cupcakeUnwrapped", "rockFish", "sandwichBag", "boehm"]
 
 func _ready():
 	randomize()
