@@ -32,7 +32,7 @@ func play_random_animation():
 		type = false
 	if animation_name == "boehm"\
 	or animation_name == "ds":
-		if randi() % 6 != 0 or Global.sinceFarmer < 8:
+		if randi() % 3 != 0 or Global.sinceFarmer < 6:
 			animation_name = "apple"
 		else:
 			farmer = true

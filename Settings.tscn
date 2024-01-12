@@ -162,6 +162,7 @@ max_value = 1.0
 step = 0.05
 
 [node name="BgMusicLabel" type="Label" parent="Panel"]
+visible = false
 anchor_left = 0.093
 anchor_top = 0.439
 anchor_right = 0.093
@@ -175,6 +176,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Background Music"
 
 [node name="Music" type="Panel" parent="Panel"]
+visible = false
 anchor_left = 0.097
 anchor_top = 0.439
 anchor_right = 0.097
@@ -227,6 +229,7 @@ align = 1
 valign = 1
 
 [node name="SoundPackLabel" type="Label" parent="Panel"]
+visible = false
 anchor_left = 0.087
 anchor_top = 0.627
 anchor_right = 0.087
@@ -240,6 +243,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Sound Effect pack"
 
 [node name="SoundPack" type="Panel" parent="Panel"]
+visible = false
 anchor_left = 0.087
 anchor_top = 0.627
 anchor_right = 0.087
@@ -294,6 +298,7 @@ align = 1
 valign = 1
 
 [node name="RichSkinLabel" type="RichTextLabel" parent="Panel"]
+visible = false
 anchor_left = 0.087
 anchor_top = 0.859
 anchor_right = 0.087
@@ -309,21 +314,8 @@ bbcode_enabled = true
 bbcode_text = "[b]Skins:[/b] Default"
 text = "Skins: Default"
 
-[node name="SkinLabel" type="Label" parent="Panel"]
-visible = false
-anchor_left = 0.087
-anchor_top = 0.859
-anchor_right = 0.087
-anchor_bottom = 0.859
-margin_left = -8.524
-margin_top = -167.82
-margin_right = 460.524
-margin_bottom = -104.82
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "Skins: Default"
-
 [node name="Skin" type="Panel" parent="Panel"]
+visible = false
 anchor_left = 0.087
 anchor_top = 0.859
 anchor_right = 0.087
