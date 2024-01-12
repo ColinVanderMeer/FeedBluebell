@@ -94,7 +94,7 @@ func _on_CodeButton_pressed():
 		# 		Global.skin_data.append("Wide")
 		# 	else:
 		# 		$Panel/Code.text = "You are already W I D E"
-		"SAVE RESET":
+		"RESET":
 			Global.reset_data()
 			OS.alert("Save Data has been reset")
 		"SETTINGS RESET":
