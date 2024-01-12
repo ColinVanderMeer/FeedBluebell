@@ -10,6 +10,7 @@ func _ready():
 	
 	if Global.score > Global.bestScore:
 		Global.bestScore = Global.score
+		$Control/BestScore.material = load("res://assets/shaders/gayyy.tres")
 		Global.save_data()
 
 	# Set final time based on score, format as human-readable
