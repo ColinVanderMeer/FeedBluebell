@@ -11,7 +11,7 @@ radius = 69.1231
 script = ExtResource( 2 )
 
 [node name="Ping" type="Sprite" parent="."]
-scale = Vector2( 0.05, 0.05 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]

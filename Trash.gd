@@ -4,8 +4,8 @@ var consumed = 0
 signal update_consumed(c)
 
 var ping = false
-var scaling = Vector2(0.025,0.025)
-var max_scale = Vector2(0.625,0.625)
+var scaling = Vector2(0.05,0.05)
+var max_scale = Vector2(1.25,1.25)
 
 func _on_Area2D_body_entered(body):
 	if !body.type and !body.farmer:
