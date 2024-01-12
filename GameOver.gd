@@ -45,7 +45,7 @@ func _make_post(url, data, ssl):
 
 
 func _on_LeaderboardButton_pressed():
-	if $Control/LeaderboardEntry.text == "":
+	if $Control/LeaderboardEntry.text == "" or $Control/LeaderboardEntry.text == "Null":
 		OS.alert("Please enter a name")
 		return
 	if not len($Control/LeaderboardEntry.text) > 18:
