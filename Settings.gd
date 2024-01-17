@@ -112,6 +112,12 @@ func updateSkin() -> void:
 		"Gold":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/gold/neutral_bbspr.png")
 			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Golden Bell"
+		"Ballet":
+			$Panel/Skin/TextureRect.texture = load("res://assets/characters/ballet/neutral_bbspr.png")
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Balletbell"
+		"Cowbell":
+			$Panel/Skin/TextureRect.texture = load("res://assets/characters/cowbell/neutral_bbspr.png")
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Cowbell"
 		_:
 			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Default"
 	Global.skin = Global.skin_data[Global.currentSkinIndex]

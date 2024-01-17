@@ -63,7 +63,7 @@ func _on_CodeButton_pressed():
 		# 		$Panel/Code.text = "Gold Skin Unlocked"
 		# 		Global.skin_data.append("Gold")
 		# 	else:
-		# 		$Panel/Code.text = "Miku Skin Already Unlocked"
+		# 		$Panel/Code.text = "Gold Skin Already Unlocked"
 		# "COPPER":
 		# 	if not Global.sound_data.has("Penny"):
 		# 		$Panel/Code.text = "Mr. Penny SFX Unlocked"
@@ -94,6 +94,18 @@ func _on_CodeButton_pressed():
 		# 		Global.skin_data.append("Wide")
 		# 	else:
 		# 		$Panel/Code.text = "You are already W I D E"
+		# "BALLET":
+		# 	if not Global.skin_data.has("Ballet"):
+		# 		$Panel/Code.text = "Balletbell Skin Unlocked"
+		# 		Global.skin_data.append("Ballet")
+		# 	else:
+		# 		$Panel/Code.text = "Balletbell Skin Already Unlocked"
+		# "COW":
+		# 	if not Global.skin_data.has("Cowbell"):
+		# 		$Panel/Code.text = "Cowbell skin Unlocked"
+		# 		Global.skin_data.append("Cowbell")
+		# 	else:
+		# 		$Panel/Code.text = "Cowbell Skin Already Unlocked"
 		"RESET":
 			Global.reset_data()
 			OS.alert("Save Data has been reset")
