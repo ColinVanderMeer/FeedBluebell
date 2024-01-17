@@ -61,6 +61,8 @@ func _on_SpawnTimer_timeout():
 	new_food.pig_target = $Pig.global_position
 	new_food.trash_target = $Trash.global_position
 	new_food.FALL_SPEED = 5 + Global.score / 16 # TODO: make this better
+	if Global.score > 350:
+		new_food.FALL_SPEED = 25
 	add_child(new_food)
 	if new_food.farmer:
 		emit_signal("farmer_spawn")
@@ -71,7 +73,7 @@ func _process(_delta):
 	else:
 		$SpawnTimer.paused = false
 		$SpawnTimer.wait_time = 1 - log(Global.score) / (16 - Global.score / 40)
-		if Global.score > 600:
+		if Global.score > 300:
 			$SpawnTimer.wait_time = 0.3
 	$Background.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
 
