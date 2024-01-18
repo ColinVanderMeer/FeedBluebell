@@ -27,6 +27,15 @@ func _ready():
 		$Control/LeaderboardButton.visible = false
 		var _error = $Control/LeaderboardEntry.connect("focus_exited", self, "_on_LeaderboardButton_pressed")
 
+	# if Global.score > 270:
+	# 	if not Global.skin_data.has("Gold"):
+	# 		Global.skin_data.append("Gold")
+	# 		Global.save_data()
+	# 		$GoldBG.visible = true
+	# 		$GoldPanel.visible = true
+	# 	else:
+	# 		pass
+
 	
 
 func _on_TryAgain_pressed():
@@ -101,3 +110,6 @@ func _on_HTTPRequest_request_completed(_result:int, response_code:int, _headers:
 			$Control/LeaderboardButton.visible = true
 		
 
+func _on_BackButton_pressed():
+	$GoldBG.visible = false
+	$GoldPanel.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Theme.tres" type="Theme" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://assets/gui/yellowRect.png" type="Texture" id=5]
 [ext_resource path="res://assets/Edited_Sign_Pig-game-background.png" type="Texture" id=6]
 [ext_resource path="res://assets/gui/buttonGeneric.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui/xButton.png" type="Texture" id=8]
+[ext_resource path="res://assets/gui/pinkRect.png" type="Texture" id=9]
+[ext_resource path="res://assets/characters/gold/happy_bbspr.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 98
@@ -78,9 +81,56 @@ LineEdit/styles/normal = SubResource( 10 )
 
 [sub_resource type="StyleBoxEmpty" id=12]
 
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.956863, 1, 0.960784, 1 )
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 485, 464 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 485, 464 )
+modulate_color = Color( 0.75, 0.75, 0.75, 1 )
+
+[sub_resource type="Theme" id=22]
+Button/styles/hover = SubResource( 16 )
+Button/styles/normal = SubResource( 16 )
+Button/styles/pressed = SubResource( 17 )
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="DynamicFont" id=24]
+size = 52
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 5
+extra_spacing_bottom = 5
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 36
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 792, 588 )
+
+[sub_resource type="Theme" id=26]
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/styles/normal = SubResource( 20 )
+
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -592, -40 )
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 game = "res://Game.tscn"
@@ -245,8 +295,96 @@ wait_time = 1.5
 one_shot = true
 autostart = true
 
+[node name="GoldBG" type="Panel" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 0.294118 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GoldPanel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -322.0
+margin_top = 424.0
+margin_right = 322.0
+margin_bottom = -424.0
+theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 21 )
+
+[node name="BackButton" type="Button" parent="GoldPanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -82.0
+margin_top = -30.0
+margin_right = 22.0
+margin_bottom = 74.0
+theme = SubResource( 22 )
+custom_styles/focus = SubResource( 23 )
+icon_align = 1
+expand_icon = true
+
+[node name="RichSkinLabel" type="RichTextLabel" parent="GoldPanel"]
+anchor_left = 0.087
+anchor_top = 0.859
+anchor_right = 0.087
+anchor_bottom = 0.859
+margin_left = 11.972
+margin_top = -323.088
+margin_right = 499.972
+margin_bottom = -171.088
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/bold_font = SubResource( 24 )
+custom_fonts/normal_font = SubResource( 25 )
+bbcode_enabled = true
+bbcode_text = "[center][b]You reached 300[/b]
+ golden skin unlocked"
+text = "You reached 300
+ golden skin unlocked"
+scroll_active = false
+
+[node name="Skin" type="Panel" parent="GoldPanel"]
+anchor_left = 0.087
+anchor_top = 0.859
+anchor_right = 0.087
+anchor_bottom = 0.859
+margin_left = -4.028
+margin_top = -179.088
+margin_right = 475.972
+margin_bottom = 44.912
+
+[node name="Label" type="Label" parent="GoldPanel/Skin"]
+anchor_left = 0.554
+anchor_top = 0.018
+anchor_right = 0.554
+anchor_bottom = 0.018
+margin_left = -201.92
+margin_top = -0.0320001
+margin_right = 202.08
+margin_bottom = 211.968
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme = SubResource( 26 )
+custom_fonts/font = SubResource( 25 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="GoldPanel/Skin"]
+anchor_left = 0.554
+anchor_top = 0.018
+anchor_right = 0.554
+anchor_bottom = 0.019
+margin_left = -94.096
+margin_top = 17.968
+margin_right = 100.904
+margin_bottom = 198.744
+texture = ExtResource( 10 )
+expand = true
+
 [connection signal="pressed" from="Control/TryAgain" to="." method="_on_TryAgain_pressed"]
 [connection signal="pressed" from="Control/TitleScren" to="." method="_on_TitleScreen_pressed"]
 [connection signal="pressed" from="Control/LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="timeout" from="ButtonEnabler" to="." method="_on_ButtonEnabler_timeout"]
+[connection signal="pressed" from="GoldPanel/BackButton" to="." method="_on_BackButton_pressed"]
