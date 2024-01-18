@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var resetEnabled = false
 
 # Called when the node enters the scene tree for the first time.
 func _on_BackButton_pressed():
@@ -107,8 +107,12 @@ func _on_CodeButton_pressed():
 		# 	else:
 		# 		$Panel/Code.text = "Cowbell Skin Already Unlocked"
 		"RESET":
-			Global.reset_data()
-			OS.alert("Save Data has been reset")
+			if resetEnabled:
+				Global.reset_data()
+				OS.alert("Save Data has been reset")
+			else:
+				$Panel/Code.text = "Incorrect"
+				$Panel/Code.modulate = Color(1, 199/255, 1, 1)
 		"SETTINGS RESET":
 			Global.currentMusicIndex = 0
 			Global.currentSoundIndex = 0
@@ -134,6 +138,8 @@ func _process(delta):
 func _on_ThirdPartyButton_pressed():
 	$ThirdParty.visible = true
 	$Panel/BackButton.visible = false
+	resetEnabled = true
+	
 func _on_ThridBackButton_pressed():
 	$ThirdParty.visible = false
 	$Panel/BackButton.visible = true
