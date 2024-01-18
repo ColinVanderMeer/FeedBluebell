@@ -90,7 +90,7 @@ func updateSkin() -> void:
 			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Rainbow Pig"
 		"Merch":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/merch/bluebell_game_swag_neutral.png")
-			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Merch"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Swagbell"
 		"Fumo":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/funnyFumo/FunnyFumo.png")
 			$Panel/RichSkinLabel.bbcode_text = "[b]Fumo:[/b] Funny"
@@ -102,7 +102,7 @@ func updateSkin() -> void:
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/rainDown/bluebell_game_rain_down.png")
 			$Panel/Skin/TextureRect.rect_scale = Vector2(1.125,1)
 			$Panel/Skin/TextureRect.rect_position.x = 155.824
-			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Rain Down"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Hymn Hog"
 		"Think":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/think/bluebell_game_THINK_neutral.png")
 			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Think"
@@ -114,7 +114,7 @@ func updateSkin() -> void:
 			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Golden Bell"
 		"Ballet":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/ballet/neutral_bbspr.png")
-			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Balletbell"
+			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Bellerina"
 		"Cowbell":
 			$Panel/Skin/TextureRect.texture = load("res://assets/characters/cowbell/neutral_bbspr.png")
 			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Cowbell"

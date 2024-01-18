@@ -48,10 +48,10 @@ func _on_CodeButton_pressed():
 		# 		$Panel/Code.text = "Rain Down Skin Already Unlocked"
 		# "MERCH":
 		# 	if not Global.skin_data.has("Merch"):
-		# 		$Panel/Code.text = "Rockway Merch Unlocked"
+		# 		$Panel/Code.text = "Rockway Swag Unlocked"
 		# 		Global.skin_data.append("Merch")
 		# 	else:
-		# 		$Panel/Code.text = "Rockway Merch Already Unlocked"
+		# 		$Panel/Code.text = "Rockway Swag Already Unlocked"
 		# "39":
 		# 	if not Global.skin_data.has("Miku"):
 		# 		$Panel/Code.text = "Miku Skin Unlocked"
@@ -90,10 +90,10 @@ func _on_CodeButton_pressed():
 		# 		$Panel/Code.text = "You are already W I D E"
 		# "BALLET":
 		# 	if not Global.skin_data.has("Ballet"):
-		# 		$Panel/Code.text = "Balletbell Skin Unlocked"
+		# 		$Panel/Code.text = "Bellerina Skin Unlocked"
 		# 		Global.skin_data.append("Ballet")
 		# 	else:
-		# 		$Panel/Code.text = "Balletbell Skin Already Unlocked"
+		# 		$Panel/Code.text = "Bellerina Skin Already Unlocked"
 		# "COW":
 		# 	if not Global.skin_data.has("Cowbell"):
 		# 		$Panel/Code.text = "Cowbell skin Unlocked"
