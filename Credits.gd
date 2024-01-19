@@ -100,6 +100,12 @@ func _on_CodeButton_pressed():
 		# 		Global.skin_data.append("Cowbell")
 		# 	else:
 		# 		$Panel/Code.text = "Cowbell Skin Already Unlocked"
+		# "MUSIC":
+		# 	if not Global.skin_data.has("Hamjam"):
+		# 		$Panel/Code.text = "DJ Ham Jam Unlocked"
+		# 		Global.skin_data.append("Hamjam")
+		# 	else:
+		# 		$Panel/Code.text = "DJ Ham Jam Already Unlocked"
 		"RESET":
 			if resetEnabled:
 				Global.reset_data()
