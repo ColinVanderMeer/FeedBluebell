@@ -60,19 +60,19 @@ func _on_CodeButton_pressed():
 		# 		$Panel/Code.text = "Miku Skin Already Unlocked"
 		# "COPPER":
 		# 	if not Global.sound_data.has("Penny"):
-		# 		$Panel/Code.text = "Mr. Penny SFX Unlocked"
+		# 		$Panel/Code.text = "Mr. Penny Sounds Unlocked"
 		# 		Global.sound_data.append("Penny")
 		# 	else:
 		# 		$Panel/Code.text = "Penny Already Unlocked"
 		# "SCIENCE":
 		# 	if not Global.sound_data.has("Rempel"):
-		# 		$Panel/Code.text = "Mr. Rempel SFX Unlocked"
+		# 		$Panel/Code.text = "Mr. Rempel Sounds Unlocked"
 		# 		Global.sound_data.append("Rempel")
 		# 	else:
 		# 		$Panel/Code.text = "Rempel Already Unlocked"
 		# "SECRET123":
 		# 	if not Global.sound_data.has("Scott"):
-		# 		$Panel/Code.text = "Ms. Scott SFX Unlocked"
+		# 		$Panel/Code.text = "Ms. Scott Sounds Unlocked"
 		# 		Global.sound_data.append("Scott")
 		# 	else:
 		# 		$Panel/Code.text = "Scott Already Unlocked"
