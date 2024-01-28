@@ -16,12 +16,14 @@ func _ready():
 	
 func _on_food_consumed(type):
 	if type:
+		# Good food consumed
 		$ProgressBar.value -= STEP
 		$DamageRect.modulate.a = 1
 		$DamageRect.rect_scale.x = 1
 		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
 		$DamageRect.modulate = Color("#84f174")
 	else:
+		# Bad food consumed
 		$ProgressBar.value += STEP
 		if $ProgressBar.value == 100 and coyote > 0.2:
 			coyote_death = true
@@ -31,6 +33,7 @@ func _on_food_consumed(type):
 		$DamageRect.modulate = Color("#f17486")
 
 func _on_Game_farmer_consumed():
+	# Farmer reached the end (good)
 	$ProgressBar.value -= STEP
 	$DamageRect.modulate.a = 1
 	$DamageRect.rect_scale.x = 1
@@ -41,6 +44,7 @@ func _on_Game_farmer_consumed():
 	$SFXplayer.play()
 
 func _on_Game_farmer_spawn():
+	# On farmer spawn add half health
 	$ProgressBar.value -= STEP/2
 
 func _process(delta):
@@ -58,16 +62,19 @@ func _process(delta):
 			$ProgressBar.value += TIMER_STEP * delta
 		
 		if $ProgressBar.value >= 100:
-			# Gameover when progress bar is empty
+			# Add 3/4 second of grace period (coyote time)
 			coyote += delta
 			$CanvasLayer/GrayRect.material.set_shader_param("fade_amount", coyote / 0.75)
 			if coyote > 0.75 or coyote_death:
+				# Game over
 				var _error = get_tree().change_scene_to(game_over)
 		else:
+			# Reset coyote time
 			coyote = 0
 			$CanvasLayer/GrayRect.material.set_shader_param("fade_amount", 0)
 			
 		if game_time < 2:
+			# Don't change health for the first 2 seconds
 			$ProgressBar.value = 0
 
 		$DamageRect.modulate.a -= 0.03 / 0.016667 * delta

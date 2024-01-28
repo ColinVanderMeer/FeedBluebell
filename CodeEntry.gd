@@ -1,6 +1,7 @@
 extends LineEdit
 
 func _ready():
+	# Check if platform is HTML5 so I don't get errors in the editor
 	if OS.get_name() == "HTML5":
 		var _error = connect("focus_entered", self, "js_text_entry")
 

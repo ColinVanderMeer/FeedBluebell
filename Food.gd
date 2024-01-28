@@ -20,6 +20,7 @@ var type = true
 var farmer = false
 
 func _ready():
+	# Pull type from sprite so it can be used later
 	type = $AnimatedSprite.type
 	farmer = $AnimatedSprite.farmer
 	

@@ -5,11 +5,13 @@ onready var sfxBus := AudioServer.get_bus_index("SFX")
 
 func _on_BackButton_pressed():
 	self.visible = false
+	# Save settings to save file
 	Global.musicVolume = $Panel/MusicSlider.value
 	Global.soundVolume = $Panel/SfxSlider.value
 	Global.save_data()
 
 func _ready() -> void:
+	# Load current settings from save file
 	AudioServer.set_bus_volume_db(musicBus, linear2db(Global.musicVolume))
 	AudioServer.set_bus_volume_db(sfxBus, linear2db(Global.soundVolume))
 	$Panel/MusicSlider.value = db2linear(AudioServer.get_bus_volume_db(musicBus))
@@ -25,6 +27,7 @@ func _on_MusicSlider_value_changed(value: float) -> void:
 func _on_SfxSlider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfxBus, linear2db(value))
 
+# Music, Sound, and Skin selection. Index through array until you reach the end, then loop back to the beginning.
 func _on_MusicRight_pressed() -> void:
 	Global.currentMusicIndex += 1
 	if Global.currentMusicIndex >= Global.music_data.size():
@@ -62,6 +65,7 @@ func _on_SkinLeft_pressed() -> void:
 	updateSkin()
 
 
+# Update the text and variables for the music, sound, and skin
 func updateMusic() -> void:
 	$Panel/Music/Label.text = Global.music_data[Global.currentMusicIndex]
 	Global.music = Global.music_data[Global.currentMusicIndex]
@@ -75,6 +79,7 @@ func updateSkin() -> void:
 	$Panel/Skin/TextureRect.material = null
 	$Panel/Skin/TextureRect.rect_scale = Vector2(1,1)
 	$Panel/Skin/TextureRect.rect_position.x = 171.824
+	# Extra code for setting picture and text for each skin
 	match Global.skin_data[Global.currentSkinIndex]:
 		"Rainbow":
 			$Panel/Skin/TextureRect.material = load("res://assets/shaders/gayyy.tres")

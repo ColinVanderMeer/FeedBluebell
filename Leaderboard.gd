@@ -18,16 +18,16 @@ func _ready():
 		$Panel/AroundMe.disabled = true
 
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+func _on_HTTPRequest_request_completed(_result, response_code, _headers, body):
 	if response_code == 200:
 		# Parse the JSON response
 		var body_string = body.get_string_from_utf8()
-
 		var json_data = JSON.parse(body_string)
 
 		$Panel/NameLabel.text = ""
 		$Panel/ScoreLabel.text = ""
 
+		# If the JSON data has a "playerRanking" key, then we know that the request was for around me and not all time
 		if json_data.result.has("playerRanking"):
 			# Access the value of "playerRanking"
 			var player_ranking = json_data.result["playerRanking"]
@@ -42,6 +42,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 				var minutes = int(score / 60)
 				var seconds = int(score % 60)
 
+				# If the position is the same as the player's position, then display their name in blue
 				if position == player_ranking:
 					$Panel/NameLabel.append_bbcode("[color=#69a5d4]" + str(position) + ". " + name + "[/color]\n")
 					$Panel/ScoreLabel.text += "%dm %ds" % [minutes, seconds] + "\n"
@@ -49,7 +50,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 				# Display the information in the label
 				$Panel/NameLabel.append_bbcode(str(position) + ". " + name + "\n")
 				$Panel/ScoreLabel.text += "%dm %ds" % [minutes, seconds] + "\n"
-		else:
+		else: # All time leaderboard
 			i = 1
 			# Iterate through each item in the JSON array
 			for item in json_data.result:

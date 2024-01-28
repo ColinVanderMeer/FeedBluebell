@@ -11,6 +11,7 @@ signal farmer_consumed()
 signal farmer_spawn()
 
 func _ready():
+	# Start background music
 	$UI/AudioStreamPlayer.play(0)
 	Global.sinceFarmer = 0
 
@@ -18,6 +19,7 @@ func _ready():
 	Global.bad_food = []
 	Global.game_over = []
 
+	# Load sound packs
 	match Global.soundpack:
 		"Default":
 			Global.good_food.append(load("res://assets/sfx/default/good_food.wav"))
@@ -50,9 +52,7 @@ func _ready():
 			Global.bad_food.append(load("res://assets/sfx/scott/bad_food_4.wav"))
 			Global.game_over.append(load("res://assets/sfx/scott/game_over_1.wav"))
 			Global.game_over.append(load("res://assets/sfx/scott/game_over_2.wav"))
-			
 
-			
 
 func _on_SpawnTimer_timeout():
 	# Spawn new food item on set spawn position, dynamically update fall speed based on score
@@ -64,6 +64,7 @@ func _on_SpawnTimer_timeout():
 	if Global.score > 300:
 		new_food.FALL_SPEED = 25
 	add_child(new_food)
+	# Add half health when farmer spawns for balance purposes
 	if new_food.farmer:
 		emit_signal("farmer_spawn")
 
@@ -72,13 +73,17 @@ func _process(_delta):
 		$SpawnTimer.paused = true
 	else:
 		$SpawnTimer.paused = false
+		# Hard cap on food spawn rate so the game doesn't become impossible
 		if Global.score > 300:
 			$SpawnTimer.wait_time = 0.3
 		else:
 			$SpawnTimer.wait_time = 1 - log(Global.score) / (16 - Global.score / 40)
+	# Make sure background is always positioned correctly on different screen sizes
+	# Probably a better way to do this, but I couldn't find one
 	$Background.position.y = get_viewport().get_visible_rect().size.y - BGSIZE
 
 func _on_Despawn_body_entered(body):
+	# If farmer reaches the end, add one health
 	if body.farmer:
 		print("farmer consumed")
 		emit_signal("farmer_consumed")

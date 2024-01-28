@@ -1,6 +1,8 @@
 extends Node
 
 const SAVE_FILE ="user://save_file.save"
+
+# Set default save data
 var music_data = ["My Soul Cries Out"]
 var sound_data = ["Default"]
 var skin_data = ["Default"]
@@ -34,10 +36,12 @@ var game_over = []
 func _ready():
 	load_data()
 	
+	# If the ban date is not today, reset the ban hammer
 	if current_datetime.day != banDate and banDate != 0:
 		banDate = 0
 		bannerHammer = 1
 
+# Set banDate to current day to ban the player for 24 hours
 func banDay():
 	banDate = current_datetime.day
 
@@ -55,6 +59,7 @@ func load_data():
 		save_data()
 	file.open(SAVE_FILE, File.READ)
 	unlock_data = file.get_var()
+	# If the save file is not the correct length, reset it to prevent out of bounds errors
 	if len(unlock_data) < 12:
 		unlock_data = [music_data, sound_data, skin_data, 0, 0, 0, 1, 1, 0, -1, 0, 0]
 		save_data()
@@ -76,6 +81,7 @@ func load_data():
 	if not skin_data.has("Rainbow"):
 		v2_update()
 
+# Update the save file to include base v2.0 data
 func v2_update():
 	skin_data.append("Rainbow")
 	skin_data.append("Rain")
@@ -84,6 +90,7 @@ func v2_update():
 	sound_data.append("Scott")
 	save_data()
 
+# Reset the save file to default
 func reset_data():
 	music_data = ["My Soul Cries Out"]
 	sound_data = ["Default"]
