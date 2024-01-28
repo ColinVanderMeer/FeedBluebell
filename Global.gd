@@ -18,12 +18,15 @@ var unlock_data = [music_data, sound_data, skin_data, 0, 0, 0, 1, 1, 0, -1, 0, 0
 
 var current_datetime = OS.get_date()
 
-# Set the default soundpack
+var score = 0
+var pause = false
+var sinceFarmer = 8
+
+# Set default settings
 var music = "My Soul Cries Out"
 var soundpack = "Default"
 var skin = "Default"
 
-# TODO: Make these an array/hashmap of some kind?
 var good_food = []
 var bad_food = []
 var game_over = []
@@ -35,14 +38,9 @@ func _ready():
 		banDate = 0
 		bannerHammer = 1
 
-	
 func banDay():
 	banDate = current_datetime.day
 
-
-var score = 0
-var pause = false # this shouldn't be here, too bad
-var sinceFarmer = 8
 
 func save_data():
 	unlock_data = [music_data, sound_data, skin_data, currentMusicIndex, currentSoundIndex, currentSkinIndex, musicVolume, soundVolume, bestScore, playerID, bannerHammer, banDate]

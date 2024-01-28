@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-var consumed = 0
 signal update_consumed(c)
 
 var ping = false
@@ -10,7 +9,6 @@ var max_scale = Vector2(1.25,1.25)
 func _on_Area2D_body_entered(body):
 	if !body.type and !body.farmer:
 		$FoodSFX.stream = Global.good_food[randi() % Global.good_food.size()]
-		# TODO: remove these, and make sure audio is normalized
 		
 		$Ping.scale = scaling
 		$Ping.modulate.a = 1

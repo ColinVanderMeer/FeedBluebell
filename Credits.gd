@@ -1,12 +1,7 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var resetEnabled = false
 
-# Called when the node enters the scene tree for the first time.
 func _on_BackButton_pressed():
 	self.visible = false
 	Global.save_data()
@@ -100,8 +95,6 @@ func _process(delta):
 		$Panel/Code.modulate.g += 0.01 * delta / 0.016
 		if $Panel/Code.modulate.g > 1:
 			$Panel/Code.modulate.g = 1
-
-
 
 func _on_ThirdPartyButton_pressed():
 	$ThirdParty.visible = true

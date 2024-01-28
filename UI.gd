@@ -14,25 +14,7 @@ func _ready():
 	$AudioStreamPlayer.stream = load("res://assets/music/" + Global.music + ".ogg")
 
 	
-func _on_Pig_update_consumed(type):
-	if type:
-		$ProgressBar.value -= STEP
-		$DamageRect.modulate.a = 1
-		$DamageRect.rect_scale.x = 1
-		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
-		$DamageRect.modulate = Color("#84f174")
-	else:
-		$ProgressBar.value += STEP
-		if $ProgressBar.value == 100 and coyote > 0.2:
-			coyote_death = true
-		$DamageRect.modulate.a = 1
-		$DamageRect.rect_scale.x = 1
-		$DamageRect.rect_position.y = get_viewport().get_visible_rect().size.y/2 + 153
-		$DamageRect.modulate = Color("#f17486")
-			
-
-# TODO: deprecated
-func _on_Trash_update_consumed(type):
+func _on_food_consumed(type):
 	if type:
 		$ProgressBar.value -= STEP
 		$DamageRect.modulate.a = 1
@@ -99,11 +81,9 @@ func _on_Button_pressed():
 	$PauseScreen.visible = Global.pause
 	if Global.pause:
 		# Lower bg music on pause screen
-		# TODO: do this for other menus
 		$AudioStreamPlayer.volume_db = -8.0
 		$CanvasLayer/Button.icon = load("res://assets/gui/buttonResume.png")
 	else:
-		# TODO: normalize SFX so we can set this to 0dB
 		$AudioStreamPlayer.volume_db = -3.0
 		$CanvasLayer/Button.icon = load("res://assets/gui/buttonPause.png")
 

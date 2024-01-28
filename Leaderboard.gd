@@ -7,7 +7,6 @@ func _on_BackButton_pressed():
 	self.visible = false
 
 func _ready():
-	
 	# Set up the request parameters
 	var url = "https://bluebell.vandermeer.tech/api/scores/"
 	var headers = []
@@ -17,6 +16,7 @@ func _ready():
 
 	if Global.playerID == -1:
 		$Panel/AroundMe.disabled = true
+
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code == 200:
@@ -81,7 +81,6 @@ func _on_AllTime_pressed():
 	
 	# Send the request
 	$HTTPRequest.request(url, headers)
-
 
 func _on_AroundMe_pressed():
 	$Panel/AllTime.disabled = false

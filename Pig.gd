@@ -1,20 +1,16 @@
 extends StaticBody2D
 
-# How many food items have been consumed, deprecated
-var consumed = 0
 signal update_consumed(type)
 
 var ping = false
 var scaling = Vector2(0.05,0.05)
 var max_scale = Vector2(1.25,1.25)
 
-
 func _ready():
 	match Global.skin:
 		"Rainbow":
 			$AnimatedSprite.material = load("res://assets/shaders/gayyy.tres")
 		"Merch":
-		# change happy and sad sprites to merch
 			$AnimatedSprite.frames = load("res://assets/characters/merch/merchFrame.tres")
 		"Fumo":
 			$AnimatedSprite.frames = load("res://assets/characters/funnyFumo/fumo.tres")

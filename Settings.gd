@@ -1,23 +1,13 @@
 extends Control
 
+onready var musicBus := AudioServer.get_bus_index("Music")
+onready var sfxBus := AudioServer.get_bus_index("SFX")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
 func _on_BackButton_pressed():
 	self.visible = false
 	Global.musicVolume = $Panel/MusicSlider.value
 	Global.soundVolume = $Panel/SfxSlider.value
 	Global.save_data()
-
-
-onready var musicBus := AudioServer.get_bus_index("Music")
-onready var sfxBus := AudioServer.get_bus_index("SFX")
-
-# godot array with two values "mySoul" and "rainDown"
-
 
 func _ready() -> void:
 	AudioServer.set_bus_volume_db(musicBus, linear2db(Global.musicVolume))
@@ -71,6 +61,7 @@ func _on_SkinLeft_pressed() -> void:
 		Global.currentSkinIndex = Global.skin_data.size() - 1
 	updateSkin()
 
+
 func updateMusic() -> void:
 	$Panel/Music/Label.text = Global.music_data[Global.currentMusicIndex]
 	Global.music = Global.music_data[Global.currentMusicIndex]
@@ -123,5 +114,6 @@ func updateSkin() -> void:
 			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] DJ Ham Jam"
 		_:
 			$Panel/RichSkinLabel.bbcode_text = "[b]Skin:[/b] Default"
+			
 	Global.skin = Global.skin_data[Global.currentSkinIndex]
 

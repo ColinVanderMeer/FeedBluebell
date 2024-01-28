@@ -60,7 +60,7 @@ func _on_SpawnTimer_timeout():
 	new_food.position = $SpawnPosition.global_position
 	new_food.pig_target = $Pig.global_position
 	new_food.trash_target = $Trash.global_position
-	new_food.FALL_SPEED = 5 + Global.score / 15 # TODO: make this better
+	new_food.FALL_SPEED = 5 + Global.score / 15
 	if Global.score > 300:
 		new_food.FALL_SPEED = 25
 	add_child(new_food)

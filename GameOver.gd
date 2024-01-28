@@ -36,22 +36,11 @@ func _ready():
 	else:
 		pass
 
-	
-
-func _on_TryAgain_pressed():
-	if ResourceLoader.exists(game):
-		var _error = get_tree().change_scene(game)
-		
-func _on_TitleScreen_pressed():
-	if ResourceLoader.exists(title_screen):
-		var _error = get_tree().change_scene(title_screen)
-
 
 func _make_post(url, data, ssl):
 	var query = JSON.print(data)
 	var headers = ["Content-Type: application/json"]
 	$HTTPRequest.request(url, headers, ssl, HTTPClient.METHOD_POST, query)
-
 
 func _on_LeaderboardButton_pressed():
 	if $Control/LeaderboardEntry.text == "" or $Control/LeaderboardEntry.text == "Null":
@@ -66,14 +55,6 @@ func _on_LeaderboardButton_pressed():
 		$Control/LeaderboardEntry.modulate = Color(110 / 255, 255 / 255, 0)
 	else:
 		OS.alert("Name must be less than 19 characters")
-
-
-
-func _on_ButtonEnabler_timeout():
-	# This is so that people don't accidentally try again after the game ends
-	$Control/TryAgain.disabled = false
-	$Control/TitleScren.disabled = false
-
 
 func _on_HTTPRequest_request_completed(_result:int, response_code:int, _headers:PoolStringArray, body:PoolByteArray):
 	if response_code == 200:
@@ -113,3 +94,16 @@ func _on_HTTPRequest_request_completed(_result:int, response_code:int, _headers:
 func _on_BackButton_pressed():
 	$GoldBG.visible = false
 	$GoldPanel.visible = false
+
+func _on_TryAgain_pressed():
+	if ResourceLoader.exists(game):
+		var _error = get_tree().change_scene(game)
+		
+func _on_TitleScreen_pressed():
+	if ResourceLoader.exists(title_screen):
+		var _error = get_tree().change_scene(title_screen)
+
+func _on_ButtonEnabler_timeout():
+	# This is so that people don't accidentally try again after the game ends
+	$Control/TryAgain.disabled = false
+	$Control/TitleScren.disabled = false
