@@ -20,92 +20,60 @@ func _ready():
 func _on_CodeButton_pressed():
 	$Panel/Code.modulate = Color(95/255, 1, 1, 1)
 	match $Panel/Code.text.to_upper():
-		# "703":
-		# 	if not Global.music_data.has("Rain Down"):
-		# 		$Panel/Code.text = "Rain Down Unlocked"
-		# 		Global.music_data.append("Rain Down")
-		# 	else:
-		# 		$Panel/Code.text = "Rain Down Already Unlocked"
-		# "RETROBELL":
-		# 	$Panel/Code.text = "Retro Skin Unlocked"
-		# "RAINBOW":
-		# 	if not Global.skin_data.has("Rainbow"):
-		# 		$Panel/Code.text = "Rainbow Skin Unlocked"
-		# 		Global.skin_data.append("Rainbow")
-		# 	else:
-		# 		$Panel/Code.text = "Rainbow Skin Already Unlocked"
-		# "THINK":
-		# 	if not Global.skin_data.has("Think"):
-		# 		$Panel/Code.text = "Think Skin Unlocked"
-		# 		Global.skin_data.append("Think")
-		# 	else:
-		# 		$Panel/Code.text = "Think Skin Already Unlocked"
-		# "RAIN":
-		# 	if not Global.skin_data.has("Rain"):
-		# 		$Panel/Code.text = "Rain Down Skin Unlocked"
-		# 		Global.skin_data.append("Rain")
-		# 	else:
-		# 		$Panel/Code.text = "Rain Down Skin Already Unlocked"
-		# "MERCH":
-		# 	if not Global.skin_data.has("Merch"):
-		# 		$Panel/Code.text = "Rockway Swag Unlocked"
-		# 		Global.skin_data.append("Merch")
-		# 	else:
-		# 		$Panel/Code.text = "Rockway Swag Already Unlocked"
-		# "39":
-		# 	if not Global.skin_data.has("Miku"):
-		# 		$Panel/Code.text = "Miku Skin Unlocked"
-		# 		Global.skin_data.append("Miku")
-		# 	else:
-		# 		$Panel/Code.text = "Miku Skin Already Unlocked"
-		# "COPPER":
-		# 	if not Global.sound_data.has("Penny"):
-		# 		$Panel/Code.text = "Mr. Penny Sounds Unlocked"
-		# 		Global.sound_data.append("Penny")
-		# 	else:
-		# 		$Panel/Code.text = "Penny Already Unlocked"
-		# "SCIENCE":
-		# 	if not Global.sound_data.has("Rempel"):
-		# 		$Panel/Code.text = "Mr. Rempel Sounds Unlocked"
-		# 		Global.sound_data.append("Rempel")
-		# 	else:
-		# 		$Panel/Code.text = "Rempel Already Unlocked"
-		# "SECRET123":
-		# 	if not Global.sound_data.has("Scott"):
-		# 		$Panel/Code.text = "Ms. Scott Sounds Unlocked"
-		# 		Global.sound_data.append("Scott")
-		# 	else:
-		# 		$Panel/Code.text = "Scott Already Unlocked"
-		# "FUNNY FUMO FUNCTION":
-		# 	if not Global.skin_data.has("Fumo"):
-		# 		$Panel/Code.text = ":3"
-		# 		Global.skin_data.append("Fumo")
-		# 	else:
-		# 		$Panel/Code.text = ":("
-		# "WIDE":
-		# 	if not Global.skin_data.has("Wide"):
-		# 		$Panel/Code.text = "W I D E"
-		# 		Global.skin_data.append("Wide")
-		# 	else:
-		# 		$Panel/Code.text = "You are already W I D E"
-		# "BALLET":
-		# 	if not Global.skin_data.has("Ballet"):
-		# 		$Panel/Code.text = "Bellerina Skin Unlocked"
-		# 		Global.skin_data.append("Ballet")
-		# 	else:
-		# 		$Panel/Code.text = "Bellerina Skin Already Unlocked"
-		# "COW":
-		# 	if not Global.skin_data.has("Cowbell"):
-		# 		$Panel/Code.text = "Cowbell skin Unlocked"
-		# 		Global.skin_data.append("Cowbell")
-		# 	else:
-		# 		$Panel/Code.text = "Cowbell Skin Already Unlocked"
-		# "MUSIC":
-		# 	if not Global.skin_data.has("Hamjam"):
-		# 		$Panel/Code.text = "DJ Ham Jam Unlocked"
-		# 		Global.skin_data.append("Hamjam")
-		# 	else:
-		# 		$Panel/Code.text = "DJ Ham Jam Already Unlocked"
+		"703":
+			if not Global.music_data.has("Rain Down"):
+				$Panel/Code.text = "Rain Down Unlocked"
+				Global.music_data.append("Rain Down")
+			else:
+				$Panel/Code.text = "Rain Down Already Unlocked"
+		"THINK":
+			if not Global.skin_data.has("Think"):
+				$Panel/Code.text = "Think Skin Unlocked"
+				Global.skin_data.append("Think")
+			else:
+				$Panel/Code.text = "Think Skin Already Unlocked"
+		"39":
+			if not Global.skin_data.has("Miku"):
+				$Panel/Code.text = "Miku Skin Unlocked"
+				Global.skin_data.append("Miku")
+			else:
+				$Panel/Code.text = "Miku Skin Already Unlocked"
+		"COPPER":
+			if not Global.sound_data.has("Penny"):
+				$Panel/Code.text = "Mr. Penny Sounds Unlocked"
+				Global.sound_data.append("Penny")
+			else:
+				$Panel/Code.text = "Penny Already Unlocked"
+		"FUNNY FUMO FUNCTION":
+			if not Global.skin_data.has("Fumo"):
+				$Panel/Code.text = ":3"
+				Global.skin_data.append("Fumo")
+			else:
+				$Panel/Code.text = ":("
+		"WIDE":
+			if not Global.skin_data.has("Wide"):
+				$Panel/Code.text = "W I D E"
+				Global.skin_data.append("Wide")
+			else:
+				$Panel/Code.text = "You are already W I D E"
+		"BALLET":
+			if not Global.skin_data.has("Ballet"):
+				$Panel/Code.text = "Bellerina Skin Unlocked"
+				Global.skin_data.append("Ballet")
+			else:
+				$Panel/Code.text = "Bellerina Skin Already Unlocked"
+		"COW":
+			if not Global.skin_data.has("Cowbell"):
+				$Panel/Code.text = "Cowbell skin Unlocked"
+				Global.skin_data.append("Cowbell")
+			else:
+				$Panel/Code.text = "Cowbell Skin Already Unlocked"
+		"MUSIC":
+			if not Global.skin_data.has("Hamjam"):
+				$Panel/Code.text = "DJ Ham Jam Unlocked"
+				Global.skin_data.append("Hamjam")
+			else:
+				$Panel/Code.text = "DJ Ham Jam Already Unlocked"
 		"RESET":
 			if resetEnabled:
 				Global.reset_data()

@@ -27,14 +27,14 @@ func _ready():
 		$Control/LeaderboardButton.visible = false
 		var _error = $Control/LeaderboardEntry.connect("focus_exited", self, "_on_LeaderboardButton_pressed")
 
-	# if Global.score > 270:
-	# 	if not Global.skin_data.has("Gold"):
-	# 		Global.skin_data.append("Gold")
-	# 		Global.save_data()
-	# 		$GoldBG.visible = true
-	# 		$GoldPanel.visible = true
-	# 	else:
-	# 		pass
+	if Global.score > 240:
+		if not Global.skin_data.has("Gold"):
+			Global.skin_data.append("Gold")
+			Global.save_data()
+			$GoldBG.visible = true
+			$GoldPanel.visible = true
+	else:
+		pass
 
 	
 

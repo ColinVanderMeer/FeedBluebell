@@ -74,7 +74,18 @@ func load_data():
 	playerID = unlock_data[9]
 	bannerHammer = unlock_data[10]
 	banDate = unlock_data[11]
-	
+
+	if not skin_data.has("Rainbow"):
+		v2_update()
+
+func v2_update():
+	skin_data.append("Rainbow")
+	skin_data.append("Rain")
+	skin_data.append("Merch")
+	sound_data.append("Rempel")
+	sound_data.append("Scott")
+	save_data()
+
 func reset_data():
 	music_data = ["My Soul Cries Out"]
 	sound_data = ["Default"]

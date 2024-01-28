@@ -338,9 +338,9 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/bold_font = SubResource( 24 )
 custom_fonts/normal_font = SubResource( 25 )
 bbcode_enabled = true
-bbcode_text = "[center][b]You reached 300[/b]
+bbcode_text = "[center][b]You reached 4:00[/b]
  golden skin unlocked"
-text = "You reached 300
+text = "You reached 4:00
  golden skin unlocked"
 scroll_active = false
 
