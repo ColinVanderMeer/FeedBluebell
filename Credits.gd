@@ -23,13 +23,13 @@ func _on_CodeButton_pressed():
 				Global.music_data.append("Rain Down")
 			else:
 				$Panel/Code.text = "Rain Down Already Unlocked"
-		"THINK":
+		"THINKGREEN":
 			if not Global.skin_data.has("Think"):
 				$Panel/Code.text = "Think Skin Unlocked"
 				Global.skin_data.append("Think")
 			else:
 				$Panel/Code.text = "Think Skin Already Unlocked"
-		"39":
+		"COMPOST":
 			if not Global.skin_data.has("Miku"):
 				$Panel/Code.text = "Miku Skin Unlocked"
 				Global.skin_data.append("Miku")
@@ -47,25 +47,25 @@ func _on_CodeButton_pressed():
 				Global.skin_data.append("Fumo")
 			else:
 				$Panel/Code.text = ":("
-		"WIDE":
+		"RECYCLE":
 			if not Global.skin_data.has("Wide"):
-				$Panel/Code.text = "W I D E"
+				$Panel/Code.text = "W I D E skin unlocked"
 				Global.skin_data.append("Wide")
 			else:
 				$Panel/Code.text = "You are already W I D E"
-		"BALLET":
+		"ZEROWASTE":
 			if not Global.skin_data.has("Ballet"):
 				$Panel/Code.text = "Bellerina Skin Unlocked"
 				Global.skin_data.append("Ballet")
 			else:
 				$Panel/Code.text = "Bellerina Skin Already Unlocked"
-		"COW":
+		"MAKEAPIGHAPPY":
 			if not Global.skin_data.has("Cowbell"):
 				$Panel/Code.text = "Cowbell skin Unlocked"
 				Global.skin_data.append("Cowbell")
 			else:
 				$Panel/Code.text = "Cowbell Skin Already Unlocked"
-		"MUSIC":
+		"IHEARTHOGS":
 			if not Global.skin_data.has("Hamjam"):
 				$Panel/Code.text = "DJ Ham Jam Unlocked"
 				Global.skin_data.append("Hamjam")
