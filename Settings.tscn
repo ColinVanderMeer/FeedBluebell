@@ -308,6 +308,7 @@ custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[b]Skins:[/b] Default"
 text = "Skins: Default"
+scroll_active = false
 
 [node name="Skin" type="Panel" parent="Panel"]
 anchor_left = 0.087
