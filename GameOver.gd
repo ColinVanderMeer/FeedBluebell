@@ -116,3 +116,4 @@ func _on_ButtonEnabler_timeout():
 	# This is so that people don't accidentally hit try again after the game ends
 	$Control/TryAgain.disabled = false
 	$Control/TitleScren.disabled = false
+	$GoldPanel/BackButton.disabled = false

@@ -88,16 +88,17 @@ corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
-[sub_resource type="StyleBoxTexture" id=16]
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 485, 464 )
-
 [sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 485, 464 )
 modulate_color = Color( 0.75, 0.75, 0.75, 1 )
 
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 485, 464 )
+
 [sub_resource type="Theme" id=22]
+Button/styles/disabled = SubResource( 17 )
 Button/styles/hover = SubResource( 16 )
 Button/styles/normal = SubResource( 16 )
 Button/styles/pressed = SubResource( 17 )
@@ -322,6 +323,7 @@ margin_right = 22.0
 margin_bottom = 74.0
 theme = SubResource( 22 )
 custom_styles/focus = SubResource( 23 )
+disabled = true
 icon_align = 1
 expand_icon = true
 
