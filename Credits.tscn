@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=2]
@@ -78,6 +78,8 @@ use_mipmaps = true
 use_filter = true
 extra_spacing_top = 8
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=16]
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -216,6 +218,7 @@ margin_top = 640.16
 margin_right = 326.104
 margin_bottom = 695.16
 custom_fonts/font = SubResource( 13 )
+custom_styles/focus = SubResource( 16 )
 text = "third party licenses"
 
 [node name="ThirdParty" type="Panel" parent="."]
@@ -294,6 +297,7 @@ margin_left = 44.0
 margin_top = 18.0
 margin_right = 100.0
 margin_bottom = 73.0
+custom_styles/focus = SubResource( 16 )
 text = "<"
 
 [node name="Label" type="Label" parent="ThirdParty"]
