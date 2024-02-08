@@ -1,11 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/luckiest-guy/LuckiestGuy.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Credits.gd" type="Script" id=3]
 [ext_resource path="res://assets/gui/xButton.png" type="Texture" id=4]
-[ext_resource path="res://assets/gui/yellowRect.png" type="Texture" id=5]
-[ext_resource path="res://CodeEntry.gd" type="Script" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.956863, 1, 0.960784, 1 )
@@ -30,25 +28,6 @@ Button/styles/pressed = SubResource( 7 )
 
 [sub_resource type="StyleBoxEmpty" id=9]
 
-[sub_resource type="DynamicFont" id=5]
-size = 32
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 792, 210 )
-
-[sub_resource type="Theme" id=11]
-Label/colors/font_color = Color( 0, 0, 0, 1 )
-Label/fonts/font = SubResource( 5 )
-Label/styles/normal = SubResource( 10 )
-LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
-LineEdit/fonts/font = SubResource( 5 )
-LineEdit/styles/focus = SubResource( 10 )
-LineEdit/styles/normal = SubResource( 10 )
-
 [sub_resource type="DynamicFont" id=14]
 size = 43
 use_mipmaps = true
@@ -69,8 +48,6 @@ use_filter = true
 extra_spacing_top = 5
 extra_spacing_bottom = 5
 font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="DynamicFont" id=13]
 size = 28
@@ -114,21 +91,6 @@ theme = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 icon_align = 1
 expand_icon = true
-
-[node name="Code" type="LineEdit" parent="Panel"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -270.0
-margin_top = -142.0
-margin_right = 194.0
-margin_bottom = -66.0
-theme = SubResource( 11 )
-align = 1
-placeholder_text = "Enter code"
-placeholder_alpha = 1.0
-script = ExtResource( 6 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 anchor_left = 0.006
@@ -193,20 +155,6 @@ custom_colors/font_outline_modulate = Color( 0.278431, 0.278431, 0.278431, 1 )
 custom_fonts/font = SubResource( 15 )
 text = "CREDITS:"
 autowrap = true
-
-[node name="CodeButton" type="Button" parent="Panel"]
-anchor_left = 0.5
-anchor_top = 0.998
-anchor_right = 0.5
-anchor_bottom = 0.998
-margin_left = 218.0
-margin_top = -128.04
-margin_right = 274.0
-margin_bottom = -73.04
-rect_pivot_offset = Vector2( 88, 40 )
-custom_styles/focus = SubResource( 4 )
-text = ">"
-icon_align = 1
 
 [node name="ThirdPartyButton" type="Button" parent="Panel"]
 anchor_left = 0.034
@@ -315,6 +263,5 @@ align = 1
 valign = 1
 
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="pressed" from="Panel/CodeButton" to="." method="_on_CodeButton_pressed"]
 [connection signal="pressed" from="Panel/ThirdPartyButton" to="." method="_on_ThirdPartyButton_pressed"]
 [connection signal="pressed" from="ThirdParty/ThridBackButton" to="." method="_on_ThridBackButton_pressed"]

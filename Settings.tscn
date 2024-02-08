@@ -375,6 +375,7 @@ margin_bottom = 200.744
 texture = ExtResource( 8 )
 expand = true
 
+[connection signal="visibility_changed" from="." to="." method="_on_Settings_visibility_changed"]
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="value_changed" from="Panel/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
 [connection signal="value_changed" from="Panel/SfxSlider" to="." method="_on_SfxSlider_value_changed"]

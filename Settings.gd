@@ -122,3 +122,5 @@ func updateSkin() -> void:
 			
 	Global.skin = Global.skin_data[Global.currentSkinIndex]
 
+func _on_Settings_visibility_changed():
+	updateSkin()
