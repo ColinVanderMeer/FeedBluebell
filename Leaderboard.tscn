@@ -179,8 +179,36 @@ mouse_filter = 2
 custom_colors/default_color = Color( 0.298039, 0.309804, 0.411765, 1 )
 custom_fonts/normal_font = SubResource( 22 )
 bbcode_enabled = true
-bbcode_text = "Loading..."
-text = "Loading..."
+bbcode_text = "1. Leo S
+2. Schellenberger
+3. Lucas R
+4. Colin
+5. Aidan
+6. Michael
+7. :(
+8. Trevyn
+9. Drew
+10. Ryker
+11. Seth
+12. I beat poetker
+13. John gosse
+14. Big Micah
+15. Felix"
+text = "1. Leo S
+2. Schellenberger
+3. Lucas R
+4. Colin
+5. Aidan
+6. Michael
+7. :(
+8. Trevyn
+9. Drew
+10. Ryker
+11. Seth
+12. I beat poetker
+13. John gosse
+14. Big Micah
+15. Felix"
 scroll_active = false
 
 [node name="ScoreLabel" type="Label" parent="Panel"]
@@ -194,6 +222,21 @@ margin_right = 104.156
 margin_bottom = 569.0
 custom_colors/font_color = Color( 0.411765, 0.647059, 0.831373, 1 )
 custom_fonts/font = SubResource( 20 )
+text = "10m 17s
+9m 14s
+8m 4s
+6m 34s
+5m 39s
+5m 29s
+5m 29s
+5m 25s
+5m 6s
+5m 5s
+5m 4s
+4m 59s
+4m 59s
+4m 53s
+4m 52s"
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 margin_right = 40.0
